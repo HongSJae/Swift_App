@@ -1,0 +1,6 @@
+framework module Pods_CMD {
+  umbrella header "Pods-CMD-umbrella.h"
+
+  export *
+  module * { export * }
+}
