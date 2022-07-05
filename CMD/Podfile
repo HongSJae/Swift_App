@@ -6,5 +6,6 @@ target 'CMD' do
   use_frameworks!
 
   # Pods for CMD
-  pod 'MaterialComponents/BottomNavigation'
+  pod 'SnapKit'
+  pod 'Alamofire'
 end

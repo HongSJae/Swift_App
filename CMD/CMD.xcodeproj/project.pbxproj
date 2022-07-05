@@ -19,6 +19,7 @@
 		9063B727286EC4A700ED8DAF /* noticeboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B726286EC4A700ED8DAF /* noticeboardVC.swift */; };
 		9063B729286EC4C500ED8DAF /* myinfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B728286EC4C500ED8DAF /* myinfoVC.swift */; };
 		9063B72E286EC73800ED8DAF /* MyTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B72D286EC73800ED8DAF /* MyTapBarController.swift */; };
+		90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A018902872A6EF0063FB80 /* SignupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9063B726286EC4A700ED8DAF /* noticeboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeboardVC.swift; sourceTree = "<group>"; };
 		9063B728286EC4C500ED8DAF /* myinfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myinfoVC.swift; sourceTree = "<group>"; };
 		9063B72D286EC73800ED8DAF /* MyTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTapBarController.swift; sourceTree = "<group>"; };
+		90A018902872A6EF0063FB80 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		DAF23BBEB6786F8321425394 /* Pods_CMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				9063B6BB286D5A9400ED8DAF /* LoginVC.swift */,
+				90A018902872A6EF0063FB80 /* SignupVC.swift */,
 				9063B722286EC42900ED8DAF /* scheduleVC.swift */,
 				9063B724286EC47400ED8DAF /* classinfoVC.swift */,
 				9063B726286EC4A700ED8DAF /* noticeboardVC.swift */,
@@ -235,6 +238,7 @@
 				9063B6BC286D5A9400ED8DAF /* LoginVC.swift in Sources */,
 				9063B6B8286D5A9400ED8DAF /* AppDelegate.swift in Sources */,
 				9063B729286EC4C500ED8DAF /* myinfoVC.swift in Sources */,
+				90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */,
 				9063B725286EC47400ED8DAF /* classinfoVC.swift in Sources */,
 				9063B723286EC42900ED8DAF /* scheduleVC.swift in Sources */,
 				9063B6BA286D5A9400ED8DAF /* SceneDelegate.swift in Sources */,
