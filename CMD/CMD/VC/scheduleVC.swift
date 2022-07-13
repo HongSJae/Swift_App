@@ -26,9 +26,9 @@ class scheduleVC: UIViewController {
         
         
         
-//        WeekEscape()
-//        print(Weekday)
-//        getTimeSchedule(weekday: Weekday)
+        WeekEscape()
+        print(Weekday)
+        getTimeSchedule(weekday: Weekday)
         
         view.backgroundColor = UIColor(named: "BackgroundColor")
                 
@@ -50,45 +50,45 @@ class scheduleVC: UIViewController {
     
     
     func getTimeSchedule(weekday: String) {
-        let url = "http://192.168.137.7:8080" + "/user/timetable/"
+        let url = "http://54.180.120.242:8080" + "/user/timetable/"
         AF.request(url + weekday,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+                   headers: ["Authorization":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSZXN3byIsInJvbGVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNjU3NzEwNzgxLCJleHAiOjE2NTc3MTI1ODF9.AI1-ZFm7l5apwr88_uVfSXe3twTZGNma-5fcOd7FcJ4"])
         .validate(statusCode: 200..<300)
         .response { result in
             do{
                 let model = try JSONDecoder().decode(TimeGet.self, from: result.data!)
                 
-                //                self._1stTime.text = model.period1st
-                //                print(model.period1st)
-                //
-                //                self._2ndTime.text = model.period2nd
-                //                print(model.period2nd)
-                //
-                //                self._3rdTime.text = model.period3th //3rd지만 근우가 잘못 보내서 수정해야함
-                //                print(model.period3th)
-                //
-                //                self._4thTime.text = model.period4th
-                //                print(model.period4th)
-                //
-                //                self._5thTime.text = model.period5th
-                //                print(model.period5th)
-                //
-                //                self._6thTime.text = model.period6th
-                //                print(model.period6th)
-                //
-                //                self._7thTime.text = model.period7th
-                //                print(model.period7th)
-                //
-                //                self._8thTime.text = model.period8th
-                //                print(model.period8th)
-                //
-                //                self._9thTime.text = model.period9th
-                //                print(model.period9th)
-                //
-                //                self._10thTime.text = model.period10th
-                //                print(model.period10th)
+//                self._1stTime.text = model.period1st
+                print(model.period1st)
+                
+//                self._2ndTime.text = model.period2nd
+                print(model.period2nd)
+                
+//                self._3rdTime.text = model.period3th //3rd지만 근우가 잘못 보내서 수정해야함
+                print(model.period3th)
+                
+//                self._4thTime.text = model.period4th
+                print(model.period4th)
+                
+//                self._5thTime.text = model.period5th
+                print(model.period5th)
+                
+//                self._6thTime.text = model.period6th
+                print(model.period6th)
+                
+//                self._7thTime.text = model.period7th
+                print(model.period7th)
+                
+//                self._8thTime.text = model.period8th
+                print(model.period8th)
+                
+//                self._9thTime.text = model.period9th
+                print(model.period9th)
+                
+//                self._10thTime.text = model.period10th
+                print(model.period10th)
                 
             } catch {
                 print(error)
