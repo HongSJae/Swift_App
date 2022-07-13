@@ -8,86 +8,64 @@
 import UIKit
 import SnapKit
 import Alamofire
+import Then
 
 class SignupVC: UIViewController {
     
-    lazy var SignupBtn = { () -> UIButton in
-        let button = UIButton()
-        button.backgroundColor = .white
-        button.setTitle("회원가입", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.layer.cornerRadius = 20
-        return button
-    }()
+    private var SignupBtn = UIButton().then {
+        $0.backgroundColor = .white
+        $0.setTitle("회원가입", for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.setTitleColor(UIColor.black, for: .normal)
+        $0.layer.cornerRadius = 20
+    }
     
-    lazy var gotoLoginVCBtn = { () -> UIButton in
-        let button = UIButton()
-        button.setTitle("계정이 있으신가요? 로그인", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
-        button.setTitleColor(UIColor.white, for: .normal)
-        return button
-    }()
+    private var gotoLoginVCBtn = UIButton().then {
+        $0.setTitle("계정이 있으신가요? 로그인", for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        $0.setTitleColor(UIColor.white, for: .normal)
+    }
     
-    lazy var IdBox = { () -> UIView in
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "InputBox")
-        view.layer.cornerRadius = 10
-        return view
-    }()
-    lazy var IdTF = { () -> UITextField in
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 18)
-        textField.placeholder = "아이디"
-        
-        return textField
-    }()
+    private var IdBox = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+        $0.layer.cornerRadius = 10
+    }
+    private var IdTF = UITextField().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.placeholder = "아이디"
+    }
     
     
-    lazy var PwBox = { () -> UIView in
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "InputBox")
-        view.layer.cornerRadius = 10
-        return view
-    }()
-    lazy var PwTF = { () -> UITextField in
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 18)
-        textField.placeholder = "비밀번호"
-        return textField
-    }()
+    private var PwBox = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+        $0.layer.cornerRadius = 10
+    }
+    var PwTF = UITextField().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.placeholder = "비밀번호"
+    }
     
-    lazy var PwCBox = { () -> UIView in
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "InputBox")
-        view.layer.cornerRadius = 10
-        return view
-    }()
-    lazy var PwCTF = { () -> UITextField in
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 18)
-        textField.placeholder = "비밀번호 확인"
-        return textField
-    }()
+    private var PwCBox = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+        $0.layer.cornerRadius = 10
+    }
+    private var PwCTF = UITextField().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.placeholder = "비밀번호 확인"
+    }
     
-    lazy var CodeCheck = { () -> UIView in
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "InputBox")
-        view.layer.cornerRadius = 10
-        return view
-    }()
-    lazy var CodeCheckTF = { () -> UITextField in
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 18)
-        textField.placeholder = "가입코드"
-        return textField
-    }()
+    private var CodeCheck = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+        $0.layer.cornerRadius = 10
+    }
+    private var CodeCheckTF = UITextField().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.placeholder = "가입코드"
+    }
     
-    lazy var Logo = { () -> UIImageView in
-        let image = UIImageView()
-        image.image = UIImage(named: "CMD-W")
-        return image
-    }()
+    private var Logo = UIImageView().then {
+        $0.image = UIImage(named: "CMD-W")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

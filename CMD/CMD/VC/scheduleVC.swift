@@ -8,12 +8,17 @@
 import UIKit
 import Alamofire
 import SnapKit
+import Then
 
 class scheduleVC: UIViewController {
-    
+    let scrollView = UIScrollView().then {
+        $0.backgroundColor = .white
+    }
+    var button = UIButton().then {
+        $0.setTitle("dfksfs", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+    }
     var Weekday: String = ""
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +33,18 @@ class scheduleVC: UIViewController {
         view.backgroundColor = UIColor(named: "BackgroundColor")
                 
         
+    }
+    override func viewWillLayoutSubviews() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(button)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            
+        }
+        button.snp.makeConstraints {
+            $0.edges.equalTo(scrollView.snp.edges)
+        }
+    
     }
     
     

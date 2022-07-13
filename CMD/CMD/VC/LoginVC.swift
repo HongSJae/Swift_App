@@ -12,67 +12,50 @@ import Then
 
 class LoginVC: UIViewController {
     
-    lazy var LoginBtn = { () -> UIButton in
-        let button = UIButton()
-        button.backgroundColor = .white
-        button.setTitle("로그인", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.layer.cornerRadius = 20
-        return button
-    }()
+    private var LoginBtn = UIButton().then {
+        $0.backgroundColor = .white
+        $0.setTitle("로그인", for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.setTitleColor(UIColor.black, for: .normal)
+        $0.layer.cornerRadius = 20
+    }
     
-    lazy var Admin = { () -> UIButton in
-        let button = UIButton()
-        button.backgroundColor = .lightGray
-        button.setTitle("관리자", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.layer.cornerRadius = 10
-        return button
-    }()
+    private var Admin = UIButton().then {
+        $0.backgroundColor = .lightGray
+        $0.setTitle("관리자", for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.setTitleColor(UIColor.black, for: .normal)
+        $0.layer.cornerRadius = 10
+    }
     
-    lazy var gotoSignupVCBtn = { () -> UIButton in
-        let button = UIButton()
-        button.setTitle("아이디가 없으신가요? 회원가입", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-        button.setTitleColor(UIColor.white, for: .normal)
-        return button
-    }()
+    private var gotoSignupVCBtn = UIButton().then {
+        $0.setTitle("아이디가 없으신가요? 회원가입", for: .normal)
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        $0.setTitleColor(UIColor.white, for: .normal)
+    }
     
-    lazy var IdBox = { () -> UIView in
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "InputBox")
-        view.layer.cornerRadius = 10
-        return view
-    }()
-    lazy var IdTF = { () -> UITextField in
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 18)
-        textField.placeholder = "아이디"
-        
-        return textField
-    }()
+    private var IdBox = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+        $0.layer.cornerRadius = 10
+    }
+    private var IdTF = UITextField().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.placeholder = "아이디"
+    }
     
     
-    lazy var PwBox = { () -> UIView in
-        let view = UIView()
-        view.backgroundColor = UIColor(named: "InputBox")
-        view.layer.cornerRadius = 10
-        return view
-    }()
-    lazy var PwTF = { () -> UITextField in
-        let textField = UITextField()
-        textField.font = UIFont.systemFont(ofSize: 18)
-        textField.placeholder = "비밀번호"
-        return textField
-    }()
+    private var PwBox = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+        $0.layer.cornerRadius = 10
+    }
+    private var PwTF = UITextField().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.placeholder = "비밀번호"
+    }
     
-    lazy var Logo = { () -> UIImageView in
-        let image = UIImageView()
-        image.image = UIImage(named: "CMD-W")
-        return image
-    }()
+    private var Logo = UIImageView().then {
+        $0.image = UIImage(named: "CMD-W")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
