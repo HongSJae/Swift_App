@@ -11,50 +11,95 @@ import SnapKit
 import Then
 
 class scheduleVC: UIViewController {
-    let scrollView = UIScrollView().then {
-        $0.backgroundColor = .white
+    private var Header = UILabel().then {
+        $0.textColor = .white
+        $0.font = UIFont.boldSystemFont(ofSize: 60)
+        $0.text = "시간표"
     }
-    var button = UIButton().then {
-        $0.setTitle("dfksfs", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
+    
+    private var date = UILabel().then {
+        $0.textColor = .white
+        $0.font = UIFont.boldSystemFont(ofSize: 15)
+        let custom = DateFormatter()
+        custom.dateFormat = "yyyy년 MM월 dd일 EEE"
+        $0.text = "date"
     }
-    var Weekday: String = ""
+    
+    private var labelOne = UILabel().then {
+        $0.text = "Scroll Top"
+        $0.backgroundColor = .red
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private var labelTwo = UILabel().then {
+        $0.text = "Scroll Bottom"
+        $0.backgroundColor = .red
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private var scrollView = UIScrollView().then {
+//        $0.backgroundColor = .white //UIColor(named: "BackgroundColor")
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let Weekday: String = WeekDaydate()
         
-        
-        
-        
-        WeekEscape()
         print(Weekday)
         getTimeSchedule(weekday: Weekday)
         
-        view.backgroundColor = UIColor(named: "BackgroundColor")
-                
+        self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
-    }
-    override func viewWillLayoutSubviews() {
-        view.addSubview(scrollView)
-        scrollView.addSubview(button)
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            
+        self.view.addSubview(Header)
+        Header.snp.makeConstraints {
+            $0.topMargin.equalTo(38)
+            $0.leadingMargin.equalTo(50)
         }
-        button.snp.makeConstraints {
-            $0.edges.equalTo(scrollView.snp.edges)
+        
+        self.view.addSubview(date)
+        date.snp.makeConstraints {
+            $0.topMargin.equalTo(168)
+            $0.trailingMargin.equalTo(-50)
         }
-    
+        
+        self.view.addSubview(scrollView)
+//        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+//        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+//        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        scrollView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(50)
+            $0.leading.equalToSuperview().inset(50)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(215)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(0)
+        }
+        
+        scrollView.addSubview(labelOne)
+
+        labelOne.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40).isActive = true
+        labelOne.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 40).isActive = true
+
+        scrollView.addSubview(labelTwo)
+
+        labelTwo.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40).isActive = true
+        labelTwo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 1000).isActive = true
+        labelTwo.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -40).isActive = true
+
     }
     
     
     
     func getTimeSchedule(weekday: String) {
+        
         let url = "http://54.180.120.242:8080" + "/user/timetable/"
         AF.request(url + weekday,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Authorization":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSZXN3byIsInJvbGVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNjU3NzEwNzgxLCJleHAiOjE2NTc3MTI1ODF9.AI1-ZFm7l5apwr88_uVfSXe3twTZGNma-5fcOd7FcJ4"])
+                   headers: ["Authorization": ""])
         .validate(statusCode: 200..<300)
         .response { result in
             do{
@@ -96,87 +141,11 @@ class scheduleVC: UIViewController {
         }
     }
     
-    func WeekEscape() { // 오늘이 몇월 몇일인지 구해서 무슨 요일인지 구함
-        var formatter_time = DateFormatter()
-        
-        formatter_time.dateFormat = "MM"
-        var current_time_string = formatter_time.string(from: Date())
-        
-        
-        formatter_time.dateFormat = "DD"
-        var current_time_string1 = formatter_time.string(from: Date())
-        
-        
-        Weekday = getWeekDay(month: Int(current_time_string)!, day: Int(current_time_string1)!)
-        
-        
-    }
-    
-    func endOfMonth(atMonth: Int) -> Int { //몇일이 마지막날인지 구함 (요일가져올 때 필요)
-        let set30: [Int] = [1,3,5,7,8,10,12]
-        var endDay: Int = 0
-        if atMonth == 2 {
-            endDay = 28
-        }else if set30.contains(atMonth) {
-            endDay = 31
-        }else {
-            endDay = 30
-        }
-        
-        return endDay
-    }
-    
-    func getWeekDay(month: Int, day: Int) -> String { //요일 가져오기
-        
-        let week: [String] = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
-        var totalDay: Int = 0
-        
-        if month > 1 {
-            for i in 1..<month {
-                let endDay: Int = endOfMonth(atMonth: i)
-                totalDay += endDay
-            }
-            
-            totalDay = totalDay + day
-            
-        }else if month == 1 {
-            totalDay = day
-        }
-        
-        var index: Int = (totalDay) % 7
-        
-        if index > 0 {
-            index = index - 1
-        }
-        
-        return week[index]
-    }
-    
-    func AlertFunc(title: String, message: String) { //알림띄우기
-        let alert = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: .alert)
-        let action = UIAlertAction(
-            title: "네",
-            style: .default,
-            handler: nil)
-        alert.addAction(action)
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func removePoint(num: Double) -> String{ //점 지우기
-        var floatNumString = String(num)
-        
-        while floatNumString.last == "0" {
-            floatNumString.removeLast()
-        }
-        if floatNumString.last == "."{
-            floatNumString.removeLast()
-        }
-        
-        return floatNumString
+    func WeekDaydate() -> String{
+        let custom = DateFormatter()
+        custom.dateFormat = "yyyy년 M월 d일 E"
+        let nowdate: String = custom.string(from: .now)
+        return nowdate
     }
 }
 

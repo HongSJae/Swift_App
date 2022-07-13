@@ -10,6 +10,5 @@ import SnapKit
 
 class ScrollView: UIView {
     let scrollView = UIScrollView()
-    
     let contentsView = UIView()
 }
