@@ -8,4 +8,5 @@ target 'CMD' do
   # Pods for CMD
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'Then'
 end
