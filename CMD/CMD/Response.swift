@@ -20,3 +20,8 @@ struct TimeGet: Codable { //시간표 받기
     let period9th: String
     let period10th: String
 }
+
+struct SignInInfo: Codable {
+    let accessToken: String
+}
+

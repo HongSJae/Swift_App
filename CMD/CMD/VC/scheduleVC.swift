@@ -21,20 +21,91 @@ class scheduleVC: UIViewController {
         $0.textColor = .white
         $0.font = UIFont.boldSystemFont(ofSize: 15)
         let custom = DateFormatter()
-        custom.dateFormat = "yyyy년 MM월 dd일 EEE"
-        $0.text = "date"
+        custom.dateFormat = "yyyy년 M월 d일 E요일"
+        let nowdate: String = custom.string(from: .now)
+        print(nowdate)
+        $0.text = nowdate
     }
     
-    private var labelOne = UILabel().then {
-        $0.text = "Scroll Top"
-        $0.backgroundColor = .red
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    private var Class1 = UILabel().then {
+        $0.text = "시간표1"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
     }
-    
-    private var labelTwo = UILabel().then {
-        $0.text = "Scroll Bottom"
-        $0.backgroundColor = .red
-        $0.translatesAutoresizingMaskIntoConstraints = false
+    private var Class2 = UILabel().then {
+        $0.text = "시간표2"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class3 = UILabel().then {
+        $0.text = "시간표3"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class4 = UILabel().then {
+        $0.text = "시간표4"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class5 = UILabel().then {
+        $0.text = "시간표5"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class6 = UILabel().then {
+        $0.text = "시간표6"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class7 = UILabel().then {
+        $0.text = "시간표7"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class8 = UILabel().then {
+        $0.text = "시간표8"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class9 = UILabel().then {
+        $0.text = "시간표9"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    private var Class10 = UILabel().then {
+        $0.text = "시간표10"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
     }
     
     private var scrollView = UIScrollView().then {
@@ -43,14 +114,12 @@ class scheduleVC: UIViewController {
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let Weekday: String = WeekDaydate()
-        
-        print(Weekday)
-        getTimeSchedule(weekday: Weekday)
+        let Weekday: String = WeekDaydate(Want: "WD")
+//        print(Weekday)
+//        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -67,10 +136,6 @@ class scheduleVC: UIViewController {
         }
         
         self.view.addSubview(scrollView)
-//        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-//        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-//        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         scrollView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(50)
             $0.leading.equalToSuperview().inset(50)
@@ -78,17 +143,68 @@ class scheduleVC: UIViewController {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(0)
         }
         
-        scrollView.addSubview(labelOne)
-
-        labelOne.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40).isActive = true
-        labelOne.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 40).isActive = true
-
-        scrollView.addSubview(labelTwo)
-
-        labelTwo.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 40).isActive = true
-        labelTwo.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 1000).isActive = true
-        labelTwo.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -40).isActive = true
-
+        scrollView.addSubview(Class1)
+        scrollView.addSubview(Class2)
+        scrollView.addSubview(Class3)
+        scrollView.addSubview(Class4)
+        scrollView.addSubview(Class5)
+        scrollView.addSubview(Class6)
+        scrollView.addSubview(Class7)
+        scrollView.addSubview(Class8)
+        scrollView.addSubview(Class9)
+        scrollView.addSubview(Class10)
+        
+        Class1.snp.makeConstraints() {
+            $0.top.equalTo(scrollView.snp.top).offset(0)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class2.snp.makeConstraints() {
+            $0.top.equalTo(Class1.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class3.snp.makeConstraints() {
+            $0.top.equalTo(Class2.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class4.snp.makeConstraints() {
+            $0.top.equalTo(Class3.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class5.snp.makeConstraints() {
+            $0.top.equalTo(Class4.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class6.snp.makeConstraints() {
+            $0.top.equalTo(Class5.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class7.snp.makeConstraints() {
+            $0.top.equalTo(Class6.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class8.snp.makeConstraints() {
+            $0.top.equalTo(Class7.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class9.snp.makeConstraints() {
+            $0.top.equalTo(Class8.snp.bottom).offset(20)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+        }
+        Class10.snp.makeConstraints() {
+            $0.width.equalToSuperview()
+            $0.height.equalTo(65)
+            $0.top.equalTo(scrollView.snp.top).offset(765)
+            $0.bottom.equalTo(scrollView.snp.bottom).offset(-40)
+        }
     }
     
     
@@ -99,40 +215,40 @@ class scheduleVC: UIViewController {
         AF.request(url + weekday,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Authorization": ""])
+                   headers: ["Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSZXN3byIsInJvbGVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNjU3NzYwNTkyLCJleHAiOjE2NTc3NjIzOTJ9.OoXN5S1Bo4U1KT6CFrLDdUCCtetGMsiMhq2Bna_y0lM"])
         .validate(statusCode: 200..<300)
         .response { result in
             do{
                 let model = try JSONDecoder().decode(TimeGet.self, from: result.data!)
                 
-//                self._1stTime.text = model.period1st
+                self.Class1.text = model.period1st
                 print(model.period1st)
                 
-//                self._2ndTime.text = model.period2nd
+                self.Class2.text = model.period2nd
                 print(model.period2nd)
                 
-//                self._3rdTime.text = model.period3th //3rd지만 근우가 잘못 보내서 수정해야함
+                self.Class3.text = model.period3th
                 print(model.period3th)
                 
-//                self._4thTime.text = model.period4th
+                self.Class4.text = model.period4th
                 print(model.period4th)
                 
-//                self._5thTime.text = model.period5th
+                self.Class5.text = model.period5th
                 print(model.period5th)
                 
-//                self._6thTime.text = model.period6th
+                self.Class6.text = model.period6th
                 print(model.period6th)
                 
-//                self._7thTime.text = model.period7th
+                self.Class7.text = model.period7th
                 print(model.period7th)
                 
-//                self._8thTime.text = model.period8th
+                self.Class8.text = model.period8th
                 print(model.period8th)
                 
-//                self._9thTime.text = model.period9th
+                self.Class9.text = model.period9th
                 print(model.period9th)
                 
-//                self._10thTime.text = model.period10th
+                self.Class10.text = model.period10th
                 print(model.period10th)
                 
             } catch {
@@ -141,11 +257,30 @@ class scheduleVC: UIViewController {
         }
     }
     
-    func WeekDaydate() -> String{
-        let custom = DateFormatter()
-        custom.dateFormat = "yyyy년 M월 d일 E"
-        let nowdate: String = custom.string(from: .now)
-        return nowdate
+    func WeekDaydate(Want: String) -> String{
+        if Want == "WD" {
+            let custom = DateFormatter()
+            custom.dateFormat = "E"
+            let nowdate: String = custom.string(from: .now)
+            
+            switch nowdate {
+            case "월": return "mon"
+            case "화": return "tue"
+            case "수": return "wed"
+            case "목": return "thu"
+            case "금": return "fri"
+            default:
+                return nowdate
+            }
+        } else if Want == "CD"{
+            let custom = DateFormatter()
+            custom.dateFormat = "yyyy년 M월 d일 E"
+            let nowdate: String = custom.string(from: .now)
+            return nowdate
+        } else {
+            return "error"
+        }
+        
     }
 }
 

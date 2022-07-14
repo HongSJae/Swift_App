@@ -139,6 +139,7 @@ class LoginVC: UIViewController {
     @objc fileprivate func GotoScheduleVC() {
         let MainTabBarControllerViewController = MainTabBarControllerViewController()
         self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
+        Login()
         
     }
     
@@ -148,7 +149,31 @@ class LoginVC: UIViewController {
         
     }
     
-
-
+    func Login() {
+        let url = "http://54.180.120.242:8080/signin"
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 10
+        
+        // POST 로 보낼 정보
+        let params = ["userId":"Reswo", "password":"a141412424"]
+        
+        // httpBody 에 parameters 추가
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+        AF.request(request).responseString { (response) in
+            switch response.result {
+            case .success:
+                print("POST 성공")
+                print(response)
+            case .failure(let error):
+                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")   
+            }
+        }
+    }
 }
 
