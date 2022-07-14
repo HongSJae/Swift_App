@@ -10,6 +10,8 @@ import Alamofire
 import SnapKit
 import Then
 
+let getToken = UserDefaults.standard.string(forKey: "TokenToken")
+
 class scheduleVC: UIViewController {
     private var Header = UILabel().then {
         $0.textColor = .white
@@ -117,9 +119,12 @@ class scheduleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        TokenToken = UserDefaults.standard.string(forKey: TokenToken) ?? ""
         let Weekday: String = WeekDaydate(Want: "WD")
-//        print(Weekday)
-//        getTimeSchedule(weekday: Weekday)
+        print(Weekday)
+        
+//        print("받은 토큰은 : \(getToken ?? "nil")")
+        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -210,12 +215,13 @@ class scheduleVC: UIViewController {
     
     
     func getTimeSchedule(weekday: String) {
-        
-        let url = "http://54.180.120.242:8080" + "/user/timetable/"
-        AF.request(url + weekday,
+        print("불러온 토큰은 : \(getToken ?? "")")
+        let url = "http://54.180.120.242:8080/user/timetable/thu"
+        AF.request(url,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSZXN3byIsInJvbGVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNjU3NzYwNTkyLCJleHAiOjE2NTc3NjIzOTJ9.OoXN5S1Bo4U1KT6CFrLDdUCCtetGMsiMhq2Bna_y0lM"])
+                   headers: ["Authorization": (getToken ?? "")]
+        )
         .validate(statusCode: 200..<300)
         .response { result in
             do{
@@ -253,6 +259,7 @@ class scheduleVC: UIViewController {
                 
             } catch {
                 print(error)
+                print("에런데용 :( ?")
             }
         }
     }

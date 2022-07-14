@@ -10,6 +10,10 @@ import SnapKit
 import Alamofire
 import Then
 
+var TokenToken: String = ""
+var ID: String = ""
+var PW: String = ""
+
 class LoginVC: UIViewController {
     
     private var LoginBtn = UIButton().then {
@@ -137,9 +141,13 @@ class LoginVC: UIViewController {
     }
     
     @objc fileprivate func GotoScheduleVC() {
-        let MainTabBarControllerViewController = MainTabBarControllerViewController()
-        self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
-        Login()
+        ID = IdTF.text ?? ""
+        PW = PwTF.text ?? ""
+        if ID == ""||PW == "" {
+            AlertFunc(title: "입력이 잘못됨", message: "아이디나 비밀번호가 공백이 있습니다\n확인해주세요")
+        } else {
+            Login()
+        }
         
     }
     
@@ -151,13 +159,14 @@ class LoginVC: UIViewController {
     
     func Login() {
         let url = "http://54.180.120.242:8080/signin"
+        
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
         
         // POST 로 보낼 정보
-        let params = ["userId":"Reswo", "password":"a141412424"]
+        let params = ["userId":ID, "password":PW] as Dictionary
         
         // httpBody 에 parameters 추가
         do {
@@ -165,15 +174,38 @@ class LoginVC: UIViewController {
         } catch {
             print("http Body Error")
         }
-        AF.request(request).responseString { (response) in
-            switch response.result {
-            case .success:
-                print("POST 성공")
-                print(response)
-            case .failure(let error):
-                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")   
+        
+        AF.request(request).responseString { result in
+            do{
+                let model = try JSONDecoder().decode(SignInInfo.self, from: result.data!)
+                print(model.accessToken)
+                TokenToken = model.accessToken
+                UserDefaults.standard.set(TokenToken, forKey: "TokenToken")
+                let giveToken = UserDefaults.standard.string(forKey: "TokenToken")
+                print("보낼 토큰은 : \(giveToken)")
+                let MainTabBarControllerViewController = MainTabBarControllerViewController()
+                self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
+            } catch {
+                print(error)
+                self.AlertFunc(title: "아이디나 비밀번호 확인바람", message: "아이디나 비밀번호가 잘못되었습니다")
             }
         }
+        
+    }
+    
+    func AlertFunc(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: "네",
+            style: .default,
+            handler: nil)
+        alert.addAction(action)
+               
+        present(alert, animated: true, completion: nil)
     }
 }
+
 
