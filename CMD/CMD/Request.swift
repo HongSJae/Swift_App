@@ -7,12 +7,5 @@
 
 import Foundation
 
-struct SignUpInfo: Codable {
-
-    let username: String
-    let number: Int
-    let userId: String
-    let password: String
-}
 
 

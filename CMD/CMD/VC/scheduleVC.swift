@@ -123,7 +123,7 @@ class scheduleVC: UIViewController {
         let Weekday: String = WeekDaydate(Want: "WD")
         print(Weekday)
         
-//        print("받은 토큰은 : \(getToken ?? "nil")")
+        print("받은 토큰은 : \(getToken ?? "nil")")
         getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
@@ -216,7 +216,7 @@ class scheduleVC: UIViewController {
     
     func getTimeSchedule(weekday: String) {
         print("불러온 토큰은 : \(getToken ?? "")")
-        let url = "http://54.180.120.242:8080/user/timetable/thu"
+        let url = "http://54.180.122.62:8080/user/timetable/" + weekday
         AF.request(url,
                    method: .get,
                    encoding: URLEncoding.queryString,
@@ -226,7 +226,7 @@ class scheduleVC: UIViewController {
         .response { result in
             do{
                 let model = try JSONDecoder().decode(TimeGet.self, from: result.data!)
-                
+                print("success")
                 self.Class1.text = model.period1st
                 print(model.period1st)
                 

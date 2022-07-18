@@ -55,6 +55,7 @@ class LoginVC: UIViewController {
     private var PwTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
         $0.placeholder = "비밀번호"
+        $0.isSecureTextEntry = true
     }
     
     private var Logo = UIImageView().then {
@@ -137,7 +138,7 @@ class LoginVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(PwBox.snp.bottom).offset(50)
         }
-        Admin.addTarget(self, action: #selector(GotoScheduleVC), for: .touchUpInside)
+        Admin.addTarget(self, action: #selector(AdminBtn), for: .touchUpInside)
     }
     
     @objc fileprivate func GotoScheduleVC() {
@@ -157,8 +158,13 @@ class LoginVC: UIViewController {
         
     }
     
+    @objc fileprivate func AdminBtn() {
+        let MainTabBarControllerViewController = MainTabBarControllerViewController()
+        self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
+    }
+    
     func Login() {
-        let url = "http://54.180.120.242:8080/signin"
+        let url = "http://54.180.122.62:8080/signin"
         
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"

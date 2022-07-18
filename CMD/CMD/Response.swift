@@ -25,3 +25,8 @@ struct SignInInfo: Codable {
     let accessToken: String
 }
 
+struct SignUpInfo: Codable {
+    let userId: String
+    let password: String
+}
+

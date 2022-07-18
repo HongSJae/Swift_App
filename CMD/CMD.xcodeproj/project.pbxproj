@@ -34,7 +34,6 @@
 		9063B6C0286D5A9500ED8DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9063B6C3286D5A9500ED8DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9063B6C5286D5A9500ED8DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9063B71E286EC3ED00ED8DAF /* CMD-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMD-Bridging-Header.h"; sourceTree = "<group>"; };
 		9063B722286EC42900ED8DAF /* scheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleVC.swift; sourceTree = "<group>"; };
 		9063B724286EC47400ED8DAF /* classinfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classinfoVC.swift; sourceTree = "<group>"; };
 		9063B726286EC4A700ED8DAF /* noticeboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeboardVC.swift; sourceTree = "<group>"; };
@@ -87,7 +86,6 @@
 		9063B6B6286D5A9400ED8DAF /* CMD */ = {
 			isa = PBXGroup;
 			children = (
-				9063B71E286EC3ED00ED8DAF /* CMD-Bridging-Header.h */,
 				9063B6B7286D5A9400ED8DAF /* AppDelegate.swift */,
 				9063B6B9286D5A9400ED8DAF /* SceneDelegate.swift */,
 				903676A9287662070019A0E8 /* Response.swift */,

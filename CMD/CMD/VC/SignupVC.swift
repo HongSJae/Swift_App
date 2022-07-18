@@ -10,6 +10,9 @@ import SnapKit
 import Alamofire
 import Then
 
+var userID: String = ""
+var userPW: String = ""
+
 class SignupVC: UIViewController {
     
     private var SignupBtn = UIButton().then {
@@ -40,9 +43,10 @@ class SignupVC: UIViewController {
         $0.backgroundColor = UIColor(named: "InputBox")
         $0.layer.cornerRadius = 10
     }
-    var PwTF = UITextField().then {
+    private var PwTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
         $0.placeholder = "비밀번호"
+        $0.isSecureTextEntry = true
     }
     
     private var PwCBox = UIView().then {
@@ -52,6 +56,7 @@ class SignupVC: UIViewController {
     private var PwCTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
         $0.placeholder = "비밀번호 확인"
+        $0.isSecureTextEntry = true
     }
     
     private var CodeCheck = UIView().then {
@@ -169,14 +174,63 @@ class SignupVC: UIViewController {
         gotoLoginVCBtn.addTarget(self, action: #selector(GotoLoginVCBtn), for: .touchUpInside)//Action 추가
     }
     @objc fileprivate func Signup() {
-        self.navigationController?.popViewController(animated: true)
+//        userID = IdTF.text ?? ""
+//        userPW = PwTF.text ?? ""
+//        SignUp()
+        
+        if PwTF.text != PwCTF.text {
+            AlertFunc(title: "비밀번호가 다릅니다", message: "비밀번호와 비밀번호 확인에 \n적힌 값이 다릅니다! 확인해주세요!")
+        } else {
+            SignUp()
+        }
     }
     
     @objc fileprivate func GotoLoginVCBtn() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-
+    func SignUp() {
+        
+        let url = "http://54.180.122.62:8080/signup/" + (CodeCheckTF.text ?? "")
+        
+        var request = URLRequest(url: URL(string: url)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 10
+        
+        // POST 로 보낼 정보
+        let params = ["userId": userID, "password": userPW] as Dictionary
+        
+        // httpBody 에 parameters 추가
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+        } catch {
+            print("http Body Error")
+        }
+        
+        AF.request(request).responseString { result in
+            do{
+                let model = try JSONDecoder().decode(SignUpInfo.self, from: result.data!)
+                print("ID : \(ID), PW : \(PW)")
+                self.navigationController?.popViewController(animated: true)
+            } catch {
+                print(error)
+                self.AlertFunc(title: "Error", message: "제대로 적어주세요")
+            }
+        }
+    }
+    func AlertFunc(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: "네",
+            style: .default,
+            handler: nil)
+        alert.addAction(action)
+               
+        present(alert, animated: true, completion: nil)
+    }
 }
 
