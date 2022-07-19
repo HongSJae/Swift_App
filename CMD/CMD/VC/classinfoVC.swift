@@ -11,25 +11,15 @@ class classinfo: UIViewController {
         $0.text = "학생정보"
     }
     
-//    private var NO1 = UIView().then {
-//        $0.snp.makeConstraints() {
-//            $0.height.equalTo(111)
-//            $0.width.equalTo(80)
-//        }
-//
-//        var view = UIView().then {
-//            $0.snp.makeConstraints {
-//                $0.
-//            }
-//            var image = UIImageView().then {
-//                $0.image = UIImage(named: "CMD-Logo-B")
-//                $0.snp.makeConstraints() {
-//                    $0.centerX.equalToSuperview()
-//                    $0.centerY.equalToSuperview()
-//                }
-//            }
-//        }
-//    }
+    
+    private var NO1 = UILabel().then {
+        $0.text = "시간표1"
+        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
     private var NO2 = UILabel().then {
         $0.text = "시간표2"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")

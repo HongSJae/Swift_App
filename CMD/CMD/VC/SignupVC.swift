@@ -15,6 +15,10 @@ var userPW: String = ""
 
 class SignupVC: UIViewController {
     
+    private var LookPWBtn = UIButton().then {
+        $0.setImage(UIImage(named: "eye"), for: .normal)
+    }
+    
     private var SignupBtn = UIButton().then {
         $0.backgroundColor = .white
         $0.setTitle("회원가입", for: .normal)
@@ -78,18 +82,7 @@ class SignupVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true //네비게이션바 숨기기
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
-        
-        self.view.addSubview(IdBox)
-        self.view.addSubview(IdTF)
-        self.view.addSubview(PwBox)
-        self.view.addSubview(PwTF)
-        self.view.addSubview(PwCBox)
-        self.view.addSubview(PwCTF)
-        self.view.addSubview(CodeCheck)
-        self.view.addSubview(CodeCheckTF)
-        self.view.addSubview(Logo)
-        self.view.addSubview(SignupBtn)
-        self.view.addSubview(gotoLoginVCBtn)
+        [IdBox, IdTF, PwBox, PwTF, PwCBox, PwCTF, CodeCheck, CodeCheckTF, Logo, SignupBtn, gotoLoginVCBtn, LookPWBtn].forEach({self.view.addSubview($0)})
         
         //로고 위치 설정
         Logo.snp.makeConstraints { make in
@@ -112,6 +105,7 @@ class SignupVC: UIViewController {
             make.centerY.equalTo(IdBox)
             make.leading.equalTo(IdBox.snp.leading).inset(20)
         }
+
         
         //비밀번호 입력 위치 설정
         PwBox.snp.makeConstraints { make in
@@ -172,16 +166,24 @@ class SignupVC: UIViewController {
             make.top.equalTo(SignupBtn.snp.bottom).offset(26)
         }
         gotoLoginVCBtn.addTarget(self, action: #selector(GotoLoginVCBtn), for: .touchUpInside)//Action 추가
+        
+        LookPWBtn.snp.makeConstraints {
+            $0.centerY.equalTo(self.PwBox)
+            $0.right.equalTo(self.PwBox.snp.right).inset(10)
+        }
     }
     @objc fileprivate func Signup() {
 //        userID = IdTF.text ?? ""
 //        userPW = PwTF.text ?? ""
 //        SignUp()
-        
-        if PwTF.text != PwCTF.text {
-            AlertFunc(title: "비밀번호가 다릅니다", message: "비밀번호와 비밀번호 확인에 \n적힌 값이 다릅니다! 확인해주세요!")
+        if IdTF.text?.isEmpty == true || PwTF.text?.isEmpty == true || PwCTF.text?.isEmpty == true || CodeCheckTF.text?.isEmpty == true {
+            AlertFunc(title: "공백이 있습니다", message: "모든 칸을 입력해주세요")
         } else {
-            SignUp()
+            if PwTF.text != PwCTF.text {
+                AlertFunc(title: "비밀번호가 다릅니다", message: "비밀번호와 비밀번호 확인에 \n적힌 값이 다릅니다! 확인해주세요!")
+            } else {
+                SignUp()
+            }
         }
     }
     
@@ -215,7 +217,7 @@ class SignupVC: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             } catch {
                 print(error)
-                self.AlertFunc(title: "Error", message: "제대로 적어주세요")
+                self.AlertFunc(title: "가입코드가 다른데요?😅", message: "다시 확인 후 적어주세요!")
             }
         }
     }
