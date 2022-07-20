@@ -21,7 +21,7 @@ class LoginVC: UIViewController {
         $0.setTitle("로그인", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.layer.cornerRadius = 20
+//        $0.layer.cornerRadius = 20
     }
     
     private var Admin = UIButton().then {
@@ -40,7 +40,7 @@ class LoginVC: UIViewController {
     
     private var IdBox = UIView().then {
         $0.backgroundColor = UIColor(named: "InputBox")
-        $0.layer.cornerRadius = 10
+//        $0.layer.cornerRadius = 10
     }
     private var IdTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
@@ -50,7 +50,7 @@ class LoginVC: UIViewController {
     
     private var PwBox = UIView().then {
         $0.backgroundColor = UIColor(named: "InputBox")
-        $0.layer.cornerRadius = 10
+//        $0.layer.cornerRadius = 10
     }
     private var PwTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
@@ -61,6 +61,11 @@ class LoginVC: UIViewController {
     private var Logo = UIImageView().then {
         $0.image = UIImage(named: "CMD-W")
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +86,9 @@ class LoginVC: UIViewController {
         //아이디 입력 위치 설정
         IdBox.snp.makeConstraints { make in
             make.leftMargin.rightMargin.equalTo(40)
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
-            make.top.equalTo(Logo.snp.bottom).offset(135)//44
+            make.top.equalTo(Logo.snp.bottom).offset(70)
         }
         IdTF.snp.makeConstraints { make in
             make.height.equalTo(26)
@@ -95,7 +100,7 @@ class LoginVC: UIViewController {
         //비밀번호 입력 위치 설정
         PwBox.snp.makeConstraints { make in
             make.leftMargin.rightMargin.equalTo(40)
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
             make.top.equalTo(IdBox.snp.bottom).offset(46)
         }
@@ -108,15 +113,15 @@ class LoginVC: UIViewController {
         
         //로고 위치 설정
         Logo.snp.makeConstraints { make in
-            make.height.equalTo(140)
-            make.width.equalTo(152)
+            make.height.equalTo(92)
+            make.width.equalTo(100)
             make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(100)
         }
         
         //로그인 버튼 위치 설정
         LoginBtn.snp.makeConstraints { make in
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.leftMargin.rightMargin.equalTo(40)
             make.centerX.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(132)
@@ -132,13 +137,13 @@ class LoginVC: UIViewController {
         }
         gotoSignupVCBtn.addTarget(self, action: #selector(gotoSignupVC), for: .touchUpInside)
         
-        Admin.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.leftMargin.rightMargin.equalTo(80)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(PwBox.snp.bottom).offset(50)
-        }
-        Admin.addTarget(self, action: #selector(AdminBtn), for: .touchUpInside)
+//        Admin.snp.makeConstraints { make in
+//            make.height.equalTo(25)
+//            make.leftMargin.rightMargin.equalTo(80)
+//            make.centerX.equalToSuperview()
+//            make.top.equalTo(PwBox.snp.bottom).offset(50)
+//        }
+//        Admin.addTarget(self, action: #selector(AdminBtn), for: .touchUpInside)
     }
     
     @objc fileprivate func GotoScheduleVC() {
@@ -183,15 +188,17 @@ class LoginVC: UIViewController {
         
         AF.request(request).responseString { result in
             do{
+                print(result)
                 let model = try JSONDecoder().decode(SignInInfo.self, from: result.data!)
                 print(model.accessToken)
                 TokenToken = model.accessToken
                 UserDefaults.standard.set(TokenToken, forKey: "TokenToken")
                 let giveToken = UserDefaults.standard.string(forKey: "TokenToken")
-                print("보낼 토큰은 : \(giveToken)")
+                print("보낼 토큰은 : \(giveToken ?? "notToken")")
                 let MainTabBarControllerViewController = MainTabBarControllerViewController()
                 self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
             } catch {
+                print(result)
                 print(error)
                 self.AlertFunc(title: "아이디나 비밀번호 확인바람", message: "아이디나 비밀번호가 잘못되었습니다")
             }

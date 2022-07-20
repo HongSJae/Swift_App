@@ -13,7 +13,6 @@
 		9063B6BA286D5A9400ED8DAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B6B9286D5A9400ED8DAF /* SceneDelegate.swift */; };
 		9063B6BC286D5A9400ED8DAF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B6BB286D5A9400ED8DAF /* LoginVC.swift */; };
 		9063B6C1286D5A9500ED8DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9063B6C0286D5A9500ED8DAF /* Assets.xcassets */; };
-		9063B6C4286D5A9500ED8DAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9063B6C2286D5A9500ED8DAF /* LaunchScreen.storyboard */; };
 		9063B723286EC42900ED8DAF /* scheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B722286EC42900ED8DAF /* scheduleVC.swift */; };
 		9063B725286EC47400ED8DAF /* classinfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B724286EC47400ED8DAF /* classinfoVC.swift */; };
 		9063B727286EC4A700ED8DAF /* noticeboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B726286EC4A700ED8DAF /* noticeboardVC.swift */; };
@@ -21,6 +20,7 @@
 		9065D7DB2876831B00E3A716 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065D7DA2876831B00E3A716 /* Request.swift */; };
 		9095A22E287D83BF00228B37 /* MainTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */; };
 		90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A018902872A6EF0063FB80 /* SignupVC.swift */; };
+		90A6F39128882A5100AB93FD /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6F39028882A5100AB93FD /* StartVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		9063B6B9286D5A9400ED8DAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9063B6BB286D5A9400ED8DAF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9063B6C0286D5A9500ED8DAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9063B6C3286D5A9500ED8DAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9063B6C5286D5A9500ED8DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9063B722286EC42900ED8DAF /* scheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduleVC.swift; sourceTree = "<group>"; };
 		9063B724286EC47400ED8DAF /* classinfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classinfoVC.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		9065D7DA2876831B00E3A716 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		90A018902872A6EF0063FB80 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		90A6F39028882A5100AB93FD /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		DAF23BBEB6786F8321425394 /* Pods_CMD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CMD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,6 @@
 				9063B71D286DE11D00ED8DAF /* VC */,
 				9063B6C5286D5A9500ED8DAF /* Info.plist */,
 				9063B6C0286D5A9500ED8DAF /* Assets.xcassets */,
-				9063B6C2286D5A9500ED8DAF /* LaunchScreen.storyboard */,
 			);
 			path = CMD;
 			sourceTree = "<group>";
@@ -102,6 +101,7 @@
 		9063B71D286DE11D00ED8DAF /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				90A6F39028882A5100AB93FD /* StartVC.swift */,
 				9063B6BB286D5A9400ED8DAF /* LoginVC.swift */,
 				90A018902872A6EF0063FB80 /* SignupVC.swift */,
 				9063B722286EC42900ED8DAF /* scheduleVC.swift */,
@@ -181,7 +181,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9063B6C4286D5A9500ED8DAF /* LaunchScreen.storyboard in Resources */,
 				9063B6C1286D5A9500ED8DAF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +238,7 @@
 				9063B6B8286D5A9400ED8DAF /* AppDelegate.swift in Sources */,
 				9063B729286EC4C500ED8DAF /* myinfoVC.swift in Sources */,
 				90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */,
+				90A6F39128882A5100AB93FD /* StartVC.swift in Sources */,
 				903676AA287662070019A0E8 /* Response.swift in Sources */,
 				9063B725286EC47400ED8DAF /* classinfoVC.swift in Sources */,
 				9063B723286EC42900ED8DAF /* scheduleVC.swift in Sources */,
@@ -250,17 +250,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		9063B6C2286D5A9500ED8DAF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9063B6C3286D5A9500ED8DAF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9063B6C6286D5A9500ED8DAF /* Debug */ = {

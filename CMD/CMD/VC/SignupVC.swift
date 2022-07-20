@@ -24,7 +24,7 @@ class SignupVC: UIViewController {
         $0.setTitle("회원가입", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.layer.cornerRadius = 20
+//        $0.layer.cornerRadius = 20
     }
     
     private var gotoLoginVCBtn = UIButton().then {
@@ -35,7 +35,7 @@ class SignupVC: UIViewController {
     
     private var IdBox = UIView().then {
         $0.backgroundColor = UIColor(named: "InputBox")
-        $0.layer.cornerRadius = 10
+//        $0.layer.cornerRadius = 10
     }
     private var IdTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
@@ -45,7 +45,7 @@ class SignupVC: UIViewController {
     
     private var PwBox = UIView().then {
         $0.backgroundColor = UIColor(named: "InputBox")
-        $0.layer.cornerRadius = 10
+//        $0.layer.cornerRadius = 10
     }
     private var PwTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
@@ -55,7 +55,7 @@ class SignupVC: UIViewController {
     
     private var PwCBox = UIView().then {
         $0.backgroundColor = UIColor(named: "InputBox")
-        $0.layer.cornerRadius = 10
+//        $0.layer.cornerRadius = 10
     }
     private var PwCTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
@@ -65,7 +65,7 @@ class SignupVC: UIViewController {
     
     private var CodeCheck = UIView().then {
         $0.backgroundColor = UIColor(named: "InputBox")
-        $0.layer.cornerRadius = 10
+//        $0.layer.cornerRadius = 10
     }
     private var CodeCheckTF = UITextField().then {
         $0.font = UIFont.systemFont(ofSize: 18)
@@ -86,16 +86,16 @@ class SignupVC: UIViewController {
         
         //로고 위치 설정
         Logo.snp.makeConstraints { make in
-            make.height.equalTo(140)
-            make.width.equalTo(152)
+            make.height.equalTo(92)
+            make.width.equalTo(100)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(100)
+            make.top.equalToSuperview().inset(100)
         }
         
         //아이디 입력 위치 설정
         IdBox.snp.makeConstraints { make in
             make.leftMargin.rightMargin.equalTo(40)
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
             make.top.equalTo(Logo.snp.bottom).offset(52)
         }
@@ -110,7 +110,7 @@ class SignupVC: UIViewController {
         //비밀번호 입력 위치 설정
         PwBox.snp.makeConstraints { make in
             make.leftMargin.rightMargin.equalTo(40)
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
             make.top.equalTo(IdBox.snp.bottom).offset(31)
         }
@@ -124,7 +124,7 @@ class SignupVC: UIViewController {
         //비밀번호 확인 입력 위치 설정
         PwCBox.snp.makeConstraints { make in
             make.leftMargin.rightMargin.equalTo(40)
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
             make.top.equalTo(PwBox.snp.bottom).offset(31)
         }
@@ -138,7 +138,7 @@ class SignupVC: UIViewController {
         //가입코드 입력 위치 설정
         CodeCheck.snp.makeConstraints { make in
             make.leftMargin.rightMargin.equalTo(40)
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
             make.top.equalTo(PwCBox.snp.bottom).offset(31)
         }
@@ -151,7 +151,7 @@ class SignupVC: UIViewController {
 
         //회원가입 버튼 위치 설정
         SignupBtn.snp.makeConstraints { make in
-            make.height.equalTo(54)
+            make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.leftMargin.rightMargin.equalTo(40)
             make.centerX.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(120)
@@ -173,9 +173,6 @@ class SignupVC: UIViewController {
         }
     }
     @objc fileprivate func Signup() {
-//        userID = IdTF.text ?? ""
-//        userPW = PwTF.text ?? ""
-//        SignUp()
         if IdTF.text?.isEmpty == true || PwTF.text?.isEmpty == true || PwCTF.text?.isEmpty == true || CodeCheckTF.text?.isEmpty == true {
             AlertFunc(title: "공백이 있습니다", message: "모든 칸을 입력해주세요")
         } else {
@@ -212,7 +209,7 @@ class SignupVC: UIViewController {
         
         AF.request(request).responseString { result in
             do{
-                let model = try JSONDecoder().decode(SignUpInfo.self, from: result.data!)
+                _ = try JSONDecoder().decode(SignUpInfo.self, from: result.data!)
                 print("ID : \(ID), PW : \(PW)")
                 self.navigationController?.popViewController(animated: true)
             } catch {
@@ -220,6 +217,9 @@ class SignupVC: UIViewController {
                 self.AlertFunc(title: "가입코드가 다른데요?😅", message: "다시 확인 후 적어주세요!")
             }
         }
+        
+        DispatchQueue.global().async{}
+        
     }
     func AlertFunc(title: String, message: String) {
         let alert = UIAlertController(

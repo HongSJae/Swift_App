@@ -23,10 +23,11 @@ class scheduleVC: UIViewController {
         $0.textColor = .white
         $0.font = UIFont.boldSystemFont(ofSize: 15)
         let custom = DateFormatter()
-        custom.dateFormat = "yyyy년 M월 d일 E요일"
+        var WD: String = WeekDaydate(Want: "Weekday")
+        custom.dateFormat = "yyyy년 M월 d일 "
         let nowdate: String = custom.string(from: .now)
-        print(nowdate)
-        $0.text = nowdate
+        print(nowdate + "\(WD)요일")
+        $0.text = nowdate + "\(WD)요일"
     }
     
     private var Class1 = UILabel().then {
@@ -115,7 +116,6 @@ class scheduleVC: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -162,56 +162,55 @@ class scheduleVC: UIViewController {
         Class1.snp.makeConstraints() {
             $0.top.equalTo(scrollView.snp.top).offset(0)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class2.snp.makeConstraints() {
             $0.top.equalTo(Class1.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class3.snp.makeConstraints() {
             $0.top.equalTo(Class2.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class4.snp.makeConstraints() {
             $0.top.equalTo(Class3.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class5.snp.makeConstraints() {
             $0.top.equalTo(Class4.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class6.snp.makeConstraints() {
             $0.top.equalTo(Class5.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class7.snp.makeConstraints() {
             $0.top.equalTo(Class6.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class8.snp.makeConstraints() {
             $0.top.equalTo(Class7.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class9.snp.makeConstraints() {
             $0.top.equalTo(Class8.snp.bottom).offset(20)
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class10.snp.makeConstraints() {
             $0.width.equalToSuperview()
-            $0.height.equalTo(65)
-            $0.top.equalTo(scrollView.snp.top).offset(765)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
+            $0.top.equalTo(scrollView.snp.top).offset(767)
             $0.bottom.equalTo(scrollView.snp.bottom).offset(-40)
         }
     }
-    
     
     
     func getTimeSchedule(weekday: String) {
@@ -263,31 +262,47 @@ class scheduleVC: UIViewController {
             }
         }
     }
-    
-    func WeekDaydate(Want: String) -> String{
-        if Want == "WD" {
-            let custom = DateFormatter()
-            custom.dateFormat = "E"
-            let nowdate: String = custom.string(from: .now)
-            
-            switch nowdate {
-            case "월": return "mon"
-            case "화": return "tue"
-            case "수": return "wed"
-            case "목": return "thu"
-            case "금": return "fri"
-            default:
-                return nowdate
-            }
-        } else if Want == "CD"{
-            let custom = DateFormatter()
-            custom.dateFormat = "yyyy년 M월 d일 E"
-            let nowdate: String = custom.string(from: .now)
+}
+func WeekDaydate(Want: String) -> String{
+    if Want == "WD" {
+        let custom = DateFormatter()
+        custom.dateFormat = "E"
+        let nowdate: String = custom.string(from: .now)
+        print(nowdate)
+        switch nowdate {
+        case "월": return "mon"
+        case "화": return "tue"
+        case "수": return "wed"
+        case "목": return "thu"
+        case "금": return "fri"
+        case "Mon": return "월"
+        case "Tue": return "화"
+        case "Wed": return "수"
+        case "Thu": return "목"
+        case "Fri": return "금"
+        case "Sat": return "토"
+        case "Sun": return "일"
+        default:
             return nowdate
-        } else {
-            return "error"
         }
-        
+    } else if Want == "Weekday"{
+        let custom = DateFormatter()
+        custom.dateFormat = "E"
+        let nowdate: String = custom.string(from: .now)
+        print(nowdate)
+        switch nowdate {
+        case "Mon": return "월"
+        case "Tue": return "화"
+        case "Wed": return "수"
+        case "Thu": return "목"
+        case "Fri": return "금"
+        case "Sat": return "토"
+        case "Sun": return "일"
+        default:
+            return nowdate
+        }
+    } else {
+        return "error"
     }
 }
 

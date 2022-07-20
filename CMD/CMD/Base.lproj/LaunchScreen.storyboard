@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CMD-W" translatesAutoresizingMaskIntoConstraints="NO" id="QY9-5x-Dsp">
-                                <rect key="frame" x="107" y="355.5" width="200" height="185"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="CMD-W" translatesAutoresizingMaskIntoConstraints="NO" id="QY9-5x-Dsp">
+                                <rect key="frame" x="139" y="371" width="136" height="154"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -30,13 +30,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
         <image name="CMD-W" width="200" height="185"/>
         <namedColor name="BackgroundColor">
-            <color red="0.25099998712539673" green="0.25099998712539673" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13699999451637268" green="0.13699999451637268" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
