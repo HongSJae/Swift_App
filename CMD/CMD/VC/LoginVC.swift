@@ -14,14 +14,16 @@ var TokenToken: String = ""
 var ID: String = ""
 var PW: String = ""
 
+var openEye: Bool = false
+
 class LoginVC: UIViewController {
     
     private var LoginBtn = UIButton().then {
         $0.backgroundColor = .white
         $0.setTitle("로그인", for: .normal)
-        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.titleLabel?.font = UIFont(name: "NotoSansKR-Medium", size: 18)
         $0.setTitleColor(UIColor.black, for: .normal)
-//        $0.layer.cornerRadius = 20
+        $0.layer.cornerRadius = 10
     }
     
     private var Admin = UIButton().then {
@@ -32,34 +34,68 @@ class LoginVC: UIViewController {
         $0.layer.cornerRadius = 10
     }
     
-    private var gotoSignupVCBtn = UIButton().then {
-        $0.setTitle("아이디가 없으신가요? 회원가입", for: .normal)
+    private var gotoSignupVCBtn1 = UIButton().then {
+        $0.setTitle("아이디가 없으신가요?                   ", for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         $0.setTitleColor(UIColor.white, for: .normal)
     }
+    private var gotoSignupVCBtn2 = UIButton().then {
+        $0.setTitle("                            회원가입", for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        $0.setTitleColor(UIColor.white, for: .normal)
+    }
     
-    private var IdBox = UIView().then {
-        $0.backgroundColor = UIColor(named: "InputBox")
+    private var IdBox = UIView().then {_ in
+//        $0.backgroundColor = UIColor(named: "InputBox")
 //        $0.layer.cornerRadius = 10
+    }
+    private var Idline = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
     }
     private var IdTF = UITextField().then {
-        $0.font = UIFont.systemFont(ofSize: 18)
-        $0.placeholder = "아이디"
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 18)
+//        $0.placeholder = "아이디"
+        $0.attributedPlaceholder = NSAttributedString(
+            string: "아이디",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray,
+                         NSAttributedString.Key.font: UIFont(name: "NotoSansKR-Regular", size: 18)!]
+        )
+        $0.textColor = .white
     }
     
     
-    private var PwBox = UIView().then {
-        $0.backgroundColor = UIColor(named: "InputBox")
+    private var PwBox = UIView().then {_ in
+//        $0.backgroundColor = UIColor(named: "InputBox")
 //        $0.layer.cornerRadius = 10
     }
+    private var Pwline = UIView().then {
+        $0.backgroundColor = UIColor(named: "InputBox")
+    }
     private var PwTF = UITextField().then {
-        $0.font = UIFont.systemFont(ofSize: 18)
-        $0.placeholder = "비밀번호"
         $0.isSecureTextEntry = true
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 18)
+//        $0.placeholder = "아이디"
+        $0.attributedPlaceholder = NSAttributedString(
+            string: "비밀번호",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray,
+                         NSAttributedString.Key.font: UIFont(name: "NotoSansKR-Regular", size: 18)!]
+        )
+        $0.textColor = .white
     }
     
-    private var Logo = UIImageView().then {
-        $0.image = UIImage(named: "CMD-W")
+//    private var Logo = UIImageView().then {
+//        $0.image = UIImage(named: "CMD-W")
+//    }
+    
+    private var Header = UILabel().then {
+        $0.text = "로그인"
+        $0.font = UIFont(name: "NotoSansKR-Bold", size: 50)
+        $0.textColor = .white
+    }
+    
+    private var Eye = UIButton().then {
+        $0.setImage(UIImage(named: "눈 뜸"), for: .normal)
+        $0.alpha = 0
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -71,15 +107,20 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.setNavigationBarHidden(true, animated: true)
-
+        PwTF.addTarget(self, action: #selector(PwTFeye), for: .editingChanged)
         self.view.addSubview(IdBox)
         self.view.addSubview(IdTF)
         self.view.addSubview(PwBox)
         self.view.addSubview(PwTF)
-        self.view.addSubview(Logo)
+        self.view.addSubview(Header)
         self.view.addSubview(LoginBtn)
-        self.view.addSubview(gotoSignupVCBtn)
+        self.view.addSubview(gotoSignupVCBtn1)
+        self.view.addSubview(gotoSignupVCBtn2)
         self.view.addSubview(Admin)
+        self.view.addSubview(Eye)
+        
+        self.view.addSubview(Idline)
+        self.view.addSubview(Pwline)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
 
@@ -88,13 +129,19 @@ class LoginVC: UIViewController {
             make.leftMargin.rightMargin.equalTo(40)
             make.height.equalTo(self.view.safeAreaLayoutGuide).dividedBy(15)
             make.centerX.equalToSuperview()
-            make.top.equalTo(Logo.snp.bottom).offset(70)
+            make.top.equalTo(Header.snp.bottom).offset(70)
+        }
+        Idline.snp.makeConstraints {
+            $0.height.equalTo(2)
+            $0.leftMargin.rightMargin.equalTo(40)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(self.IdBox.snp.bottom).offset(0)
         }
         IdTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.centerY.equalTo(IdBox)
-            make.leading.equalTo(IdBox.snp.leading).inset(20)
+            make.top.equalTo(IdBox.snp.top).inset(20)
+            make.leading.equalTo(IdBox.snp.leading).inset(10)
         }
         
         //비밀번호 입력 위치 설정
@@ -104,17 +151,30 @@ class LoginVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(IdBox.snp.bottom).offset(46)
         }
+        Pwline.snp.makeConstraints {
+            $0.height.equalTo(2)
+            $0.leftMargin.rightMargin.equalTo(40)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalTo(PwBox.snp.bottom).offset(0)
+        }
         PwTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.centerY.equalTo(PwBox)
-            make.leading.equalTo(PwBox.snp.leading).inset(20)
+            make.top.equalTo(PwBox.snp.top).inset(20)
+            make.leading.equalTo(PwBox.snp.leading).inset(10)
         }
+        Eye.snp.makeConstraints {
+            $0.height.equalTo(17)
+            $0.width.equalTo(22)
+            $0.top.equalTo(PwBox.snp.top).inset(30)
+            $0.right.equalTo(PwBox.snp.right).inset(10)
+        }
+        Eye.addTarget(self, action: #selector(isSecureTextEntryBool), for: .touchUpInside)
         
-        //로고 위치 설정
-        Logo.snp.makeConstraints { make in
-            make.height.equalTo(92)
-            make.width.equalTo(100)
+        //헤더 위치 설정
+        Header.snp.makeConstraints { make in
+            make.topMargin.equalTo(74)
+            make.leftMargin.equalTo(50)
             make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(100)
         }
@@ -129,21 +189,28 @@ class LoginVC: UIViewController {
         LoginBtn.addTarget(self, action: #selector(GotoScheduleVC), for: .touchUpInside)
         
         //회원가입 하러가기 버튼 위치 설정
-        gotoSignupVCBtn.snp.makeConstraints { make in
+        gotoSignupVCBtn1.snp.makeConstraints { make in
             make.height.equalTo(17)
             make.width.equalTo(166)
             make.centerX.equalToSuperview()
             make.top.equalTo(LoginBtn.snp.bottom).offset(26)
         }
-        gotoSignupVCBtn.addTarget(self, action: #selector(gotoSignupVC), for: .touchUpInside)
+        gotoSignupVCBtn2.snp.makeConstraints { make in
+            make.height.equalTo(17)
+            make.width.equalTo(166)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(LoginBtn.snp.bottom).offset(26)
+        }
+        gotoSignupVCBtn1.addTarget(self, action: #selector(gotoSignupVC), for: .touchUpInside)
+        gotoSignupVCBtn2.addTarget(self, action: #selector(gotoSignupVC), for: .touchUpInside)
         
-//        Admin.snp.makeConstraints { make in
-//            make.height.equalTo(25)
-//            make.leftMargin.rightMargin.equalTo(80)
-//            make.centerX.equalToSuperview()
-//            make.top.equalTo(PwBox.snp.bottom).offset(50)
-//        }
-//        Admin.addTarget(self, action: #selector(AdminBtn), for: .touchUpInside)
+        Admin.snp.makeConstraints { make in
+            make.height.equalTo(25)
+            make.leftMargin.rightMargin.equalTo(80)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(PwBox.snp.bottom).offset(50)
+        }
+        Admin.addTarget(self, action: #selector(AdminBtn), for: .touchUpInside)
     }
     
     @objc fileprivate func GotoScheduleVC() {
@@ -168,6 +235,27 @@ class LoginVC: UIViewController {
         self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
     }
     
+    @objc fileprivate func isSecureTextEntryBool() {
+        if openEye == true {
+            Eye.setImage(UIImage(named: "눈 뜸"), for: .normal)
+            PwTF.isSecureTextEntry = true
+            openEye = false
+        } else {
+            Eye.setImage(UIImage(named: "눈 감음"), for: .normal)
+            PwTF.isSecureTextEntry = false
+            openEye = true
+        }
+    }
+    
+    @objc func PwTFeye() {
+        if let value = PwTF.text,
+           value.isEmpty == false {
+            Eye.alpha = 1
+        } else {
+            Eye.alpha = 0
+        }
+    }
+    
     func Login() {
         let url = "http://54.180.122.62:8080/signin"
         
@@ -188,7 +276,7 @@ class LoginVC: UIViewController {
         
         AF.request(request).responseString { result in
             do{
-                print(result)
+                 print(result)
                 let model = try JSONDecoder().decode(SignInInfo.self, from: result.data!)
                 print(model.accessToken)
                 TokenToken = model.accessToken

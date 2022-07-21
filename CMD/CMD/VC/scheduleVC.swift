@@ -15,13 +15,13 @@ let getToken = UserDefaults.standard.string(forKey: "TokenToken")
 class scheduleVC: UIViewController {
     private var Header = UILabel().then {
         $0.textColor = .white
-        $0.font = UIFont.boldSystemFont(ofSize: 60)
+        $0.font = UIFont(name: "NotoSansKR-Bold", size: 60)
         $0.text = "시간표"
     }
     
     private var date = UILabel().then {
         $0.textColor = .white
-        $0.font = UIFont.boldSystemFont(ofSize: 15)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 15)
         let custom = DateFormatter()
         var WD: String = WeekDaydate(Want: "Weekday")
         custom.dateFormat = "yyyy년 M월 d일 "
@@ -34,7 +34,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표1"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -42,7 +42,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표2"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -50,7 +50,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표3"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -58,7 +58,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표4"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -66,7 +66,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표5"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -74,7 +74,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표6"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -82,7 +82,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표7"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -90,7 +90,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표8"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -98,7 +98,7 @@ class scheduleVC: UIViewController {
         $0.text = "시간표9"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
@@ -106,14 +106,20 @@ class scheduleVC: UIViewController {
         $0.text = "시간표10"
         $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 25) //만약 현재시간에 따라 폰트가 바껴야 한다면 '35'로 바뀜
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
     }
     
     private var scrollView = UIScrollView().then {
 //        $0.backgroundColor = .white //UIColor(named: "BackgroundColor")
+        $0.backgroundColor = .yellow
         $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private var ContentView = UIView().then {
+        $0.backgroundColor = .white
+        
     }
     
     override func viewDidLoad() {
@@ -124,7 +130,7 @@ class scheduleVC: UIViewController {
         print(Weekday)
         
         print("받은 토큰은 : \(getToken ?? "nil")")
-        getTimeSchedule(weekday: Weekday)
+//        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -148,16 +154,17 @@ class scheduleVC: UIViewController {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(0)
         }
         
-        scrollView.addSubview(Class1)
-        scrollView.addSubview(Class2)
-        scrollView.addSubview(Class3)
-        scrollView.addSubview(Class4)
-        scrollView.addSubview(Class5)
-        scrollView.addSubview(Class6)
-        scrollView.addSubview(Class7)
-        scrollView.addSubview(Class8)
-        scrollView.addSubview(Class9)
-        scrollView.addSubview(Class10)
+        ContentView.addSubview(Class1)
+        ContentView.addSubview(Class2)
+        ContentView.addSubview(Class3)
+        ContentView.addSubview(Class4)
+        ContentView.addSubview(Class5)
+        ContentView.addSubview(Class6)
+        ContentView.addSubview(Class7)
+        ContentView.addSubview(Class8)
+        ContentView.addSubview(Class9)
+        ContentView.addSubview(Class10)
+        scrollView.addSubview(ContentView)
         
         Class1.snp.makeConstraints() {
             $0.top.equalTo(scrollView.snp.top).offset(0)
@@ -205,10 +212,18 @@ class scheduleVC: UIViewController {
             $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
         }
         Class10.snp.makeConstraints() {
+            $0.top.equalTo(Class9.snp.bottom).offset(20)
             $0.width.equalToSuperview()
             $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
-            $0.top.equalTo(scrollView.snp.top).offset(767)
-            $0.bottom.equalTo(scrollView.snp.bottom).offset(-40)
+//            $0.width.equalToSuperview()
+//            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(11)
+//            $0.top.equalTo(scrollView.snp.top).offset(767)
+//            $0.bottom.equalTo(scrollView.snp.bottom).offset(-40)
+        }
+        ContentView.snp.makeConstraints {
+            $0.width.equalTo(scrollView.snp.width)
+            $0.top.equalTo(scrollView.snp.top)
+            $0.bottom.equalTo(scrollView.snp.top).offset(767)
         }
     }
     
