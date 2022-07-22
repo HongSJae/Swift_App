@@ -151,7 +151,7 @@ class SignupVC: UIViewController {
         IdTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.top.equalTo(IdBox.snp.top).inset(20)
+            make.bottom.equalTo(IdBox.snp.bottom).inset(5)
             make.leading.equalTo(IdBox.snp.leading).inset(10)
         }
 
@@ -172,7 +172,7 @@ class SignupVC: UIViewController {
         PwTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.top.equalTo(PwBox.snp.top).inset(20)
+            make.bottom.equalTo(PwBox.snp.bottom).inset(5)
             make.leading.equalTo(PwBox.snp.leading).inset(10)
         }
         Eye1.snp.makeConstraints {
@@ -199,7 +199,7 @@ class SignupVC: UIViewController {
         PwCTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.top.equalTo(PwCBox.snp.top).inset(20)
+            make.bottom.equalTo(PwCBox.snp.bottom).inset(5)
             make.leading.equalTo(PwCBox.snp.leading).inset(10)
         }
         Eye2.snp.makeConstraints {
@@ -226,7 +226,7 @@ class SignupVC: UIViewController {
         CodeCheckTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.top.equalTo(CodeCheck.snp.top).inset(20)
+            make.bottom.equalTo(CodeCheck.snp.bottom).inset(5)
             make.leading.equalTo(CodeCheck.snp.leading).inset(10)
         }
 

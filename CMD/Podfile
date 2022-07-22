@@ -9,4 +9,5 @@ target 'CMD' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'Then'
+  pod 'ACFloatingTextfield-Objc'
 end

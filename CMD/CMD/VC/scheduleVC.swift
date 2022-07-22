@@ -113,13 +113,10 @@ class scheduleVC: UIViewController {
     
     private var scrollView = UIScrollView().then {
 //        $0.backgroundColor = .white //UIColor(named: "BackgroundColor")
-        $0.backgroundColor = .yellow
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private var ContentView = UIView().then {
-        $0.backgroundColor = .white
-        
+    private var ContentView = UIView().then {_ in
     }
     
     override func viewDidLoad() {
@@ -221,9 +218,10 @@ class scheduleVC: UIViewController {
 //            $0.bottom.equalTo(scrollView.snp.bottom).offset(-40)
         }
         ContentView.snp.makeConstraints {
-            $0.width.equalTo(scrollView.snp.width)
-            $0.top.equalTo(scrollView.snp.top)
-            $0.bottom.equalTo(scrollView.snp.top).offset(767)
+            $0.edges.equalTo(0)
+            $0.width.equalToSuperview()
+
+            $0.bottom.equalTo(Class10.snp.bottom).offset(0)
         }
     }
     

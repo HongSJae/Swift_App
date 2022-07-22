@@ -140,7 +140,7 @@ class LoginVC: UIViewController {
         IdTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.top.equalTo(IdBox.snp.top).inset(20)
+            make.bottom.equalTo(IdBox.snp.bottom).inset(5)
             make.leading.equalTo(IdBox.snp.leading).inset(10)
         }
         
@@ -160,7 +160,7 @@ class LoginVC: UIViewController {
         PwTF.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(250)
-            make.top.equalTo(PwBox.snp.top).inset(20)
+            make.bottom.equalTo(PwBox.snp.bottom).inset(5)
             make.leading.equalTo(PwBox.snp.leading).inset(10)
         }
         Eye.snp.makeConstraints {
@@ -175,7 +175,6 @@ class LoginVC: UIViewController {
         Header.snp.makeConstraints { make in
             make.topMargin.equalTo(74)
             make.leftMargin.equalTo(50)
-            make.centerX.equalToSuperview()
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(100)
         }
         

@@ -7,156 +7,41 @@ class classinfo: UIViewController {
 
     private var Header = UILabel().then {
         $0.textColor = .white
-        $0.font = UIFont.boldSystemFont(ofSize: 50)
+        $0.font = UIFont(name: "NotoSansKR-Bold", size: 50)
         $0.text = "학생정보"
     }
     
     
-    private var NO1 = UILabel().then {
-        $0.text = "시간표1"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
+    private var NO1 = UIImageView().then {
+        $0.image = UIImage(named: "Profile")
     }
-    private var NO2 = UILabel().then {
-        $0.text = "시간표2"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+    private var Name1 = UILabel().then {
+        $0.text = "강용수"
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 15)
+        $0.textColor = .white
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO3 = UILabel().then {
-        $0.text = "시간표3"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO4 = UILabel().then {
-        $0.text = "시간표4"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO5 = UILabel().then {
-        $0.text = "시간표5"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO6 = UILabel().then {
-        $0.text = "시간표6"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO7 = UILabel().then {
-        $0.text = "시간표7"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO8 = UILabel().then {
-        $0.text = "시간표8"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO9 = UILabel().then {
-        $0.text = "시간표9"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO10 = UILabel().then {
-        $0.text = "시간표10"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
     }
     
-    private var NO11 = UILabel().then {
-        $0.text = "시간표1"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
+    private var NO2 = UIImageView().then {
+        $0.image = UIImage(named: "Profile")
     }
-    private var NO12 = UILabel().then {
-        $0.text = "시간표2"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+    private var Name2 = UILabel().then {
+        $0.text = "강지인"
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 15)
+        $0.textColor = .white
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
     }
-    private var NO13 = UILabel().then {
-        $0.text = "시간표3"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
+    
+    private var NO3 = UIImageView().then {
+        $0.image = UIImage(named: "Profile")
+    }
+    private var Name3 = UILabel().then {
+        $0.text = "길근우"
+        $0.font = UIFont(name: "NotoSansKR-Regular", size: 15)
+        $0.textColor = .white
         $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
     }
-    private var NO14 = UILabel().then {
-        $0.text = "시간표4"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO15 = UILabel().then {
-        $0.text = "시간표5"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO16 = UILabel().then {
-        $0.text = "시간표6"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO17 = UILabel().then {
-        $0.text = "시간표7"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
-    private var NO18 = UILabel().then {
-        $0.text = "시간표8"
-        $0.backgroundColor = UIColor(named: "ScheduleGrayColor")
-        $0.textAlignment = .center
-        $0.font = UIFont.systemFont(ofSize: 25)
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-    }
+    
     
     private var scrollView = UIScrollView().then {
 //        $0.backgroundColor = .white //UIColor(named: "BackgroundColor")
@@ -169,12 +54,47 @@ class classinfo: UIViewController {
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         // Do any additional setup after loading the view.
-        self.view.addSubview(Header)
+        [Header, NO1, Name1, NO2, Name2, NO3, Name3].forEach({view.addSubview($0)})
         
         Header.snp.makeConstraints() {
             $0.leftMargin.equalTo(30)
             $0.topMargin.equalTo(48)
         }
+        
+        NO1.snp.makeConstraints {
+            $0.centerX.equalTo(NO2.snp.left).dividedBy(2)
+            $0.height.width.equalTo(view.safeAreaLayoutGuide.snp.width).dividedBy(4)
+            $0.top.equalTo(Header.snp.bottom).offset(86)
+        }
+        Name1.snp.makeConstraints {
+            $0.top.equalTo(NO1.snp.bottom).offset(8)
+            $0.leftMargin.equalTo(NO1.snp.leftMargin)
+            $0.centerX.equalTo(NO1)
+        }
+        
+        
+        NO2.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(view.safeAreaLayoutGuide.snp.width).dividedBy(4)
+            $0.top.equalTo(Header.snp.bottom).offset(86)
+        }
+        Name2.snp.makeConstraints {
+            $0.top.equalTo(NO2.snp.bottom).offset(8)
+            $0.leftMargin.equalTo(NO2.snp.leftMargin)
+            $0.centerX.equalTo(NO2)
+        }
+        
+        NO3.snp.makeConstraints {
+            $0.centerX.equalTo(NO2.snp.right)
+            $0.height.width.equalTo(view.safeAreaLayoutGuide.snp.width).dividedBy(4)
+            $0.top.equalTo(Header.snp.bottom).offset(86)
+        }
+        Name3.snp.makeConstraints {
+            $0.top.equalTo(NO3.snp.bottom).offset(8)
+            $0.leftMargin.equalTo(NO3.snp.leftMargin)
+            $0.centerX.equalTo(NO3)
+        }
+        
         
         
     }
