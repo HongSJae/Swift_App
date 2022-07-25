@@ -320,7 +320,7 @@ struct ViewControllerRepresentable: UIViewControllerRepresentable {
     // makeui
     @available(iOS 13.0, *)
     func makeUIViewController(context: Context) -> UIViewController {
-        scheduleVC()
+        classinfo()
     }
 }
         

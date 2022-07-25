@@ -127,7 +127,7 @@ class scheduleVC: UIViewController {
         print(Weekday)
         
         print("받은 토큰은 : \(getToken ?? "nil")")
-//        getTimeSchedule(weekday: Weekday)
+        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -220,7 +220,6 @@ class scheduleVC: UIViewController {
         ContentView.snp.makeConstraints {
             $0.edges.equalTo(0)
             $0.width.equalToSuperview()
-
             $0.bottom.equalTo(Class10.snp.bottom).offset(0)
         }
     }
