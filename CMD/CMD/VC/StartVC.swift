@@ -69,13 +69,7 @@ class StartVC: UIViewController {
 
     @objc fileprivate func BtnClicked() {
         let LoginVC = LoginVC()
-//        UIFont.familyNames.sorted().forEach { familyName in
-//            print("*** \(familyName) ***")
-//            UIFont.fontNames(forFamilyName: familyName).forEach { fontName in
-//                print("\(fontName)")
-//            }
-//            print("---------------------")
-//        }
         self.navigationController?.pushViewController(LoginVC, animated: true)
     }
 }
+

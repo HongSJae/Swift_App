@@ -309,3 +309,29 @@ class LoginVC: UIViewController {
 }
 
 
+#if DEBUG
+import SwiftUI
+struct ViewControllerRepresentable: UIViewControllerRepresentable {
+    
+    // update
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
+    }
+    // makeui
+    @available(iOS 13.0, *)
+    func makeUIViewController(context: Context) -> UIViewController {
+        scheduleVC()
+    }
+}
+        
+struct ViewController_Previews: PreviewProvider {
+    static var previews: some View {
+        ViewControllerRepresentable()
+        .edgesIgnoringSafeArea(.all)
+        .previewDisplayName("미리보기")
+        .previewInterfaceOrientation(.portrait)
+    }
+}
+
+
+#endif
