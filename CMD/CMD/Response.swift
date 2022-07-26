@@ -9,6 +9,7 @@ import Foundation
 
 //MARK: - 시간표 (1 ~ 10 교시)
 
+
 struct TimeGet: Codable {
     
     let period1st: String?
