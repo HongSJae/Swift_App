@@ -234,7 +234,6 @@ class classinfo: UIViewController {
         }
         Name1.snp.makeConstraints {
             $0.top.equalTo(NO1.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO1.snp.leftMargin)
             $0.centerX.equalTo(NO1)
         }
         
@@ -246,7 +245,6 @@ class classinfo: UIViewController {
         }
         Name2.snp.makeConstraints {
             $0.top.equalTo(NO2.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO2.snp.leftMargin)
             $0.centerX.equalTo(NO2)
         }
         
@@ -257,7 +255,6 @@ class classinfo: UIViewController {
         }
         Name3.snp.makeConstraints {
             $0.top.equalTo(NO3.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO3.snp.leftMargin)
             $0.centerX.equalTo(NO3)
         }
         
@@ -268,7 +265,6 @@ class classinfo: UIViewController {
         }
         Name4.snp.makeConstraints {
             $0.top.equalTo(NO4.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO4.snp.leftMargin)
             $0.centerX.equalTo(NO4)
         }
         
@@ -279,7 +275,6 @@ class classinfo: UIViewController {
         }
         Name5.snp.makeConstraints {
             $0.top.equalTo(NO5.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO5.snp.leftMargin)
             $0.centerX.equalTo(NO5)
         }
         
@@ -290,7 +285,6 @@ class classinfo: UIViewController {
         }
         Name6.snp.makeConstraints {
             $0.top.equalTo(NO6.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO6.snp.leftMargin)
             $0.centerX.equalTo(NO6)
         }
         
@@ -301,7 +295,6 @@ class classinfo: UIViewController {
         }
         Name7.snp.makeConstraints {
             $0.top.equalTo(NO7.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO7.snp.leftMargin)
             $0.centerX.equalTo(NO7)
         }
         
@@ -312,7 +305,6 @@ class classinfo: UIViewController {
         }
         Name8.snp.makeConstraints {
             $0.top.equalTo(NO8.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO8.snp.leftMargin)
             $0.centerX.equalTo(NO8)
         }
         
@@ -323,7 +315,6 @@ class classinfo: UIViewController {
         }
         Name9.snp.makeConstraints {
             $0.top.equalTo(NO9.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO9.snp.leftMargin)
             $0.centerX.equalTo(NO9)
         }
         
@@ -334,7 +325,6 @@ class classinfo: UIViewController {
         }
         Name10.snp.makeConstraints {
             $0.top.equalTo(NO10.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO10.snp.leftMargin)
             $0.centerX.equalTo(NO10)
         }
         
@@ -345,7 +335,6 @@ class classinfo: UIViewController {
         }
         Name11.snp.makeConstraints {
             $0.top.equalTo(NO11.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO11.snp.leftMargin)
             $0.centerX.equalTo(NO11)
         }
         
@@ -356,7 +345,6 @@ class classinfo: UIViewController {
         }
         Name12.snp.makeConstraints {
             $0.top.equalTo(NO12.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO12.snp.leftMargin)
             $0.centerX.equalTo(NO12)
         }
         
@@ -367,7 +355,6 @@ class classinfo: UIViewController {
         }
         Name13.snp.makeConstraints {
             $0.top.equalTo(NO13.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO13.snp.leftMargin)
             $0.centerX.equalTo(NO13)
         }
         
@@ -389,7 +376,6 @@ class classinfo: UIViewController {
         }
         Name15.snp.makeConstraints {
             $0.top.equalTo(NO15.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO15.snp.leftMargin)
             $0.centerX.equalTo(NO15)
         }
         
@@ -400,7 +386,6 @@ class classinfo: UIViewController {
         }
         Name16.snp.makeConstraints {
             $0.top.equalTo(NO16.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO16.snp.leftMargin)
             $0.centerX.equalTo(NO16)
         }
         
@@ -411,7 +396,6 @@ class classinfo: UIViewController {
         }
         Name17.snp.makeConstraints {
             $0.top.equalTo(NO17.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO17.snp.leftMargin)
             $0.centerX.equalTo(NO17)
         }
         
@@ -422,13 +406,51 @@ class classinfo: UIViewController {
         }
         Name18.snp.makeConstraints {
             $0.top.equalTo(NO18.snp.bottom).offset(8)
-            $0.leftMargin.equalTo(NO18.snp.leftMargin)
             $0.centerX.equalTo(NO18)
         }
         
-        
-        
-        
+        NO1.addTarget(self, action: #selector(gotoClassinformation1), for: .touchUpInside)
+        NO2.addTarget(self, action: #selector(gotoClassinformation2), for: .touchUpInside)
+        NO3.addTarget(self, action: #selector(gotoClassinformation3), for: .touchUpInside)
+        NO4.addTarget(self, action: #selector(gotoClassinformation4), for: .touchUpInside)
+        NO5.addTarget(self, action: #selector(gotoClassinformation5), for: .touchUpInside)
+        NO6.addTarget(self, action: #selector(gotoClassinformation6), for: .touchUpInside)
+        NO7.addTarget(self, action: #selector(gotoClassinformation7), for: .touchUpInside)
+        NO8.addTarget(self, action: #selector(gotoClassinformation8), for: .touchUpInside)
+        NO9.addTarget(self, action: #selector(gotoClassinformation9), for: .touchUpInside)
+        NO10.addTarget(self, action: #selector(gotoClassinformation10), for: .touchUpInside)
+        NO11.addTarget(self, action: #selector(gotoClassinformation11), for: .touchUpInside)
+        NO12.addTarget(self, action: #selector(gotoClassinformation12), for: .touchUpInside)
+        NO13.addTarget(self, action: #selector(gotoClassinformation13), for: .touchUpInside)
+        NO14.addTarget(self, action: #selector(gotoClassinformation14), for: .touchUpInside)
+        NO15.addTarget(self, action: #selector(gotoClassinformation15), for: .touchUpInside)
+        NO16.addTarget(self, action: #selector(gotoClassinformation16), for: .touchUpInside)
+        NO17.addTarget(self, action: #selector(gotoClassinformation17), for: .touchUpInside)
+        NO18.addTarget(self, action: #selector(gotoClassinformation18), for: .touchUpInside)
+    }
+    @objc fileprivate func gotoClassinformation1() {ClassFunc(Number: "1201")}
+    @objc fileprivate func gotoClassinformation2() {ClassFunc(Number: "1202")}
+    @objc fileprivate func gotoClassinformation3() {ClassFunc(Number: "1203")}
+    @objc fileprivate func gotoClassinformation4() {ClassFunc(Number: "1204")}
+    @objc fileprivate func gotoClassinformation5() {ClassFunc(Number: "1205")}
+    @objc fileprivate func gotoClassinformation6() {ClassFunc(Number: "1206")}
+    @objc fileprivate func gotoClassinformation7() {ClassFunc(Number: "1207")}
+    @objc fileprivate func gotoClassinformation8() {ClassFunc(Number: "1208")}
+    @objc fileprivate func gotoClassinformation9() {ClassFunc(Number: "1209")}
+    @objc fileprivate func gotoClassinformation10() {ClassFunc(Number: "1210")}
+    @objc fileprivate func gotoClassinformation11() {ClassFunc(Number: "1211")}
+    @objc fileprivate func gotoClassinformation12() {ClassFunc(Number: "1212")}
+    @objc fileprivate func gotoClassinformation13() {ClassFunc(Number: "1213")}
+    @objc fileprivate func gotoClassinformation14() {ClassFunc(Number: "1214")}
+    @objc fileprivate func gotoClassinformation15() {ClassFunc(Number: "1215")}
+    @objc fileprivate func gotoClassinformation16() {ClassFunc(Number: "1216")}
+    @objc fileprivate func gotoClassinformation17() {ClassFunc(Number: "1217")}
+    @objc fileprivate func gotoClassinformation18() {ClassFunc(Number: "1218")}
+    
+    func ClassFunc(Number: String) {
+        UserDefaults.standard.set(Number, forKey: "Number")
+        self.navigationController?.present(classinformationVC(), animated: true)
     }
 }
+
 

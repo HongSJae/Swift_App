@@ -116,8 +116,7 @@ class scheduleVC: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private var ContentView = UIView().then {_ in
-    }
+    private var ContentView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,7 +126,7 @@ class scheduleVC: UIViewController {
         print(Weekday)
         
         print("받은 토큰은 : \(getToken ?? "nil")")
-        getTimeSchedule(weekday: Weekday)
+//        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -145,8 +144,7 @@ class scheduleVC: UIViewController {
         
         self.view.addSubview(scrollView)
         scrollView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(50)
-            $0.leading.equalToSuperview().inset(50)
+            $0.trailing.leading.equalToSuperview().inset(50)
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(215)
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(0)
         }

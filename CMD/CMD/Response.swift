@@ -30,3 +30,7 @@ struct SignUpInfo: Codable {
     let password: String
 }
 
+struct Classinfo: Codable {
+    let username, number, birthday, field: String
+}
+
