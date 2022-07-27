@@ -31,6 +31,12 @@ struct SignUpInfo: Codable {
 }
 
 struct Classinfo: Codable {
-    let username, number, birthday, field: String
+    let username, number, birthday, field: String?
 }
 
+struct NoticeboardElement: Codable {
+    let id: Int
+    let title, contents: String
+}
+
+typealias Noticeboard = [NoticeboardElement]

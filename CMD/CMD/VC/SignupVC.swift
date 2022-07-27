@@ -262,6 +262,8 @@ class SignupVC: UIViewController {
             if PwTF.text != PwCTF.text {
                 AlertFunc(title: "비밀번호가 다릅니다", message: "비밀번호와 비밀번호 확인에 \n적힌 값이 다릅니다! 확인해주세요!")
             } else {
+                userID = IdTF.text ?? ""
+                userPW = PwTF.text ?? ""
                 SignUp()
             }
         }
@@ -324,7 +326,7 @@ class SignupVC: UIViewController {
         
         // POST 로 보낼 정보
         let params = ["userId": userID, "password": userPW] as Dictionary
-        
+        print("\(userID), \(userPW) 를 POST")
         // httpBody 에 parameters 추가
         do {
             try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
@@ -335,15 +337,13 @@ class SignupVC: UIViewController {
         AF.request(request).responseString { result in
             do{
                 _ = try JSONDecoder().decode(SignUpInfo.self, from: result.data!)
-                print("ID : \(ID), PW : \(PW)")
+                print("회원가입 성공")
                 self.navigationController?.popViewController(animated: true)
             } catch {
                 print(error)
                 self.AlertFunc(title: "가입코드가 다른데요?😅", message: "다시 확인 후 적어주세요!")
             }
         }
-        
-        DispatchQueue.global().async{}
         
     }
     func AlertFunc(title: String, message: String) {

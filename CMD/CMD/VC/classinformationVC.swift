@@ -10,7 +10,8 @@ import Alamofire
 import Then
 import SnapKit
 
-let getNumber = UserDefaults.standard.string(forKey: "Number")
+var getNumber: String = ""
+let takeToken = UserDefaults.standard.string(forKey: "TokenToken")
 
 class classinformationVC: UIViewController {
     
@@ -106,7 +107,8 @@ class classinformationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ClassAPI(Number: getNumber!)
+        getNumber = UserDefaults.standard.string(forKey: "Number")!
+        ClassAPI(Number: getNumber)
         view.addSubview(scrollview)
         scrollview.addSubview(ContentView)
         [profile, profilename, View, Header, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, Cancel].forEach({ContentView.addSubview($0)})
@@ -196,18 +198,19 @@ class classinformationVC: UIViewController {
         let url = "http://54.180.122.62:8080/user/info/" + Number
         AF.request(url,
                    method: .get,
-                   encoding: URLEncoding.queryString
+                   encoding: URLEncoding.queryString,
+                   headers: ["Authorization": (takeToken ?? "")]
         )
         .validate(statusCode: 200..<300)
         .response { result in
             do{
                 let model = try JSONDecoder().decode(Classinfo.self, from: result.data!)
                 print("success")
-                self.profilename.text = model.username
-                self.nameinfo.text = model.username
-                self.birthinfo.text = model.birthday
-                self.fieldinfo.text = model.field
-                self.numberinfo.text = model.number
+                self.profilename.text = model.username ?? "이름"
+                self.nameinfo.text = model.username ?? "정보없음"
+                self.birthinfo.text = model.birthday ?? "정보없음"
+                self.fieldinfo.text = model.field ?? "정보없음"
+                self.numberinfo.text = model.number ?? "정보없음"
             } catch {
                 print(error)
                 print("정보가 없어요")

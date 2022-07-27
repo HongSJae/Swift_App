@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Alamofire
 import Then
+import TextFieldEffects
 
 var TokenToken: String = ""
 var ID: String = ""
@@ -53,15 +54,23 @@ class LoginVC: UIViewController {
         $0.backgroundColor = UIColor(named: "InputBox")
     }
     private var IdTF = UITextField().then {
+        
         $0.font = UIFont(name: "NotoSansKR-Regular", size: 18)
-//        $0.placeholder = "아이디"
+        $0.placeholder = "아이디"
         $0.attributedPlaceholder = NSAttributedString(
             string: "아이디",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray,
                          NSAttributedString.Key.font: UIFont(name: "NotoSansKR-Regular", size: 18)!]
         )
         $0.textColor = .white
+//        $0.font = UIFont(name: "NotoSansKR-Regular", size: 18)
+//        $0.placeholderLabel.font = UIFont(name: "NotoSansKR-Regular", size: 18)
+//        $0.placeholder = "아이디"
+//        $0.placeholderColor = .gray
+        
+        
     }
+    
     
     
     private var PwBox = UIView().then {_ in
@@ -323,27 +332,11 @@ struct ViewControllerRepresentable: UIViewControllerRepresentable {
         MainTabBarControllerViewController()
     }
 }
-struct ViewControllerRepresentable2: UIViewControllerRepresentable {
-    
-    // update
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        
-    }
-    // makeui
-    @available(iOS 13.0, *)
-    func makeUIViewController(context: Context) -> UIViewController {
-        LoginVC()
-    }
-}
         
 struct ViewController_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ViewControllerRepresentable()
-                .edgesIgnoringSafeArea(.all)
-                .previewDisplayName("미리보기")
-                .previewInterfaceOrientation(.portrait)
-            ViewControllerRepresentable2()
                 .edgesIgnoringSafeArea(.all)
                 .previewDisplayName("미리보기")
                 .previewInterfaceOrientation(.portrait)

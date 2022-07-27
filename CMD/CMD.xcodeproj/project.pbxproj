@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05FBB13BAA0F250BE1165F99 /* Pods_CMD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF23BBEB6786F8321425394 /* Pods_CMD.framework */; };
+		9014FB0528918ABC00A23B66 /* TableviewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9014FB0428918ABB00A23B66 /* TableviewCellTableViewCell.swift */; };
 		903676AA287662070019A0E8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903676A9287662070019A0E8 /* Response.swift */; };
 		9063B6B8286D5A9400ED8DAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B6B7286D5A9400ED8DAF /* AppDelegate.swift */; };
 		9063B6BA286D5A9400ED8DAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B6B9286D5A9400ED8DAF /* SceneDelegate.swift */; };
@@ -17,7 +18,6 @@
 		9063B725286EC47400ED8DAF /* classinfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B724286EC47400ED8DAF /* classinfoVC.swift */; };
 		9063B727286EC4A700ED8DAF /* noticeboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B726286EC4A700ED8DAF /* noticeboardVC.swift */; };
 		9063B729286EC4C500ED8DAF /* myinfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B728286EC4C500ED8DAF /* myinfoVC.swift */; };
-		9065D7DB2876831B00E3A716 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9065D7DA2876831B00E3A716 /* Request.swift */; };
 		9095A22E287D83BF00228B37 /* MainTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */; };
 		90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A018902872A6EF0063FB80 /* SignupVC.swift */; };
 		90A6F39128882A5100AB93FD /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6F39028882A5100AB93FD /* StartVC.swift */; };
@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		373AAC0D73C61F799A2935AF /* Pods-CMD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMD.debug.xcconfig"; path = "Target Support Files/Pods-CMD/Pods-CMD.debug.xcconfig"; sourceTree = "<group>"; };
 		8FC21F3BF6EDB2170C5A4A4F /* Pods-CMD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CMD.release.xcconfig"; path = "Target Support Files/Pods-CMD/Pods-CMD.release.xcconfig"; sourceTree = "<group>"; };
+		9014FB0428918ABB00A23B66 /* TableviewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewCellTableViewCell.swift; sourceTree = "<group>"; };
 		903676A9287662070019A0E8 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		9063B6B4286D5A9400ED8DAF /* CMD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CMD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9063B6B7286D5A9400ED8DAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		9063B724286EC47400ED8DAF /* classinfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classinfoVC.swift; sourceTree = "<group>"; };
 		9063B726286EC4A700ED8DAF /* noticeboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeboardVC.swift; sourceTree = "<group>"; };
 		9063B728286EC4C500ED8DAF /* myinfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myinfoVC.swift; sourceTree = "<group>"; };
-		9065D7DA2876831B00E3A716 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		90A018902872A6EF0063FB80 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		90A6F39028882A5100AB93FD /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 				9063B6B7286D5A9400ED8DAF /* AppDelegate.swift */,
 				9063B6B9286D5A9400ED8DAF /* SceneDelegate.swift */,
 				903676A9287662070019A0E8 /* Response.swift */,
-				9065D7DA2876831B00E3A716 /* Request.swift */,
 				9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */,
+				9014FB0428918ABB00A23B66 /* TableviewCellTableViewCell.swift */,
 				9063B71D286DE11D00ED8DAF /* VC */,
 				9063B6C5286D5A9500ED8DAF /* Info.plist */,
 				9063B6C0286D5A9500ED8DAF /* Assets.xcassets */,
@@ -273,12 +273,12 @@
 				9063B6BC286D5A9400ED8DAF /* LoginVC.swift in Sources */,
 				9063B6B8286D5A9400ED8DAF /* AppDelegate.swift in Sources */,
 				9063B729286EC4C500ED8DAF /* myinfoVC.swift in Sources */,
+				9014FB0528918ABC00A23B66 /* TableviewCellTableViewCell.swift in Sources */,
 				90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */,
 				90A6F39128882A5100AB93FD /* StartVC.swift in Sources */,
 				903676AA287662070019A0E8 /* Response.swift in Sources */,
 				9063B725286EC47400ED8DAF /* classinfoVC.swift in Sources */,
 				9063B723286EC42900ED8DAF /* scheduleVC.swift in Sources */,
-				9065D7DB2876831B00E3A716 /* Request.swift in Sources */,
 				9063B6BA286D5A9400ED8DAF /* SceneDelegate.swift in Sources */,
 				9063B727286EC4A700ED8DAF /* noticeboardVC.swift in Sources */,
 				9095A22E287D83BF00228B37 /* MainTabBarControllerViewController.swift in Sources */,

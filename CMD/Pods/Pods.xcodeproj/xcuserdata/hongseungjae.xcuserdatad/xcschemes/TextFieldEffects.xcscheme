@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5AC5519B78FC09AE74F6128BD8C64549"
-               BuildableName = "ACFloatingTextfield_Objc.framework"
-               BlueprintName = "ACFloatingTextfield-Objc"
+               BlueprintIdentifier = "D09BAB8A20917611A8AD17E2E0EE8271"
+               BuildableName = "TextFieldEffects.framework"
+               BlueprintName = "TextFieldEffects"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

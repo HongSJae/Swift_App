@@ -126,7 +126,7 @@ class scheduleVC: UIViewController {
         print(Weekday)
         
         print("받은 토큰은 : \(getToken ?? "nil")")
-//        getTimeSchedule(weekday: Weekday)
+        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
