@@ -10,7 +10,16 @@ import Alamofire
 import Then
 import SnapKit
 
-class noticeboardVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+struct Notice {
+    var Header: String?
+    var Title: String?
+}
+
+let gotToken = UserDefaults.standard.string(forKey: "TokenToken")
+
+class noticeboardVC: UIViewController {
+    
+    var notice: [Notice] = []
     
     private var Header = UILabel().then {
         $0.textColor = .white
@@ -20,27 +29,26 @@ class noticeboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     private var TableView = UITableView().then {
         $0.backgroundColor = UIColor(named: "BackgroundColor")
-    }
-    private var TableViewCell = UITableViewCell().then {
-        $0.backgroundColor = UIColor(named: "BackgroundColor")
-        
-    }
-    private var Text = UILabel().then {
-        $0.textColor = .black
-        $0.textAlignment = .center
-        $0.font = UIFont(name: "NotoSansKR-Regular", size: 17)
-        $0.text = ""
+        $0.rowHeight = 250
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
-        TableView.delegate = self
-        TableView.dataSource = self
+        getNotice()
+        attribute()
+        layer()
         
+    }
+    
+    func attribute() {
+            TableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.cellId)
+            TableView.delegate = self
+            TableView.dataSource = self
+        }
+    func layer() {
         [TableView, Header].forEach({view.addSubview($0)})
-        [TableViewCell].forEach({TableView.addSubview($0)})
         
         Header.snp.makeConstraints() {
             $0.leftMargin.equalTo(30)
@@ -55,16 +63,46 @@ class noticeboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //            $0.height.equalTo(200)
         }
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 //몇 개?
+    func getNotice() {
+        print("불러온 토큰은 : \(gotToken ?? "")")
+        let url = "http://54.180.122.62:8080/user/noticeBoard"
+        AF.request(url,
+                   method: .get,
+                   encoding: URLEncoding.queryString,
+                   headers: ["Authorization": (getToken ?? "")]
+        )
+        .validate(statusCode: 200..<300)
+        .response { result in
+            do{
+                let model = try JSONDecoder().decode(Noticeboard.self, from: result.data!)
+                
+                print("success")
+                for i in 0...model.count {
+                    self.notice.append(
+                        contentsOf:[Notice(Header: model[i].title, Title: model[i].contents)]
+                    )
+                }
+            } catch {
+                print(error)
+                print("에런데용 :( ?")
+            }
+        }
     }
-
+}
+extension noticeboardVC:  UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notice.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: .default, reuseIdentifier: "cell") as UITableViewCell
-        cell.textLabel?.text = ("\(indexPath.row)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.cellId, for: indexPath) as! TableViewCell
+        
+//        cell.profile.image = user[indexPath.row].profile
+//        cell.name.text = user[indexPath.row].name
+        cell.Header.text = notice[indexPath.row].Header
+        cell.Title.text = notice[indexPath.row].Title
+        cell.selectionStyle = .none
+        
         return cell
     }
-
-
 }
-

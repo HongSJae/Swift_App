@@ -40,3 +40,5 @@ struct NoticeboardElement: Codable {
 }
 
 typealias Noticeboard = [NoticeboardElement]
+
+
