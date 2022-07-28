@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct TimeGet: Codable { //시간표 받기
+//MARK: - 시간표 (1 ~ 10 교시)
+
+struct TimeGet: Codable {
     
     let period1st: String
     let period2nd: String
@@ -21,18 +23,26 @@ struct TimeGet: Codable { //시간표 받기
     let period10th: String
 }
 
+//MARK: - 로그인정보 (토큰)
+
 struct SignInInfo: Codable {
     let accessToken: String
 }
+
+//MARK: - 회원가입 (아이디 비밀번호)
 
 struct SignUpInfo: Codable {
     let userId: String
     let password: String
 }
 
+//MARK: - 학생정보 (이름, 번호, 생일, 전공)
+
 struct Classinfo: Codable {
     let username, number, birthday, field: String?
 }
+
+//MARK: - 공지사항
 
 struct NoticeboardElement: Codable {
     let id: Int

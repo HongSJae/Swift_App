@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D09BAB8A20917611A8AD17E2E0EE8271"
-               BuildableName = "TextFieldEffects.framework"
-               BlueprintName = "TextFieldEffects"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "9063B6B3286D5A9400ED8DAF"
+               BuildableName = "CMD.app"
+               BlueprintName = "CMD"
+               ReferencedContainer = "container:CMD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,23 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9063B6B3286D5A9400ED8DAF"
+            BuildableName = "CMD.app"
+            BlueprintName = "CMD"
+            ReferencedContainer = "container:CMD.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,6 +64,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9063B6B3286D5A9400ED8DAF"
+            BuildableName = "CMD.app"
+            BlueprintName = "CMD"
+            ReferencedContainer = "container:CMD.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

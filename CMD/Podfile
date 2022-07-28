@@ -10,4 +10,5 @@ target 'CMD' do
   pod 'Alamofire'
   pod 'Then'
   pod 'TextFieldEffects'
+  pod "ViewAnimator"
 end

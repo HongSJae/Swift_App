@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D09BAB8A20917611A8AD17E2E0EE8271"
-               BuildableName = "TextFieldEffects.framework"
-               BlueprintName = "TextFieldEffects"
+               BlueprintIdentifier = "91BFC2827E7E6E2B51AB2CFF58AC6317"
+               BuildableName = "ViewAnimator.framework"
+               BlueprintName = "ViewAnimator"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

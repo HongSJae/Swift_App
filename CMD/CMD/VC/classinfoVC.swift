@@ -1,3 +1,10 @@
+//
+//  classinfoViewController.swift
+//  CMD
+//
+//  Created by 홍승재 on 2022/06/30.
+//
+
 import UIKit
 import Alamofire
 import Then
@@ -5,13 +12,16 @@ import SnapKit
 
 class classinfo: UIViewController {
     
+    //MARK: - 뷰 생성
+    
+    //헤더
     private var Header = UILabel().then {
         $0.textColor = .white
         $0.font = UIFont(name: "NotoSansKR-Bold", size: 50)
         $0.text = "학생정보"
     }
     
-    
+    //1번
     private var NO1 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -22,6 +32,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //2번
     private var NO2 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -32,6 +43,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //3번
     private var NO3 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -42,6 +54,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //4번
     private var NO4 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -52,6 +65,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //5번
     private var NO5 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -62,6 +76,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //6번
     private var NO6 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -72,6 +87,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //7번
     private var NO7 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -82,6 +98,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //8번
     private var NO8 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -92,6 +109,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //9번
     private var NO9 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -102,6 +120,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //10번
     private var NO10 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -112,6 +131,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //11번
     private var NO11 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -122,6 +142,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //12번
     private var NO12 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -132,6 +153,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //13번
     private var NO13 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -142,6 +164,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //14번
     private var NO14 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -152,6 +175,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //15번
     private var NO15 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -162,6 +186,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //16번
     private var NO16 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -172,6 +197,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //17번
     private var NO17 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -182,6 +208,7 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
+    //18번
     private var NO18 = UIButton().then {
         $0.setImage(UIImage(named: "Profile"), for: .normal)
     }
@@ -192,24 +219,58 @@ class classinfo: UIViewController {
         $0.textAlignment = .center
     }
     
-    
+    //스크롤 뷰
     private var scrollView = UIScrollView().then {
-        //        $0.backgroundColor = .white //UIColor(named: "BackgroundColor")
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
+    //스크롤뷰의 콘텐트뷰
     private var ContentView = UIView()
     
+    //MARK: - 뷰 실행 시
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
-        // Do any additional setup after loading the view.
-        view.addSubview(Header)
-        view.addSubview(scrollView)
-        scrollView.addSubview(ContentView)
+    
+        [Header, scrollView].forEach({view.addSubview($0)})
+        [ContentView].forEach({scrollView.addSubview($0)})
         [NO1, Name1, NO2, Name2, NO3, Name3, NO4, Name4, NO5, Name5, NO6, Name6, NO7, Name7, NO8, Name8, NO9, Name9, NO10, Name10, NO11, Name11, NO12, Name12, NO13, Name13, NO14, Name14, NO15, Name15, NO16, Name16, NO17, Name17, NO18, Name18].forEach({ContentView.addSubview($0)})
         
+        layout()
+        setButton()
+        
+    }
+    
+    //MARK: - 버튼 액션 설정
+
+    @objc fileprivate func gotoClassinformation1() {ClassFunc(Number: "1201")}
+    @objc fileprivate func gotoClassinformation2() {ClassFunc(Number: "1202")}
+    @objc fileprivate func gotoClassinformation3() {ClassFunc(Number: "1203")}
+    @objc fileprivate func gotoClassinformation4() {ClassFunc(Number: "1204")}
+    @objc fileprivate func gotoClassinformation5() {ClassFunc(Number: "1205")}
+    @objc fileprivate func gotoClassinformation6() {ClassFunc(Number: "1206")}
+    @objc fileprivate func gotoClassinformation7() {ClassFunc(Number: "1207")}
+    @objc fileprivate func gotoClassinformation8() {ClassFunc(Number: "1208")}
+    @objc fileprivate func gotoClassinformation9() {ClassFunc(Number: "1209")}
+    @objc fileprivate func gotoClassinformation10() {ClassFunc(Number: "1210")}
+    @objc fileprivate func gotoClassinformation11() {ClassFunc(Number: "1211")}
+    @objc fileprivate func gotoClassinformation12() {ClassFunc(Number: "1212")}
+    @objc fileprivate func gotoClassinformation13() {ClassFunc(Number: "1213")}
+    @objc fileprivate func gotoClassinformation14() {ClassFunc(Number: "1214")}
+    @objc fileprivate func gotoClassinformation15() {ClassFunc(Number: "1215")}
+    @objc fileprivate func gotoClassinformation16() {ClassFunc(Number: "1216")}
+    @objc fileprivate func gotoClassinformation17() {ClassFunc(Number: "1217")}
+    @objc fileprivate func gotoClassinformation18() {ClassFunc(Number: "1218")}
+    
+    //MARK: - 학생 번호 UserDefaults에 저장하는 함수
+    func ClassFunc(Number: String) {
+        UserDefaults.standard.set(Number, forKey: "Number")
+        self.navigationController?.present(classinformationVC(), animated: true)
+    }
+    
+    //MARK: - 레이아웃 설정 함수
+    func layout() {
         Header.snp.makeConstraints() {
             $0.leftMargin.equalTo(30)
             $0.topMargin.equalTo(48)
@@ -408,7 +469,11 @@ class classinfo: UIViewController {
             $0.top.equalTo(NO18.snp.bottom).offset(8)
             $0.centerX.equalTo(NO18)
         }
-        
+    }
+    
+    //MARK: - 버튼 액션 실행 함수
+    
+    func setButton() {
         NO1.addTarget(self, action: #selector(gotoClassinformation1), for: .touchUpInside)
         NO2.addTarget(self, action: #selector(gotoClassinformation2), for: .touchUpInside)
         NO3.addTarget(self, action: #selector(gotoClassinformation3), for: .touchUpInside)
@@ -427,29 +492,6 @@ class classinfo: UIViewController {
         NO16.addTarget(self, action: #selector(gotoClassinformation16), for: .touchUpInside)
         NO17.addTarget(self, action: #selector(gotoClassinformation17), for: .touchUpInside)
         NO18.addTarget(self, action: #selector(gotoClassinformation18), for: .touchUpInside)
-    }
-    @objc fileprivate func gotoClassinformation1() {ClassFunc(Number: "1201")}
-    @objc fileprivate func gotoClassinformation2() {ClassFunc(Number: "1202")}
-    @objc fileprivate func gotoClassinformation3() {ClassFunc(Number: "1203")}
-    @objc fileprivate func gotoClassinformation4() {ClassFunc(Number: "1204")}
-    @objc fileprivate func gotoClassinformation5() {ClassFunc(Number: "1205")}
-    @objc fileprivate func gotoClassinformation6() {ClassFunc(Number: "1206")}
-    @objc fileprivate func gotoClassinformation7() {ClassFunc(Number: "1207")}
-    @objc fileprivate func gotoClassinformation8() {ClassFunc(Number: "1208")}
-    @objc fileprivate func gotoClassinformation9() {ClassFunc(Number: "1209")}
-    @objc fileprivate func gotoClassinformation10() {ClassFunc(Number: "1210")}
-    @objc fileprivate func gotoClassinformation11() {ClassFunc(Number: "1211")}
-    @objc fileprivate func gotoClassinformation12() {ClassFunc(Number: "1212")}
-    @objc fileprivate func gotoClassinformation13() {ClassFunc(Number: "1213")}
-    @objc fileprivate func gotoClassinformation14() {ClassFunc(Number: "1214")}
-    @objc fileprivate func gotoClassinformation15() {ClassFunc(Number: "1215")}
-    @objc fileprivate func gotoClassinformation16() {ClassFunc(Number: "1216")}
-    @objc fileprivate func gotoClassinformation17() {ClassFunc(Number: "1217")}
-    @objc fileprivate func gotoClassinformation18() {ClassFunc(Number: "1218")}
-    
-    func ClassFunc(Number: String) {
-        UserDefaults.standard.set(Number, forKey: "Number")
-        self.navigationController?.present(classinformationVC(), animated: true)
     }
 }
 
