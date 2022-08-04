@@ -11,7 +11,6 @@ import Alamofire
 import Then
 import TextFieldEffects
 
-
 //MARK: - 전역 변수 선언 (token, ID, PW, openEye)
 
 var TokenToken: String = ""
