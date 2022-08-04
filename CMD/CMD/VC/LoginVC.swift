@@ -147,13 +147,13 @@ class LoginVC: UIViewController {
     @objc fileprivate func gotoSignupVC() {
         let SignupVC = SignupVC()
         self.navigationController?.pushViewController(SignupVC, animated: true)
-        
     }
     
     //로그인 하지 않고 그냥 다음 뷰로 넘어감
     @objc fileprivate func AdminBtn() {
         let MainTabBarControllerViewController = MainTabBarControllerViewController()
         self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
+
     }
     
     //비밀번호 SecureTextEntry 설정
