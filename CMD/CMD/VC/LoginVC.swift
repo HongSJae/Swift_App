@@ -153,7 +153,6 @@ class LoginVC: UIViewController {
     @objc fileprivate func AdminBtn() {
         let MainTabBarControllerViewController = MainTabBarControllerViewController()
         self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
-
     }
     
     //비밀번호 SecureTextEntry 설정
