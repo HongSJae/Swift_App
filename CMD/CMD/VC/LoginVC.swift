@@ -147,6 +147,7 @@ class LoginVC: UIViewController {
     @objc fileprivate func gotoSignupVC() {
         let SignupVC = SignupVC()
         self.navigationController?.pushViewController(SignupVC, animated: true)
+        
     }
     
     //로그인 하지 않고 그냥 다음 뷰로 넘어감
