@@ -56,6 +56,11 @@ class noticeboardVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getNotice()
+    }
+    
     //MARK: - 테이블 뷰 설정 함수
     
     func attribute() {
@@ -113,6 +118,7 @@ class noticeboardVC: UIViewController {
                 let model = try JSONDecoder().decode(Noticeboard.self, from: result.data!)
                 
                 print("success")
+                self.notice.removeAll()
                 for i in 0...model.count - 1 {
                     self.notice.append(
                         contentsOf:[Notice(Header: model[i].title, Title: model[i].contents)]
@@ -149,6 +155,7 @@ class noticeboardVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             [weak self] in
             guard let self = self else { return }
+            self.getNotice()
             self.tempArray = self.notice
             self.TableView.reloadData()
             UIView.animate(views: self.TableView.visibleCells,

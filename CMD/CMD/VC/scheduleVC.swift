@@ -145,8 +145,10 @@ class scheduleVC: UIViewController {
         let Weekday: String = WeekDaydate(Want: "WD")
         print(Weekday)
         
+        
+        
         //API
-        getTimeSchedule(weekday: Weekday)
+//        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         

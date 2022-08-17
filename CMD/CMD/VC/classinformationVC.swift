@@ -13,7 +13,7 @@ import SnapKit
 //MARK: - 전역 변수 선언 (Number, token)
 
 var getNumber: String = ""
-let takeToken = UserDefaults.standard.string(forKey: "TokenToken")
+var takeToken = UserDefaults.standard.string(forKey: "TokenToken")
 
 class classinformationVC: UIViewController {
     

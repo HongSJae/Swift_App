@@ -273,7 +273,7 @@ class SignupVC: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - 레이아웃 설정 함수
+     
     
     func layout() {
         //헤더 레이아웃
