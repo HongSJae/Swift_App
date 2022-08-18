@@ -51,7 +51,7 @@ class myinfoVC: UIViewController {
     private var Header2 = UILabel().then {
         $0.textAlignment = .center
         $0.font = UIFont(name: "NotoSansKR-Bold", size: 20)
-        $0.text = "자리 배치"
+        $0.text = "계정"
         $0.textColor = .white
     }
     
@@ -115,6 +115,23 @@ class myinfoVC: UIViewController {
         $0.textColor = .white
     }
     
+    private var editInfo = UIButton().then {
+        $0.backgroundColor = .white
+        $0.setTitle("회원정보 수정", for: .normal)
+        $0.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 12)
+        $0.setTitleColor(UIColor(.white), for: .normal)
+        $0.backgroundColor = UIColor(named: "myinfoBtn")
+        $0.layer.cornerRadius = 5
+    }
+    private var logoutBtn = UIButton().then {
+        $0.backgroundColor = .white
+        $0.setTitle("로그아웃", for: .normal)
+        $0.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 12)
+        $0.setTitleColor(UIColor(.white), for: .normal)
+        $0.backgroundColor = UIColor(named: "myinfoBtn")
+        $0.layer.cornerRadius = 5
+    }
+    
     //MARK: - 뷰 실행 시
     
     override func viewDidLoad() {
@@ -130,20 +147,29 @@ class myinfoVC: UIViewController {
         
         //뷰 선언
         [BigHeader, profile, profilename, ContentView].forEach({view.addSubview($0)})
-        [View, Header, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo].forEach({ContentView.addSubview($0)})
+        [View, Header, Header2, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, editInfo, logoutBtn].forEach({ContentView.addSubview($0)})
+        
         layout()
+        setButton()
         
     }
     
     //MARK: - 학생정보 불러오기 함수
     
     
+    //MARK: - 버튼 액션
+    
+    @objc fileprivate func logout() {
+        let LoginVC = LoginVC()
+        self.navigationController?.pushViewController(LoginVC, animated: true)
+        tabBarController?.tabBar.isHidden = true
+    }
     //MARK: - 레이아웃 설정 함수
     
     func layout() {
         
         BigHeader.snp.makeConstraints {
-            $0.topMargin.equalTo(38)
+            $0.topMargin.equalTo(25)
             $0.leadingMargin.equalTo(50)
         }
         //콘탠트뷰 레이아웃
@@ -155,7 +181,7 @@ class myinfoVC: UIViewController {
         
         //프로필 사진 레이아웃
         profile.snp.makeConstraints {
-            $0.leftMargin.equalTo(30)
+            $0.leftMargin.equalTo(35)
             $0.top.equalTo(BigHeader.snp.bottom).offset(30)
             $0.height.width.equalTo(60)
         }
@@ -179,7 +205,7 @@ class myinfoVC: UIViewController {
         //이름 레이아웃
         nameinfotitle.snp.makeConstraints {
             $0.leftMargin.equalTo(Header.snp.leftMargin)
-            $0.top.equalTo(Header.snp.bottom).offset(20)
+            $0.top.equalTo(Header.snp.bottom).offset(10)
         }
         //이름 정보 레이아웃
         nameinfo.snp.makeConstraints {
@@ -190,7 +216,7 @@ class myinfoVC: UIViewController {
         //번호 레이아웃
         numberinfotitle.snp.makeConstraints {
             $0.leftMargin.equalTo(Header.snp.leftMargin)
-            $0.top.equalTo(nameinfotitle.snp.bottom).offset(15)
+            $0.top.equalTo(nameinfotitle.snp.bottom).offset(10)
         }
         //번호 정보 레이아웃
         numberinfo.snp.makeConstraints {
@@ -201,7 +227,7 @@ class myinfoVC: UIViewController {
         //생일 레이아웃
         birthinfotitle.snp.makeConstraints {
             $0.leftMargin.equalTo(Header.snp.leftMargin)
-            $0.top.equalTo(numberinfotitle.snp.bottom).offset(15)
+            $0.top.equalTo(numberinfotitle.snp.bottom).offset(10)
         }
         //생일 정보 레이아웃
         birthinfo.snp.makeConstraints {
@@ -212,14 +238,36 @@ class myinfoVC: UIViewController {
         //전공 레이아웃
         fieldinfotitle.snp.makeConstraints {
             $0.leftMargin.equalTo(Header.snp.leftMargin)
-            $0.top.equalTo(birthinfotitle.snp.bottom).offset(15)
+            $0.top.equalTo(birthinfotitle.snp.bottom).offset(10)
         }
         //전공 정보 레이아웃
         fieldinfo.snp.makeConstraints {
             $0.centerY.equalTo(fieldinfotitle)
             $0.left.equalTo(Header.snp.right).offset(4)
         }
+        
+        Header2.snp.makeConstraints {
+            $0.top.equalTo(fieldinfo.snp.bottom).offset(30)
+            $0.left.equalToSuperview().offset(30)
+        }
+        
+        editInfo.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.height.equalTo(24)
+            $0.leftMargin.equalTo(Header.snp.leftMargin)
+            $0.top.equalTo(Header2.snp.bottom).offset(10)
+        }
+        
+        logoutBtn.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.height.equalTo(24)
+            $0.leftMargin.equalTo(Header.snp.leftMargin)
+            $0.top.equalTo(editInfo.snp.bottom).offset(10)
+        }
     }
     
+    func setButton() {
+        logoutBtn.addTarget(self, action: #selector(logout), for: .touchUpInside)
+    }
 }
 

@@ -148,7 +148,7 @@ class scheduleVC: UIViewController {
         
         
         //API
-//        getTimeSchedule(weekday: Weekday)
+        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
