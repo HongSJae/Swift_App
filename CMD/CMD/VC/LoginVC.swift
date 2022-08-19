@@ -13,7 +13,7 @@ import TextFieldEffects
 
 //MARK: - 전역 변수 선언 (token, ID, PW, openEye)
 
-var TokenToken: String = ""
+var token: String = ""
 var ID: String = ""
 var PW: String = ""
 
@@ -201,9 +201,9 @@ class LoginVC: UIViewController {
         AF.request(request).responseString { result in
             do{
                 let model = try JSONDecoder().decode(SignInInfo.self, from: result.data!)
-                TokenToken = model.accessToken
-                UserDefaults.standard.set(TokenToken, forKey: "TokenToken")
-                let giveToken = UserDefaults.standard.string(forKey: "TokenToken")
+                token = model.accessToken
+                UserDefaults.standard.set(token, forKey: "token")
+                let giveToken = UserDefaults.standard.string(forKey: "token")
                 print("보낼 토큰은 : \(giveToken ?? "notToken")")
                 
                 //뷰 이동

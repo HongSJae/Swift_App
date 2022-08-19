@@ -19,8 +19,6 @@ struct Notice {
     var Title: String
 }
 
-let gotToken = UserDefaults.standard.string(forKey: "TokenToken")
-
 class noticeboardVC: UIViewController {
     
     //MARK: - 뷰 생성
@@ -52,6 +50,7 @@ class noticeboardVC: UIViewController {
         //API
         getNotice()
         
+        token = UserDefaults.standard.string(forKey: "token")!
         layout()
         
     }
@@ -105,12 +104,12 @@ class noticeboardVC: UIViewController {
     //MARK: - 공지사항 받는 함수
     
     func getNotice() {
-        print("불러온 토큰은 : \(gotToken ?? "")")
+        print("불러온 토큰은 : \(token)")
         let url = "http://54.180.122.62:8080/user/noticeBoard"
         AF.request(url,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Authorization": (gotToken ?? "")]
+                   headers: ["Authorization": (token )]
         )
         .validate(statusCode: 200..<300)
         .response { result in

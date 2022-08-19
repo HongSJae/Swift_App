@@ -20,6 +20,7 @@
 		9063B729286EC4C500ED8DAF /* myinfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9063B728286EC4C500ED8DAF /* myinfoVC.swift */; };
 		9095A22E287D83BF00228B37 /* MainTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */; };
 		90A018912872A6EF0063FB80 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A018902872A6EF0063FB80 /* SignupVC.swift */; };
+		90A5BA6328AE981900483808 /* Editinformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5BA6228AE981900483808 /* Editinformation.swift */; };
 		90A6F39128882A5100AB93FD /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6F39028882A5100AB93FD /* StartVC.swift */; };
 		90A6F39928892C5A00AB93FD /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90A6F39328892C5A00AB93FD /* NotoSansKR-Regular.otf */; };
 		90A6F39A28892C5A00AB93FD /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90A6F39428892C5A00AB93FD /* NotoSansKR-Medium.otf */; };
@@ -47,6 +48,7 @@
 		9063B728286EC4C500ED8DAF /* myinfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myinfoVC.swift; sourceTree = "<group>"; };
 		9095A22D287D83BF00228B37 /* MainTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		90A018902872A6EF0063FB80 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		90A5BA6228AE981900483808 /* Editinformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editinformation.swift; sourceTree = "<group>"; };
 		90A6F39028882A5100AB93FD /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		90A6F39328892C5A00AB93FD /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Regular.otf"; path = "../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		90A6F39428892C5A00AB93FD /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				90A6F39F288F879D00AB93FD /* classinformationVC.swift */,
 				9063B726286EC4A700ED8DAF /* noticeboardVC.swift */,
 				9063B728286EC4C500ED8DAF /* myinfoVC.swift */,
+				90A5BA6228AE981900483808 /* Editinformation.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				9063B723286EC42900ED8DAF /* scheduleVC.swift in Sources */,
 				9063B6BA286D5A9400ED8DAF /* SceneDelegate.swift in Sources */,
 				9063B727286EC4A700ED8DAF /* noticeboardVC.swift in Sources */,
+				90A5BA6328AE981900483808 /* Editinformation.swift in Sources */,
 				9095A22E287D83BF00228B37 /* MainTabBarControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

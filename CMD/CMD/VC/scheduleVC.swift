@@ -10,10 +10,6 @@ import Alamofire
 import SnapKit
 import Then
 
-//MARK: - 전역 변수 선언 (token)
-
-let getToken = UserDefaults.standard.string(forKey: "TokenToken")
-
 class scheduleVC: UIViewController {
     
     //MARK: - 뷰 생성
@@ -141,14 +137,12 @@ class scheduleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TokenToken = UserDefaults.standard.string(forKey: TokenToken) ?? ""
+//        token = UserDefaults.standard.string(forKey: "token")!
         let Weekday: String = WeekDaydate(Want: "WD")
         print(Weekday)
         
-        
-        
         //API
-        getTimeSchedule(weekday: Weekday)
+//        getTimeSchedule(weekday: Weekday)
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -168,7 +162,7 @@ class scheduleVC: UIViewController {
         AF.request(url,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Authorization": (getToken ?? "")]
+                   headers: ["Authorization": (token)]
         )
         .validate(statusCode: 200..<300)
         .response { result in

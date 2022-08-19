@@ -41,7 +41,12 @@ struct SignUpInfo: Codable {
 struct Classinfo: Codable {
     let username, number, birthday, field: String?
 }
+//MARK: - 내 정보
 
+struct Myinfo: Codable {
+    let username, number, birthday, field, userId: String?
+    let seatNumber: String?
+}
 //MARK: - 공지사항
 
 struct NoticeboardElement: Codable {

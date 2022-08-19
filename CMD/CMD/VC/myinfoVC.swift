@@ -59,7 +59,7 @@ class myinfoVC: UIViewController {
     private var nameinfotitle = UILabel().then {
         $0.textAlignment = .center
         $0.font = UIFont(name: "NotoSansKR-Regular", size: 13)
-        $0.text = "이름"
+        $0.text = "아이디"
         $0.textColor = .white
     }
     //이름 정보
@@ -117,7 +117,7 @@ class myinfoVC: UIViewController {
     
     private var editInfo = UIButton().then {
         $0.backgroundColor = .white
-        $0.setTitle("회원정보 수정", for: .normal)
+        $0.setTitle("비밀번호 변경", for: .normal)
         $0.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 12)
         $0.setTitleColor(UIColor(.white), for: .normal)
         $0.backgroundColor = UIColor(named: "myinfoBtn")
@@ -140,29 +140,65 @@ class myinfoVC: UIViewController {
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
         //번호 불러오기
-        getNumber = UserDefaults.standard.string(forKey: "Number")!
+//        getNumber = UserDefaults.standard.string(forKey: "Number")!
         
         //API
-        
+//        GetMyinfo()
         
         //뷰 선언
         [BigHeader, profile, profilename, ContentView].forEach({view.addSubview($0)})
         [View, Header, Header2, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, editInfo, logoutBtn].forEach({ContentView.addSubview($0)})
         
+//        token = UserDefaults.standard.string(forKey: "token")!
         layout()
         setButton()
         
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        GetMyinfo()
+//    }
     //MARK: - 학생정보 불러오기 함수
     
-    
+    func GetMyinfo() {
+        print("GetMyinfo() - called")
+        let url = "http://54.180.122.62:8080/user/myInfo"
+        AF.request(url,
+                   method: .get,
+                   encoding: URLEncoding.queryString,
+                   headers: ["Authorization": token]
+        )
+        .validate(statusCode: 200..<300)
+        .response { result in
+            do{
+                let model = try JSONDecoder().decode(Myinfo.self, from: result.data!)
+                print("success")
+                self.profilename.text = model.username ?? "이름"
+                self.nameinfo.text = model.userId ?? "정보없음"
+                self.birthinfo.text = model.birthday ?? "정보없음"
+                self.fieldinfo.text = model.field ?? "정보없음"
+                self.numberinfo.text = model.number ?? "정보없음"
+            } catch {
+                print(error)
+                print("정보가 없어요")
+            }
+        }
+    }
     //MARK: - 버튼 액션
     
     @objc fileprivate func logout() {
+        print("LogOut")
         let LoginVC = LoginVC()
         self.navigationController?.pushViewController(LoginVC, animated: true)
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    @objc fileprivate func Edit() {
+        print("Edit")
+        let EditInfo = Editinformation()
+        self.navigationController?.pushViewController(EditInfo, animated: true)
+//        tabBarController?.tabBar.isHidden = true
     }
     //MARK: - 레이아웃 설정 함수
     
@@ -267,6 +303,7 @@ class myinfoVC: UIViewController {
     }
     
     func setButton() {
+        editInfo.addTarget(self, action: #selector(Edit), for: .touchUpInside)
         logoutBtn.addTarget(self, action: #selector(logout), for: .touchUpInside)
     }
 }

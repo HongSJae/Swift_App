@@ -17,6 +17,7 @@ var userPW: String = ""
 
 var openEye1: Bool = false
 var openEye2: Bool = false
+var openEye3: Bool = false
 
 class SignupVC: UIViewController {
     

@@ -13,7 +13,6 @@ import SnapKit
 //MARK: - 전역 변수 선언 (Number, token)
 
 var getNumber: String = ""
-var takeToken = UserDefaults.standard.string(forKey: "TokenToken")
 
 class classinformationVC: UIViewController {
     
@@ -140,6 +139,7 @@ class classinformationVC: UIViewController {
         [ContentView].forEach({scrollview.addSubview($0)})
         [profile, profilename, View, Header, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, Cancel].forEach({ContentView.addSubview($0)})
 
+        token = UserDefaults.standard.string(forKey: "token")!
         layout()
         setButton()
         
@@ -158,7 +158,7 @@ class classinformationVC: UIViewController {
         AF.request(url,
                    method: .get,
                    encoding: URLEncoding.queryString,
-                   headers: ["Authorization": (takeToken ?? "")]
+                   headers: ["Authorization": (token)]
         )
         .validate(statusCode: 200..<300)
         .response { result in
