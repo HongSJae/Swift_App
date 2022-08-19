@@ -11,16 +11,16 @@ import Foundation
 
 struct TimeGet: Codable {
     
-    let period1st: String
-    let period2nd: String
-    let period3th: String
-    let period4th: String
-    let period5th: String
-    let period6th: String
-    let period7th: String
-    let period8th: String
-    let period9th: String
-    let period10th: String
+    let period1st: String?
+    let period2nd: String?
+    let period3th: String?
+    let period4th: String?
+    let period5th: String?
+    let period6th: String?
+    let period7th: String?
+    let period8th: String?
+    let period9th: String?
+    let period10th: String?
 }
 
 //MARK: - 로그인정보 (토큰)
@@ -45,7 +45,7 @@ struct Classinfo: Codable {
 
 struct Myinfo: Codable {
     let username, number, birthday, field, userId: String?
-    let seatNumber: String?
+    let seatNumber: CLong?
 }
 //MARK: - 공지사항
 

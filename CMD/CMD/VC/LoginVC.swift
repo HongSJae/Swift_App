@@ -17,6 +17,8 @@ var token: String = ""
 var ID: String = ""
 var PW: String = ""
 
+var USERPASSWORD: String = ""
+
 var openEye: Bool = false
 
 class LoginVC: UIViewController {
@@ -206,6 +208,9 @@ class LoginVC: UIViewController {
                 let giveToken = UserDefaults.standard.string(forKey: "token")
                 print("보낼 토큰은 : \(giveToken ?? "notToken")")
                 
+                USERPASSWORD = PW
+                UserDefaults.standard.set(USERPASSWORD, forKey: "password")
+                
                 //뷰 이동
                 let MainTabBarControllerViewController = MainTabBarControllerViewController()
                 self.navigationController?.pushViewController(MainTabBarControllerViewController, animated: true)
@@ -215,7 +220,6 @@ class LoginVC: UIViewController {
                 self.AlertFunc(title: "아이디나 비밀번호 확인바람", message: "아이디나 비밀번호가 잘못되었습니다")
             }
         }
-        
     }
     
     //MARK: - Alert 만드는 함수
@@ -315,12 +319,12 @@ class LoginVC: UIViewController {
         }
         
         //관리자 버튼 레이아웃
-        Admin.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.leftMargin.rightMargin.equalTo(80)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(PwBox.snp.bottom).offset(50)
-        }
+//        Admin.snp.makeConstraints { make in
+//            make.height.equalTo(25)
+//            make.leftMargin.rightMargin.equalTo(80)
+//            make.centerX.equalToSuperview()
+//            make.top.equalTo(PwBox.snp.bottom).offset(50)
+//        }
     }
     
     //MARK: - 버튼 액션 실행 함수

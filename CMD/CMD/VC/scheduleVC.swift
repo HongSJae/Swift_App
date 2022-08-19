@@ -137,12 +137,12 @@ class scheduleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        token = UserDefaults.standard.string(forKey: "token")!
+        token = UserDefaults.standard.string(forKey: "token")!
         let Weekday: String = WeekDaydate(Want: "WD")
         print(Weekday)
         
         //API
-//        getTimeSchedule(weekday: Weekday)
+        getTimeSchedule(weekday: "mon")
         
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -158,51 +158,74 @@ class scheduleVC: UIViewController {
     //MARK: - 시간표 불러오기 함수
     
     func getTimeSchedule(weekday: String) {
-        let url = "http://54.180.122.62:8080/user/timetable/" + weekday
-        AF.request(url,
-                   method: .get,
-                   encoding: URLEncoding.queryString,
-                   headers: ["Authorization": (token)]
-        )
-        .validate(statusCode: 200..<300)
-        .response { result in
-            do{
-                let model = try JSONDecoder().decode(TimeGet.self, from: result.data!)
-                print("success")
-                self.Class1.text = model.period1st
-                print(model.period1st)
-                
-                self.Class2.text = model.period2nd
-                print(model.period2nd)
-                
-                self.Class3.text = model.period3th
-                print(model.period3th)
-                
-                self.Class4.text = model.period4th
-                print(model.period4th)
-                
-                self.Class5.text = model.period5th
-                print(model.period5th)
-                
-                self.Class6.text = model.period6th
-                print(model.period6th)
-                
-                self.Class7.text = model.period7th
-                print(model.period7th)
-                
-                self.Class8.text = model.period8th
-                print(model.period8th)
-                
-                self.Class9.text = model.period9th
-                print(model.period9th)
-                
-                self.Class10.text = model.period10th
-                print(model.period10th)
-                
-            } catch {
-                print(error)
-                print("에런데용 :( ?")
+        switch weekday {
+        case "mon", "tue", "wed", "thu", "fri":
+            let url = "http://54.180.122.62:8080/user/timetable/" + weekday
+            AF.request(url,
+                       method: .get,
+                       encoding: URLEncoding.queryString,
+                       headers: ["Authorization": token]
+            )
+            .validate(statusCode: 200..<300)
+            .response { result in
+                do{
+                    let model = try JSONDecoder().decode(TimeGet.self, from: result.data!)
+                    print("success")
+                    self.Class1.text = model.period1st
+                    print(model.period1st!)
+                    
+                    self.Class2.text = model.period2nd
+                    print(model.period2nd!)
+                    
+                    self.Class3.text = model.period3th
+                    print(model.period3th!)
+                    
+                    self.Class4.text = model.period4th
+                    print(model.period4th!)
+                    
+                    self.Class5.text = model.period5th
+                    print(model.period5th!)
+                    
+                    self.Class6.text = model.period6th
+                    print(model.period6th!)
+                    
+                    self.Class7.text = model.period7th
+                    print(model.period7th!)
+                    
+                    self.Class8.text = model.period8th
+                    print(model.period8th!)
+                    
+                    self.Class9.text = model.period9th
+                    print(model.period9th!)
+                    
+                    self.Class10.text = model.period10th
+                    print(model.period10th!)
+                    
+                } catch {
+                    print(error)
+                    print("에런데용 :( ?")
+                }
             }
+        default:
+            self.Class1.text = "시간표가 없어요!"
+            
+            self.Class2.text = "시간표가 없어요!"
+            
+            self.Class3.text = "시간표가 없어요!"
+            
+            self.Class4.text = "시간표가 없어요!"
+            
+            self.Class5.text = "시간표가 없어요!"
+            
+            self.Class6.text = "시간표가 없어요!"
+            
+            self.Class7.text = "시간표가 없어요!"
+            
+            self.Class8.text = "시간표가 없어요!"
+            
+            self.Class9.text = "시간표가 없어요!"
+            
+            self.Class10.text = "시간표가 없어요!"
         }
     }
     

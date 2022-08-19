@@ -117,7 +117,7 @@ class myinfoVC: UIViewController {
     
     private var editInfo = UIButton().then {
         $0.backgroundColor = .white
-        $0.setTitle("비밀번호 변경", for: .normal)
+        $0.setTitle("정보 수정", for: .normal)
         $0.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 12)
         $0.setTitleColor(UIColor(.white), for: .normal)
         $0.backgroundColor = UIColor(named: "myinfoBtn")
@@ -140,25 +140,24 @@ class myinfoVC: UIViewController {
         self.view.backgroundColor = UIColor(named: "BackgroundColor")
         
         //번호 불러오기
-//        getNumber = UserDefaults.standard.string(forKey: "Number")!
+        getNumber = UserDefaults.standard.string(forKey: "Number")!
         
         //API
-//        GetMyinfo()
+        GetMyinfo()
         
         //뷰 선언
         [BigHeader, profile, profilename, ContentView].forEach({view.addSubview($0)})
         [View, Header, Header2, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, editInfo, logoutBtn].forEach({ContentView.addSubview($0)})
         
-//        token = UserDefaults.standard.string(forKey: "token")!
+        token = UserDefaults.standard.string(forKey: "token")!
         layout()
         setButton()
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        GetMyinfo()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        GetMyinfo()
+    }
     //MARK: - 학생정보 불러오기 함수
     
     func GetMyinfo() {
@@ -185,13 +184,35 @@ class myinfoVC: UIViewController {
             }
         }
     }
+    //MARK: - Alert 만드는 함수
+    
+    func AlertFunc() {
+        let alert = UIAlertController(
+            title: "로그아웃",
+            message: "정말로 로그아웃 하시겠습니까?",
+            preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: "네",
+            style: .default,
+            handler: { ACTION in
+                print("LogOut")
+                let LoginVC = LoginVC()
+                self.navigationController?.pushViewController(LoginVC, animated: true)
+                self.tabBarController?.tabBar.isHidden = true
+            })
+        let cancel = UIAlertAction(
+            title: "아니요",
+            style: .destructive,
+            handler: nil)
+        alert.addAction(action)
+        alert.addAction(cancel)
+               
+        present(alert, animated: true, completion: nil)
+    }
     //MARK: - 버튼 액션
     
     @objc fileprivate func logout() {
-        print("LogOut")
-        let LoginVC = LoginVC()
-        self.navigationController?.pushViewController(LoginVC, animated: true)
-        tabBarController?.tabBar.isHidden = true
+        AlertFunc()
     }
     
     @objc fileprivate func Edit() {
