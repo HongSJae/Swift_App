@@ -40,6 +40,7 @@ struct SignUpInfo: Codable {
 
 struct Classinfo: Codable {
     let username, number, birthday, field: String?
+    let seatNumber: CLong?
 }
 //MARK: - 내 정보
 

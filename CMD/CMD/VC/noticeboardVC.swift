@@ -118,10 +118,17 @@ class noticeboardVC: UIViewController {
                 
                 print("success")
                 self.notice.removeAll()
-                for i in 0...model.count - 1 {
+                if model.count == 0 {
                     self.notice.append(
-                        contentsOf:[Notice(Header: model[i].title, Title: model[i].contents)]
+                        contentsOf:[Notice(Header: "게시물이 없어요",
+                                           Title: "추가된 게시물이 없습니다.")]
                     )
+                } else {
+                    for i in 0..<model.count {
+                        self.notice.append(
+                            contentsOf:[Notice(Header: model[i].title, Title: model[i].contents)]
+                        )
+                    }
                 }
                 print("API: \(self.notice)")
                 

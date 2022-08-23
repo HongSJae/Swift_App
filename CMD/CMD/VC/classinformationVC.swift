@@ -12,7 +12,11 @@ import SnapKit
 
 //MARK: - 전역 변수 선언 (Number, token)
 
+let CellID = "Cell"
+
 var getNumber: String = ""
+
+var Seat: CLong = 0
 
 class classinformationVC: UIViewController {
     
@@ -123,6 +127,20 @@ class classinformationVC: UIViewController {
         $0.textColor = .white
     }
     
+    private var SeatPosition = UIView().then {
+        $0.backgroundColor = UIColor(named: "SeatPosition")
+        $0.layer.cornerRadius = 10
+    }
+    
+    private var CollectionView: UICollectionView = {
+        let flowlayout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
+
+        return cv
+    }()
+    
+    
+    
     //MARK: - 뷰 실행 시
     
     override func viewDidLoad() {
@@ -134,10 +152,15 @@ class classinformationVC: UIViewController {
         //API
         ClassAPI(Number: getNumber)
         
+        CollectionView.backgroundColor = UIColor(named: "SeatPosition")
+        
         //뷰 선언
         [scrollview].forEach({view.addSubview($0)})
         [ContentView].forEach({scrollview.addSubview($0)})
-        [profile, profilename, View, Header, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, Cancel].forEach({ContentView.addSubview($0)})
+        [profile, profilename, View, Header, nameinfotitle, nameinfo, birthinfotitle, birthinfo, fieldinfotitle, fieldinfo, numberinfotitle, numberinfo, Cancel, Header2, SeatPosition, CollectionView].forEach({ContentView.addSubview($0)})
+        
+        CollectionView.dataSource = self
+        CollectionView.delegate = self
 
         token = UserDefaults.standard.string(forKey: "token")!
         layout()
@@ -170,6 +193,7 @@ class classinformationVC: UIViewController {
                 self.birthinfo.text = model.birthday ?? "정보없음"
                 self.fieldinfo.text = model.field ?? "정보없음"
                 self.numberinfo.text = model.number ?? "정보없음"
+                
             } catch {
                 print(error)
                 print("정보가 없어요")
@@ -183,23 +207,21 @@ class classinformationVC: UIViewController {
         
         //스크롤뷰 레이아웃
         scrollview.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.top.equalToSuperview().inset(20)
-            $0.bottom.equalToSuperview().inset(0)
-            $0.width.equalToSuperview().inset(30)
+            $0.trailing.leading.equalToSuperview().inset(30)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(0)
         }
         //콘탠트뷰 레이아웃
         ContentView.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.top.equalToSuperview().inset(0)
-            $0.bottom.equalToSuperview().inset(0)
-            $0.width.equalToSuperview().inset(0)
+            $0.edges.equalTo(0)
+            $0.width.equalToSuperview()
+            $0.bottom.equalTo(SeatPosition.snp.bottom).offset(0)
         }
         //취소버튼 레이아웃
         Cancel.snp.makeConstraints {
             $0.height.width.equalTo(16)
             $0.top.equalTo(ContentView.snp.top).inset(20)
-            $0.right.equalTo(ContentView.snp.right).inset(20)
+            $0.right.equalTo(SeatPosition.snp.right).inset(10)
         }
         
         //프로필 사진 레이아웃
@@ -269,11 +291,64 @@ class classinformationVC: UIViewController {
             $0.centerY.equalTo(fieldinfotitle)
             $0.left.equalTo(Header.snp.right).offset(4)
         }
+        
+        //헤더2 레이아웃
+        Header2.snp.makeConstraints {
+            $0.top.equalTo(Header.snp.bottom).offset(300)
+            $0.centerX.equalTo(View)
+        }
+        
+        //자리뷰 레이아웃
+        SeatPosition.snp.makeConstraints {
+            $0.top.equalTo(Header2.snp.bottom).offset(18)
+            $0.centerX.equalToSuperview()
+            $0.left.equalTo(ContentView).offset(30)
+            $0.right.equalTo(scrollview).offset(-30)
+            $0.bottom.equalTo(scrollview).offset(-30)
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height).dividedBy(4)
+        }
+        
+        CollectionView.snp.makeConstraints { //이게 ios? iOS코드 다 간파당하죠?
+            $0.edges.equalTo(SeatPosition.snp.edges).inset(20)
+        }
+        
+        
+        CollectionView.register(CollectionCell.self, forCellWithReuseIdentifier: CellID)
     }
     
     //MARK: - 버튼 액션 실행 함수
     
     func setButton() {
         Cancel.addTarget(self, action: #selector(CancelBtn), for: .touchUpInside)
+    }
+}
+
+extension classinformationVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 18
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:    CellID, for: indexPath) as! CollectionCell
+        
+        cell.backgroundColor = UIColor(red: 0.692, green: 0.692, blue: 0.692, alpha: 1)
+        cell.layer.cornerRadius = 5
+        
+        return cell
+    }
+    
+    
+}
+
+extension classinformationVC: UICollectionViewDelegate {
+    
+}
+
+extension classinformationVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: CollectionView.frame.width / 8, height: CollectionView.frame.height / 7)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CollectionView.frame.width / 7
     }
 }
