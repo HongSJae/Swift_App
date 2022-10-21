@@ -2,17 +2,17 @@ import SwiftUI
 
 struct InformationText: View {
     @Environment(\.colorScheme) var scheme
-    let firstText: String
-    let secondText: String
+    let titleText: String
+    let valueText: String
     
     var body: some View {
         HStack {
-            Text(firstText)
+            Text(titleText)
                 .foregroundColor(Theme.fontColor(forScheme: scheme))
                 .font(.system(size: 18))
                 .fontWeight(.regular)
             Spacer()
-            Text(secondText)
+            Text(valueText)
                 .foregroundColor(Theme.fontColor(forScheme: scheme))
                 .font(.system(size: 18))
                 .fontWeight(.regular)
@@ -22,6 +22,6 @@ struct InformationText: View {
 
 struct InformationText_Previews: PreviewProvider {
     static var previews: some View {
-        InformationText(firstText: "송금 국가", secondText: "미국(USD)")
+        InformationText(titleText: "송금 국가", valueText: "미국(USD)")
     }
 }
