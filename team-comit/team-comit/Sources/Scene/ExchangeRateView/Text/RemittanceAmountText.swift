@@ -1,11 +1,5 @@
-//
-//  RemittanceAmountText.swift
-//  team-comit
-//
-//  Created by 홍승재 on 2022/10/20.
-//
-
 import SwiftUI
+import Combine
 
 struct RemittanceAmountText: View {
     @Environment(\.colorScheme) var scheme
@@ -19,6 +13,17 @@ struct RemittanceAmountText: View {
                 .fontWeight(.regular)
             Spacer()
             TextField("", text: $amount)
+                .onReceive(Just(amount), perform: { _ in
+                    if amount == "." {
+                        amount = "0."
+                    }
+                    if (amount.filter({ ($0) == "." }).count == 2
+                        || (amount.count == 2
+                         && amount != "0."
+                         && amount.first == "0")) {
+                        amount.removeLast()
+                    }
+                })
                 .foregroundColor(Theme.fontColor(forScheme: scheme))
                 .disableAutocorrection(true)
                 .keyboardType(.decimalPad)
