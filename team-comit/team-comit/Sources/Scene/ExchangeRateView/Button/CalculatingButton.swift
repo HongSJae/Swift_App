@@ -17,7 +17,7 @@ struct CalculatingButton: View {
     let unit_2: String
     var body: some View {
         ZStack {
-            NavigationLink(destination: ChangedExchangeRateView(resultValue: $VM.exchangeRate, unit: unit_1), tag: 1, selection: $tag ) { EmptyView() }
+            NavigationLink(destination: ExchangedRateView(resultValue: $VM.exchangeRate, unit: unit_1), tag: 1, selection: $tag ) { EmptyView() }
             Button {
                 if Double(amount) ?? 0 < 0
                     || Double(amount) ?? 0 > 10000
