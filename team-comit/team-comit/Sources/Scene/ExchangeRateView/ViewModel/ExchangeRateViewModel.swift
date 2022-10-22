@@ -5,7 +5,9 @@ class ExchangeRateViewModel: ObservableObject {
     @Published var sendingCountry: String = ""
     @Published var gettingCountry: String = ""
     @Published var exchangeRate: String = "0.00"
+    @Published var tag: Int? = nil
     @Published var amount: String = "1"
+    @Published var showingAlert: Bool = false
     
     func calculate() {
         print("calculating...")
@@ -17,7 +19,7 @@ class ExchangeRateViewModel: ObservableObject {
             "currencies": gettingCountry
         ]
         let header: HTTPHeaders = [
-            "apikey": "o4SXQyHc27lBbT4Ho71xOj63hlYxjfKT"
+            "apikey": "XK1OvFJhfowVZk2xpPNhx1ps4EslYXgm"
         ]
         AF.request(url,
                    method: .get,
@@ -37,8 +39,18 @@ class ExchangeRateViewModel: ObservableObject {
                             self.exchangeRate = String(model.quotes[self.sendingCountry + self.gettingCountry]!)
                             print("exchangeRate:", self.exchangeRate)
                             print("amount:", self.amount)
-                            self.exchangeRate = String((Double(self.exchangeRate) ?? 0) * (Double(self.amount) ?? 0))
+                            self.exchangeRate =
+                            String((Double(self.exchangeRate) ?? 0) *
+                                   (Double(self.amount) ?? 0))
                             print("송금 금액:", self.exchangeRate)
+                            if Double(self.exchangeRate) ?? 0 < 0
+                                || Double(self.exchangeRate) ?? 0 > 10000
+                                || Double(self.exchangeRate) == nil
+                            {
+                                self.showingAlert = true
+                            } else {
+                                self.tag = 1
+                            }
                         } catch {
                             print("NON.DATA")
                         }
