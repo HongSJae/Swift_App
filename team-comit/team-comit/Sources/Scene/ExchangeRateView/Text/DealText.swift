@@ -1,10 +1,3 @@
-//
-//  DealText.swift
-//  team-comit
-//
-//  Created by 홍승재 on 2022/10/21.
-//
-
 import SwiftUI
 
 struct DealText: View {

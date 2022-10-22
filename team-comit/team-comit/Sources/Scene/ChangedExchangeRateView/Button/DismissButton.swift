@@ -1,10 +1,3 @@
-//
-//  DisMissButton.swift
-//  team-comit
-//
-//  Created by 홍승재 on 2022/10/20.
-//
-
 import SwiftUI
 
 struct DismissButton: View {
