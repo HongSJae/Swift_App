@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ExchangedRateView: View {
     @Binding var resultValue: String
+    @Binding var nowDate: String
     let unit: String
     func changeMoneyString(money: Double) -> String {
         let numberFormatter = NumberFormatter()
@@ -23,12 +24,13 @@ struct ExchangedRateView: View {
         .navigationBarHidden(true)
         .onDisappear() {
             resultValue = ""
+            nowDate = UserDefaults.standard.string(forKey: "date") ?? "날짜를 인식할 수 없어요"
         }
     }
 }
 
 struct ChangedExchangeRateView_Previews: PreviewProvider {
     static var previews: some View {
-        ExchangedRateView(resultValue: .constant("0"), unit: "KRW")
+        ExchangedRateView(resultValue: .constant("0"), nowDate: .constant("060304"), unit: "KRW")
     }
 }
