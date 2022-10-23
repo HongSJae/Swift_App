@@ -25,6 +25,7 @@
 		90DDB77A290185710094DE71 /* ExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB779290185710094DE71 /* ExchangeRateModel.swift */; };
 		90DDB77C290210AA0094DE71 /* SelectCountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB77B290210AA0094DE71 /* SelectCountryPicker.swift */; };
 		90DDB77F290222220094DE71 /* DealText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB77E290222220094DE71 /* DealText.swift */; };
+		90DDB7852903D5600094DE71 /* CountryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DDB7842903D5600094DE71 /* CountryEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		90DDB779290185710094DE71 /* ExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateModel.swift; sourceTree = "<group>"; };
 		90DDB77B290210AA0094DE71 /* SelectCountryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryPicker.swift; sourceTree = "<group>"; };
 		90DDB77E290222220094DE71 /* DealText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealText.swift; sourceTree = "<group>"; };
+		90DDB7842903D5600094DE71 /* CountryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +94,9 @@
 		90DDB7472900DEB50094DE71 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				90DDB7832903D5550094DE71 /* enum */,
+				90DDB7822903D54E0094DE71 /* struct */,
 				90DDB7392900229E0094DE71 /* Assets.xcassets */,
-				90DDB74F2900F11D0094DE71 /* DarkModeStruct.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -221,6 +224,22 @@
 			path = Picker;
 			sourceTree = "<group>";
 		};
+		90DDB7822903D54E0094DE71 /* struct */ = {
+			isa = PBXGroup;
+			children = (
+				90DDB74F2900F11D0094DE71 /* DarkModeStruct.swift */,
+			);
+			path = struct;
+			sourceTree = "<group>";
+		};
+		90DDB7832903D5550094DE71 /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				90DDB7842903D5600094DE71 /* CountryEnum.swift */,
+			);
+			path = enum;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,6 +326,7 @@
 				90DDB7502900F11D0094DE71 /* DarkModeStruct.swift in Sources */,
 				90DDB772290181D60094DE71 /* ResultText.swift in Sources */,
 				90DDB746290024600094DE71 /* ExchangedRateView.swift in Sources */,
+				90DDB7852903D5600094DE71 /* CountryEnum.swift in Sources */,
 				90DDB7742901849F0094DE71 /* ExchangeRateViewModel.swift in Sources */,
 				90DDB77A290185710094DE71 /* ExchangeRateModel.swift in Sources */,
 				90DDB7382900229C0094DE71 /* ContentView.swift in Sources */,

@@ -15,7 +15,7 @@ struct CalculatingButton: View {
     }
     var body: some View {
         ZStack {
-            NavigationLink(destination: ExchangedRateView(resultValue: $VM.exchangeRate, nowDate: $nowDate, unit: unit_1), tag: 1, selection: $VM.tag ) { EmptyView() }
+            NavigationLink(destination: ExchangedRateView(resultValue: $VM.exchangeRate, nowDate: $nowDate, unit: unit_1), tag: 1, selection: self.$VM.tag ) { EmptyView() }
             Button {
                 VM.amount = amount
                 VM.gettingCountry = unit_1
