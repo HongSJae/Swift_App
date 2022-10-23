@@ -1,20 +1,17 @@
 import SwiftUI
 
 struct SelectCountryPicker: View {
+    @Environment(\.colorScheme) var scheme
     @Binding var selected: Int
     @StateObject var exchangeRateViewModel = ExchangeRateViewModel()
     let countrys: [String]
     var body: some View {
         VStack {
-            Picker("", selection: $selected) {
+            Picker("국가를 선택해주세요", selection: $selected) {
                 ForEach(0..<countrys.count, id: \.self) { i in
-                    Button {
-                        print("hi", countrys[i])
-                    } label: {
-                        Text(countrys[i])
-                            .font(.headline)
-                            .foregroundColor(.black)
-                    }
+                    Text(countrys[i])
+                        .accentColor(Theme.fontColor(forScheme: scheme))
+                        .tag(i)
                 }
             }
             .pickerStyle(.menu)
