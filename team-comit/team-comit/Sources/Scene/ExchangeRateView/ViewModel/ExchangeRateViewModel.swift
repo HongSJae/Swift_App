@@ -46,6 +46,7 @@ class ExchangeRateViewModel: ObservableObject {
                             if Double(self.exchangeRate) ?? 0 < 0
                                 || Double(self.exchangeRate) ?? 0 > 10000
                                 || Double(self.exchangeRate) == nil
+                                || self.amount == ""
                             {
                                 self.showingAlert = true
                             } else {
