@@ -15,28 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="0.0" y="832" width="393" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DMSportsLOGO" translatesAutoresizingMaskIntoConstraints="NO" id="FCA-r3-Sht">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DMSportLOGO" translatesAutoresizingMaskIntoConstraints="NO" id="dvK-5C-ydo">
                                 <rect key="frame" x="116" y="383.66666666666669" width="161" height="85"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="Es7-MU-Vko"/>
-                                    <constraint firstAttribute="height" constant="85" id="pxp-Jk-XiW"/>
+                                    <constraint firstAttribute="width" constant="161" id="4cL-Nd-Zdb"/>
+                                    <constraint firstAttribute="height" constant="85" id="cbh-Sm-f8x"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FCA-r3-Sht" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2Jj-Kr-Fk8"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="FCA-r3-Sht" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ppj-Gi-6A6"/>
+                            <constraint firstItem="dvK-5C-ydo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DKT-g7-Zbl"/>
+                            <constraint firstItem="dvK-5C-ydo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Zx5-Bf-2yX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DMSportsLOGO" width="161" height="85"/>
+        <image name="DMSportLOGO" width="644" height="340"/>
     </resources>
 </document>
