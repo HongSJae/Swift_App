@@ -67,7 +67,7 @@ struct MainView: View {
                     .background(Color.white)
                     .cornerRadius(20)
                     .padding(.bottom, 16)
-                    .padding(.top, proxy.size.height / 10)
+                    .padding(.top, proxy.size.height / 7)
                     ZStack(alignment: .top) {
                         Color.base.ignoresSafeArea()
                         VStack {
@@ -117,7 +117,7 @@ struct MainView: View {
                                     .padding(.top, 20)
                             } else {
                                 ScrollView {
-                                    VStack(spacing: 12) {
+                                    VStack(spacing: 0) {
                                         ForEach (postArr, id: \.self) { data in
                                             PostList (text: data.text,
                                                       time: data.time,
@@ -134,6 +134,7 @@ struct MainView: View {
                                                       action2: {
                                                 shouldShowModal = true
                                             })
+                                            .padding(.bottom, 12)
                                             .padding(.horizontal, 16)
                                         }
                                     }
@@ -148,7 +149,6 @@ struct MainView: View {
                             })
                         }
                         .padding(.top, 20)
-                        .padding(.bottom, 12)
                     }
                     .cornerRadius(20, corners: .topLeft)
                     .cornerRadius(20, corners: .topRight)
