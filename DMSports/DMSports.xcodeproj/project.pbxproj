@@ -37,6 +37,17 @@
 		90C8B90929363DBE0027355A /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90C8B90029363DBE0027355A /* Inter-ExtraLight.ttf */; };
 		90C8B90A29363DBE0027355A /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90C8B90129363DBE0027355A /* Inter-Regular.ttf */; };
 		90C8B90B29363DBE0027355A /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90C8B90229363DBE0027355A /* Inter-Light.ttf */; };
+		90C8B91029363E940027355A /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B90F29363E940027355A /* NoticeView.swift */; };
+		90C8B913293640A60027355A /* NoticeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B912293640A60027355A /* NoticeForm.swift */; };
+		90C8B919293645080027355A /* NoticeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B918293645080027355A /* NoticeListView.swift */; };
+		90C8B91B2936502A0027355A /* EditableNoticeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B91A2936502A0027355A /* EditableNoticeForm.swift */; };
+		90C8B91D293650CC0027355A /* EditNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B91C293650CC0027355A /* EditNoticeView.swift */; };
+		90C8B91F293650D30027355A /* DeleteNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B91E293650D30027355A /* DeleteNoticeView.swift */; };
+		90C8B9212936C9080027355A /* PostNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B9202936C9080027355A /* PostNoticeView.swift */; };
+		90C8B9232937013B0027355A /* NoticeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B9222937013B0027355A /* NoticeDetailView.swift */; };
+		90C8B928293707830027355A /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B927293707830027355A /* MyView.swift */; };
+		90C8B92D29375E0A0027355A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B92C29375E0A0027355A /* ChangePasswordView.swift */; };
+		90C8B932293762430027355A /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B931293762430027355A /* DeleteAccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +81,17 @@
 		90C8B90029363DBE0027355A /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		90C8B90129363DBE0027355A /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		90C8B90229363DBE0027355A /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		90C8B90F29363E940027355A /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
+		90C8B912293640A60027355A /* NoticeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeForm.swift; sourceTree = "<group>"; };
+		90C8B918293645080027355A /* NoticeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListView.swift; sourceTree = "<group>"; };
+		90C8B91A2936502A0027355A /* EditableNoticeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableNoticeForm.swift; sourceTree = "<group>"; };
+		90C8B91C293650CC0027355A /* EditNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoticeView.swift; sourceTree = "<group>"; };
+		90C8B91E293650D30027355A /* DeleteNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNoticeView.swift; sourceTree = "<group>"; };
+		90C8B9202936C9080027355A /* PostNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNoticeView.swift; sourceTree = "<group>"; };
+		90C8B9222937013B0027355A /* NoticeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeDetailView.swift; sourceTree = "<group>"; };
+		90C8B927293707830027355A /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		90C8B92C29375E0A0027355A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		90C8B931293762430027355A /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +143,9 @@
 		90261F1E29358DE20054E2E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				90261F1329358DB80054E2E5 /* Applicationi.xcassets */,
 				90261F2129358EF90054E2E5 /* Font */,
 				90261F2229358EFD0054E2E5 /* Color */,
-				90261F1329358DB80054E2E5 /* Applicationi.xcassets */,
 				90261F26293590950054E2E5 /* Image.xcassets */,
 				90261F28293590A40054E2E5 /* Color.xcassets */,
 			);
@@ -186,6 +208,7 @@
 		90261F2429358F510054E2E5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B911293640920027355A /* Notice */,
 				90C8B8EE2935F30B0027355A /* Main */,
 				90261F592935A5460054E2E5 /* Auth */,
 			);
@@ -198,6 +221,10 @@
 				90C8B8DC2935D9890027355A /* Auth */,
 				90C8B8E22935DC720027355A /* Tabbar */,
 				90C8B8E72935E6CA0027355A /* Main */,
+				90C8B90C29363E710027355A /* Notice */,
+				90C8B924293706E70027355A /* My */,
+				90C8B92929375DC90027355A /* ChangePassword */,
+				90C8B92E2937616D0027355A /* DeleteAccount */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -344,6 +371,116 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		90C8B90C29363E710027355A /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B90E29363E870027355A /* View */,
+				90C8B90D29363E810027355A /* ViewModel */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		90C8B90D29363E810027355A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90C8B90E29363E870027355A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B90F29363E940027355A /* NoticeView.swift */,
+				90C8B918293645080027355A /* NoticeListView.swift */,
+				90C8B9222937013B0027355A /* NoticeDetailView.swift */,
+				90C8B91C293650CC0027355A /* EditNoticeView.swift */,
+				90C8B91E293650D30027355A /* DeleteNoticeView.swift */,
+				90C8B9202936C9080027355A /* PostNoticeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90C8B911293640920027355A /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B912293640A60027355A /* NoticeForm.swift */,
+				90C8B91A2936502A0027355A /* EditableNoticeForm.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		90C8B924293706E70027355A /* My */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B9262937070F0027355A /* View */,
+				90C8B9252937070B0027355A /* ViewModel */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		90C8B9252937070B0027355A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90C8B9262937070F0027355A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B927293707830027355A /* MyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90C8B92929375DC90027355A /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B92B29375DE30027355A /* View */,
+				90C8B92A29375DE00027355A /* ViewModel */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		90C8B92A29375DE00027355A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90C8B92B29375DE30027355A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B92C29375E0A0027355A /* ChangePasswordView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90C8B92E2937616D0027355A /* DeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B930293761EB0027355A /* View */,
+				90C8B92F293761E80027355A /* ViewModel */,
+			);
+			path = DeleteAccount;
+			sourceTree = "<group>";
+		};
+		90C8B92F293761E80027355A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90C8B930293761EB0027355A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B931293762430027355A /* DeleteAccountView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,21 +569,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C8B8F7293612330027355A /* PlayerListPopUpView.swift in Sources */,
+				90C8B9212936C9080027355A /* PostNoticeView.swift in Sources */,
+				90C8B932293762430027355A /* DeleteAccountView.swift in Sources */,
+				90C8B919293645080027355A /* NoticeListView.swift in Sources */,
 				90C8B8F929361BCB0027355A /* SubscriptionView.swift in Sources */,
 				90C8B8DF2935D9C80027355A /* EmailVerifyView.swift in Sources */,
+				90C8B91029363E940027355A /* NoticeView.swift in Sources */,
 				90C8B8EB2935E8A20027355A /* MainView.swift in Sources */,
 				90C8B8E42935DCCE0027355A /* TabBarView.swift in Sources */,
 				90261F582935A5440054E2E5 /* PasswordTextfield.swift in Sources */,
+				90C8B913293640A60027355A /* NoticeForm.swift in Sources */,
 				90261F4C29359ACD0054E2E5 /* SignInView.swift in Sources */,
 				90261F5129359C3E0054E2E5 /* Colors.swift in Sources */,
 				90C8B8E62935DCED0027355A /* ShowView.swift in Sources */,
 				90C8B8DB2935B77D0027355A /* SignUpView.swift in Sources */,
 				90261F562935A2B60054E2E5 /* EmailTextfield.swift in Sources */,
 				90261F1229358DB70054E2E5 /* ContentView.swift in Sources */,
+				90C8B91F293650D30027355A /* DeleteNoticeView.swift in Sources */,
+				90C8B9232937013B0027355A /* NoticeDetailView.swift in Sources */,
 				90C8B8E92935E7CA0027355A /* RoundedCorner.swift in Sources */,
+				90C8B92D29375E0A0027355A /* ChangePasswordView.swift in Sources */,
 				90261F1029358DB70054E2E5 /* DMSportsApp.swift in Sources */,
+				90C8B91D293650CC0027355A /* EditNoticeView.swift in Sources */,
 				90C8B8F02935F32F0027355A /* KindOfSportsButton.swift in Sources */,
+				90C8B928293707830027355A /* MyView.swift in Sources */,
 				90C8B8F22935F8480027355A /* PostList.swift in Sources */,
+				90C8B91B2936502A0027355A /* EditableNoticeForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
