@@ -18,13 +18,18 @@ func getSafeAreaBot() -> Bool {
 struct TabBarView: View {
     @State private var tabIndex = TabIndex.main
     @State private var showModal = false
-    @State private var shouldShowToast: Bool = false
+    @State private var showPlayerList = false
+    @State private var showEdit = false
+    @State private var showDelete = false
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
                 Spacer()
                 ZStack(alignment: .bottom) {
-                    ShowView(tabIndex: $tabIndex, shouldShowToast: $shouldShowToast)
+                    ShowView(tabIndex: $tabIndex,
+                             showPlayerList: $showPlayerList,
+                             showEdit: $showEdit,
+                             showDelete: $showDelete)
                         .padding(.bottom, getSafeAreaBot() ? 60 : 80)
                     ZStack {
                         VStack(spacing: 0) {
@@ -64,12 +69,27 @@ struct TabBarView: View {
                         .padding(.bottom, getSafeAreaBot() ? 5 : 25)
                     }
                     Rectangle()
-                        .opacity(shouldShowToast ? 0.2 : 0)
+                        .opacity(showPlayerList
+                                 || showEdit
+                                 || showDelete
+                                 ? 0.2 : 0)
                         .ignoresSafeArea()
                 }
-                .popup(isPresented: $shouldShowToast, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
-                    PlayerListPopUpView(close: $shouldShowToast)
+                .popup(isPresented: $showPlayerList, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
+                    PlayerListPopUpView(close: $showPlayerList)
                         .padding(.horizontal, 16)
+                })
+                .popup(isPresented: $showEdit, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
+                    EditNoticeView(edit: {},
+                                   close: {
+                        showEdit = false})
+                    .padding(.horizontal, 16)
+                })
+                .popup(isPresented: $showDelete, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
+                    DeleteNoticeView(close: {
+                        showDelete = false},
+                                     delete: {})
+                    .padding(.horizontal, 16)
                 })
             }
             .navigationBarHidden(true)
