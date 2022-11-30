@@ -1,14 +1,17 @@
 import SwiftUI
 struct ShowView: View {
     @Binding var tabIndex: TabIndex
-    @Binding var shouldShowToast: Bool
+    @Binding var showPlayerList: Bool
+    @Binding var showEdit: Bool
+    @Binding var showDelete: Bool
     var body: some View {
         VStack {
             switch tabIndex {
             case .main:
-                MainView(shouldShowToast: $shouldShowToast)
+                MainView(shouldShowToast: $showPlayerList)
             case .notice:
-                EmptyView()
+                NoticeView(shouldShowPopUpDelete: $showDelete,
+                           shouldShowPopUpEdit: $showEdit)
             case .my:
                 EmptyView()
             }
@@ -18,6 +21,9 @@ struct ShowView: View {
 
  struct ShowView_Previews: PreviewProvider {
     static var previews: some View {
-        ShowView(tabIndex: .constant(.main), shouldShowToast: .constant(false))
+        ShowView(tabIndex: .constant(.main),
+                 showPlayerList: .constant(false),
+                 showEdit: .constant(false),
+                 showDelete: .constant(false))
     }
  }
