@@ -13,7 +13,7 @@ struct ShowView: View {
                 NoticeView(shouldShowPopUpDelete: $showDelete,
                            shouldShowPopUpEdit: $showEdit)
             case .my:
-                EmptyView()
+                MyView()
             }
         }
     }
