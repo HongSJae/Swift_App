@@ -25,7 +25,6 @@
 		90C8B8EB2935E8A20027355A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B8EA2935E8A20027355A /* MainView.swift */; };
 		90C8B8F02935F32F0027355A /* KindOfSportsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B8EF2935F32F0027355A /* KindOfSportsButton.swift */; };
 		90C8B8F22935F8480027355A /* PostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B8F12935F8480027355A /* PostList.swift */; };
-		90C8B8F5293611790027355A /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8B8F4293611790027355A /* PopupView */; };
 		90C8B8F7293612330027355A /* PlayerListPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B8F6293612330027355A /* PlayerListPopUpView.swift */; };
 		90C8B8F929361BCB0027355A /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B8F829361BCB0027355A /* SubscriptionView.swift */; };
 		90C8B90329363DBE0027355A /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90C8B8FA29363DBE0027355A /* Inter-Black.ttf */; };
@@ -48,6 +47,20 @@
 		90C8B928293707830027355A /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B927293707830027355A /* MyView.swift */; };
 		90C8B92D29375E0A0027355A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B92C29375E0A0027355A /* ChangePasswordView.swift */; };
 		90C8B932293762430027355A /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B931293762430027355A /* DeleteAccountView.swift */; };
+		90C8B93B29384C0F0027355A /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B93A29384C0F0027355A /* MoyaLoggerPlugin.swift */; };
+		90C8B93E29384EF10027355A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8B93D29384EF10027355A /* Moya */; };
+		90C8B94129384F1E0027355A /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8B94029384F1E0027355A /* PopupView */; };
+		90C8B94929384FFD0027355A /* NoticesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94829384FFD0027355A /* NoticesClient.swift */; };
+		90C8B94B293850050027355A /* ClubsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94A293850050027355A /* ClubsClient.swift */; };
+		90C8B94D293850110027355A /* UsersClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94C293850110027355A /* UsersClient.swift */; };
+		90C8B94F293850240027355A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B94E293850240027355A /* Header.swift */; };
+		90C8B9542938508B0027355A /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 90C8B9532938508B0027355A /* SwiftKeychainWrapper */; };
+		90C8B956293898700027355A /* ENUM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B955293898700027355A /* ENUM.swift */; };
+		90C8B958293995560027355A /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B957293995560027355A /* TokenModel.swift */; };
+		90C8B95B293995DE0027355A /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B95A293995DE0027355A /* ErrorModel.swift */; };
+		90C8B95D293996580027355A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B95C293996580027355A /* SignInViewModel.swift */; };
+		90C8B95F2939DA860027355A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B95E2939DA860027355A /* SignUpViewModel.swift */; };
+		90C8B9612939ED5D0027355A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B9602939ED5D0027355A /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +105,17 @@
 		90C8B927293707830027355A /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		90C8B92C29375E0A0027355A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		90C8B931293762430027355A /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
+		90C8B93A29384C0F0027355A /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		90C8B94829384FFD0027355A /* NoticesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticesClient.swift; sourceTree = "<group>"; };
+		90C8B94A293850050027355A /* ClubsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsClient.swift; sourceTree = "<group>"; };
+		90C8B94C293850110027355A /* UsersClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersClient.swift; sourceTree = "<group>"; };
+		90C8B94E293850240027355A /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		90C8B955293898700027355A /* ENUM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENUM.swift; sourceTree = "<group>"; };
+		90C8B957293995560027355A /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		90C8B95A293995DE0027355A /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		90C8B95C293996580027355A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		90C8B95E2939DA860027355A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		90C8B9602939ED5D0027355A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C8B8F5293611790027355A /* PopupView in Frameworks */,
+				90C8B94129384F1E0027355A /* PopupView in Frameworks */,
+				90C8B93E29384EF10027355A /* Moya in Frameworks */,
+				90C8B9542938508B0027355A /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +161,9 @@
 		90261F1D29358DC90054E2E5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B93829384BFA0027355A /* Header */,
+				90C8B93729384BF40027355A /* MoyaClient */,
+				90C8B93629384BE60027355A /* Plugin */,
 				90261F4A29359AA70054E2E5 /* Model */,
 			);
 			path = Network;
@@ -148,6 +177,7 @@
 				90261F2229358EFD0054E2E5 /* Color */,
 				90261F26293590950054E2E5 /* Image.xcassets */,
 				90261F28293590A40054E2E5 /* Color.xcassets */,
+				90C8B955293898700027355A /* ENUM.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -250,6 +280,7 @@
 		90261F4829359A920054E2E5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B95C293996580027355A /* SignInViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -265,6 +296,8 @@
 		90261F4A29359AA70054E2E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B95A293995DE0027355A /* ErrorModel.swift */,
+				90C8B959293995590027355A /* Auth */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +314,7 @@
 		90C8B8D82935B76E0027355A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B95E2939DA860027355A /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -348,6 +382,7 @@
 		90C8B8EC2935E8A40027355A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B9602939ED5D0027355A /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -481,6 +516,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		90C8B93629384BE60027355A /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B93A29384C0F0027355A /* MoyaLoggerPlugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		90C8B93729384BF40027355A /* MoyaClient */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B94C293850110027355A /* UsersClient.swift */,
+				90C8B94A293850050027355A /* ClubsClient.swift */,
+				90C8B94829384FFD0027355A /* NoticesClient.swift */,
+			);
+			path = MoyaClient;
+			sourceTree = "<group>";
+		};
+		90C8B93829384BFA0027355A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B94E293850240027355A /* Header.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		90C8B959293995590027355A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B957293995560027355A /* TokenModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,7 +567,9 @@
 			);
 			name = DMSports;
 			packageProductDependencies = (
-				90C8B8F4293611790027355A /* PopupView */,
+				90C8B93D29384EF10027355A /* Moya */,
+				90C8B94029384F1E0027355A /* PopupView */,
+				90C8B9532938508B0027355A /* SwiftKeychainWrapper */,
 			);
 			productName = DMSports;
 			productReference = 90261F0C29358DB70054E2E5 /* DMSports.app */;
@@ -529,7 +600,9 @@
 			);
 			mainGroup = 90261F0329358DB70054E2E5;
 			packageReferences = (
-				90C8B8F3293611790027355A /* XCRemoteSwiftPackageReference "PopupView" */,
+				90C8B93C29384EF10027355A /* XCRemoteSwiftPackageReference "Moya" */,
+				90C8B93F29384F1E0027355A /* XCRemoteSwiftPackageReference "PopupView" */,
+				90C8B9522938508B0027355A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 90261F0D29358DB70054E2E5 /* Products */;
 			projectDirPath = "";
@@ -569,20 +642,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C8B8F7293612330027355A /* PlayerListPopUpView.swift in Sources */,
+				90C8B95B293995DE0027355A /* ErrorModel.swift in Sources */,
 				90C8B9212936C9080027355A /* PostNoticeView.swift in Sources */,
+				90C8B95F2939DA860027355A /* SignUpViewModel.swift in Sources */,
 				90C8B932293762430027355A /* DeleteAccountView.swift in Sources */,
 				90C8B919293645080027355A /* NoticeListView.swift in Sources */,
+				90C8B94929384FFD0027355A /* NoticesClient.swift in Sources */,
+				90C8B94B293850050027355A /* ClubsClient.swift in Sources */,
 				90C8B8F929361BCB0027355A /* SubscriptionView.swift in Sources */,
 				90C8B8DF2935D9C80027355A /* EmailVerifyView.swift in Sources */,
+				90C8B93B29384C0F0027355A /* MoyaLoggerPlugin.swift in Sources */,
+				90C8B9612939ED5D0027355A /* MainViewModel.swift in Sources */,
 				90C8B91029363E940027355A /* NoticeView.swift in Sources */,
 				90C8B8EB2935E8A20027355A /* MainView.swift in Sources */,
 				90C8B8E42935DCCE0027355A /* TabBarView.swift in Sources */,
 				90261F582935A5440054E2E5 /* PasswordTextfield.swift in Sources */,
 				90C8B913293640A60027355A /* NoticeForm.swift in Sources */,
 				90261F4C29359ACD0054E2E5 /* SignInView.swift in Sources */,
+				90C8B94F293850240027355A /* Header.swift in Sources */,
 				90261F5129359C3E0054E2E5 /* Colors.swift in Sources */,
 				90C8B8E62935DCED0027355A /* ShowView.swift in Sources */,
 				90C8B8DB2935B77D0027355A /* SignUpView.swift in Sources */,
+				90C8B958293995560027355A /* TokenModel.swift in Sources */,
 				90261F562935A2B60054E2E5 /* EmailTextfield.swift in Sources */,
 				90261F1229358DB70054E2E5 /* ContentView.swift in Sources */,
 				90C8B91F293650D30027355A /* DeleteNoticeView.swift in Sources */,
@@ -593,6 +674,9 @@
 				90C8B91D293650CC0027355A /* EditNoticeView.swift in Sources */,
 				90C8B8F02935F32F0027355A /* KindOfSportsButton.swift in Sources */,
 				90C8B928293707830027355A /* MyView.swift in Sources */,
+				90C8B956293898700027355A /* ENUM.swift in Sources */,
+				90C8B95D293996580027355A /* SignInViewModel.swift in Sources */,
+				90C8B94D293850110027355A /* UsersClient.swift in Sources */,
 				90C8B8F22935F8480027355A /* PostList.swift in Sources */,
 				90C8B91B2936502A0027355A /* EditableNoticeForm.swift in Sources */,
 			);
@@ -799,22 +883,47 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		90C8B8F3293611790027355A /* XCRemoteSwiftPackageReference "PopupView" */ = {
+		90C8B93C29384EF10027355A /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		90C8B93F29384F1E0027355A /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 2.0.0;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
+			};
+		};
+		90C8B9522938508B0027355A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		90C8B8F4293611790027355A /* PopupView */ = {
+		90C8B93D29384EF10027355A /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 90C8B8F3293611790027355A /* XCRemoteSwiftPackageReference "PopupView" */;
+			package = 90C8B93C29384EF10027355A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		90C8B94029384F1E0027355A /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C8B93F29384F1E0027355A /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		90C8B9532938508B0027355A /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C8B9522938508B0027355A /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
