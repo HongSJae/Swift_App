@@ -12,8 +12,6 @@ struct DeleteAccountView: View {
     @State private var password: String = ""
     @State private var visible: Bool = false
     @State private var showAlert = false
-    @State private var passwordCheck: String = ""
-    @State private var visibleCheck: Bool = false
     var body: some View {
         GeometryReader { proxy in
             VStack(alignment: .leading, spacing: 0) {
@@ -25,25 +23,30 @@ struct DeleteAccountView: View {
                         .frame(width: 16, height: 16)
                 }
                 Spacer()
-                Text("변경하기")
+                Text("회원탈퇴")
                     .foregroundColor(.primary1)
                     .font(.custom("Inter-Bold", size: 48))
-                Text("Password")
+                Text("DMSport.")
                     .foregroundColor(.primary2)
                     .font(.custom("Inter-Bold", size: 32))
-                    .padding(.bottom, 41)
+                    .padding(.bottom, 100)
                 PasswordTextfield(text: $password,
                                   isSee: $visible,
-                                  placeHolder: "새로운 비밀번호를 입력해 주세요")
-                .padding(.bottom, 32)
-                PasswordTextfield(text: $passwordCheck,
-                                  isSee: $visibleCheck,
                                   placeHolder: "비밀번호를 다시 입력해 주세요")
+                .padding(.bottom, 48)
+                
+                HStack {
+                    Spacer()
+                    Text("비밀번호를 잊으셨나요?")
+                        .foregroundColor(.primary2)
+                        .font(.custom("Inter-Regular", size: 14))
+                    Spacer()
+                }
                 Spacer()
                 Button {
                     showAlert = true
                 } label: {
-                    Text("완료")
+                    Text("회원 탈퇴")
                         .foregroundColor(.white)
                         .font(.custom("Inter-SemiBold", size: 18))
                         .padding(.vertical, 13)
@@ -54,7 +57,7 @@ struct DeleteAccountView: View {
                 }
             }
             .navigationBarHidden(true)
-            .padding(.horizontal, 16)
+            .padding(16)
             .alert("정말 탈퇴하시겠습니까?", isPresented: $showAlert) {
                 Button("탈퇴", role: .destructive) { }
                 Button("취소", role: .cancel) { }
