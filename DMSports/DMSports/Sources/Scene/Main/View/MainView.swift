@@ -1,12 +1,5 @@
 import SwiftUI
 
-enum Sports {
-    case 배드민턴
-    case 축구
-    case 농구
-    case 배구
-}
-
 struct PostValue: Hashable {
     var text: String
     var time: String
@@ -19,6 +12,7 @@ struct PostValue: Hashable {
 
 struct MainView: View {
     @State private var event: Sports = .배드민턴
+    @State private var eventString: String = "배드민턴"
     @State private var shouldShowModal = false
     @Binding var shouldShowToast: Bool
     let postArr: [PostValue] = [
@@ -119,7 +113,7 @@ struct MainView: View {
                                 ScrollView {
                                     VStack(spacing: 0) {
                                         ForEach (postArr, id: \.self) { data in
-                                            PostList (text: data.text,
+                                            PostList (text: $eventString,
                                                       time: data.time,
                                                       maxAmount: data.maxAmount,
                                                       miniAmount: data.miniAmount,
@@ -148,6 +142,9 @@ struct MainView: View {
                                 print("신청 성공!")
                             })
                         }
+                        .onChange(of: event, perform: { newValue in
+                            eventString = newValue.name
+                        })
                         .padding(.top, 20)
                     }
                     .cornerRadius(20, corners: .topLeft)
@@ -158,8 +155,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView(shouldShowToast: .constant(false))
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MainView(shouldShowToast: .constant(false))
+//    }
+//}
