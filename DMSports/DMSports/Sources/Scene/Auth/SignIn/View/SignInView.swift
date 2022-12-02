@@ -1,11 +1,15 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @StateObject var signInViewModel = SignInViewModel()
     @State private var visible: Bool = false
     var body: some View {
         GeometryReader { proxy in
+            NavigationLink(
+                destination: TabBarView(),
+                tag: 1,
+                selection: $signInViewModel.viewTag
+            ) { EmptyView() }
             VStack(alignment: .leading, spacing: 0) {
                 Spacer()
                 Text("로그인")
@@ -16,11 +20,11 @@ struct SignInView: View {
                     .font(.custom("Inter-Bold", size: 32))
                 Spacer()
                     .frame(height: 42)
-                EmailTextfield(text: $email,
+                EmailTextfield(text: $signInViewModel.email,
                                    placeHolder: "이메일")
                 Spacer()
                     .frame(height: 32)
-                PasswordTextfield(text: $password,
+                PasswordTextfield(text: $signInViewModel.password,
                                   isSee: $visible,
                                   placeHolder: "비밀번호")
                 HStack {
@@ -33,7 +37,9 @@ struct SignInView: View {
                 .padding(.top, 48)
                 Spacer()
                 Group {
-                    NavigationLink(destination: TabBarView()) {
+                    Button {
+                        signInViewModel.login()
+                    } label: {
                         Text("로그인")
                             .foregroundColor(.white)
                             .font(.custom("Inter-SemiBold", size: 18))
@@ -62,6 +68,11 @@ struct SignInView: View {
             }
             .navigationBarHidden(true)
             .padding(.horizontal, 16)
+            .alert("안내", isPresented: $signInViewModel.showError) {
+                Button("확인", role: .cancel) { }
+            } message: {
+                Text(signInViewModel.errorMessage)
+            }
         }
     }
 }
