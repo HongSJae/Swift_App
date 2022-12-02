@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PostList: View {
-    let text: String
+    @Binding var text: String
     let time: String
     let maxAmount: Int
     let miniAmount: Int
@@ -83,7 +83,7 @@ struct PostList: View {
 
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {
-        PostList(text: "배드민턴",
+        PostList(text: .constant("배드민턴"),
                  time: "점심시간",
                  maxAmount: 4,
                  miniAmount: 2,
