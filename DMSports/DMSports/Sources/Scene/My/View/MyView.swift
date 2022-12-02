@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MyView: View {
-    @State private var switchToggle = false
+//    @State private var switchToggle = false
+    @State private var showChangePWModal = false
+    @State private var showLogoutAlert = false
+    @State private var showDeleteAccountModal = false
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -28,55 +31,71 @@ struct MyView: View {
                             .font(.custom("Inter-Regular", size: 14))
                             .foregroundColor(.hint)
                             .padding(.bottom, 20)
-                        HStack {
-                            Text("비밀번호 변경")
-                                .font(.custom("Inter-Bold", size: 16))
-                                .foregroundColor(.hint)
-                            Spacer()
-                            Image("Back-1")
-                                .resizable()
-                                .frame(width: 7, height: 13)
+                        Button {
+                            showChangePWModal = true
+                        } label: {
+                            HStack {
+                                Text("비밀번호 변경")
+                                    .font(.custom("Inter-Bold", size: 16))
+                                    .foregroundColor(.hint)
+                                Spacer()
+                                Image("Back-1")
+                                    .resizable()
+                                    .frame(width: 7, height: 13)
+                            }
+                            .padding(16)
+                            .background(.white)
+                            .cornerRadius(20)
+                            .padding(.bottom, 12)
                         }
-                        .padding(16)
-                        .background(.white)
-                        .cornerRadius(20)
-                        .padding(.bottom, 12)
-                        HStack {
-                            Text("종목 빈자리 자동 참여")
-                                .font(.custom("Inter-Bold", size: 16))
-                                .foregroundColor(.hint)
-                            Spacer()
+                        Button {
+                            
+                        } label: {
+                            HStack {
+                                Text("종목 빈자리 자동 참여")
+                                    .font(.custom("Inter-Bold", size: 16))
+                                    .foregroundColor(.hint)
+                                Spacer()
+                            }
+                            .padding(16)
+                            .background(.white)
+                            .cornerRadius(20)
+                            .padding(.bottom, 12)
                         }
-                        .padding(16)
-                        .background(.white)
-                        .cornerRadius(20)
-                        .padding(.bottom, 12)
-                        HStack {
-                            Text("로그아웃")
-                                .font(.custom("Inter-Bold", size: 16))
-                                .foregroundColor(.highlight)
-                            Spacer()
-                            Image("Back-2")
-                                .resizable()
-                                .frame(width: 7, height: 13)
+                        Button {
+                            showLogoutAlert = true
+                        } label: {
+                            HStack {
+                                Text("로그아웃")
+                                    .font(.custom("Inter-Bold", size: 16))
+                                    .foregroundColor(.highlight)
+                                Spacer()
+                                Image("Back-2")
+                                    .resizable()
+                                    .frame(width: 7, height: 13)
+                            }
+                            .padding(16)
+                            .background(.white)
+                            .cornerRadius(20)
+                            .padding(.bottom, 12)
                         }
-                        .padding(16)
-                        .background(.white)
-                        .cornerRadius(20)
-                        .padding(.bottom, 12)
-                        HStack {
-                            Text("회원 탈퇴")
-                                .font(.custom("Inter-Bold", size: 16))
-                                .foregroundColor(.highlight)
-                            Spacer()
-                            Image("Back-2")
-                                .resizable()
-                                .frame(width: 7, height: 13)
+                        Button {
+                            showDeleteAccountModal = true
+                        } label: {
+                            HStack {
+                                Text("회원 탈퇴")
+                                    .font(.custom("Inter-Bold", size: 16))
+                                    .foregroundColor(.highlight)
+                                Spacer()
+                                Image("Back-2")
+                                    .resizable()
+                                    .frame(width: 7, height: 13)
+                            }
+                            .padding(16)
+                            .background(.white)
+                            .cornerRadius(20)
+                            .padding(.bottom, 12)
                         }
-                        .padding(16)
-                        .background(.white)
-                        .cornerRadius(20)
-                        .padding(.bottom, 12)
                     }
                     .padding(28)
                 }
@@ -84,6 +103,18 @@ struct MyView: View {
                 .cornerRadius(20, corners: .topRight)
                 .padding(.top, proxy.size.height / 9)
             }
+        }
+        .sheet(isPresented: $showChangePWModal) {
+            ChangePasswordView()
+        }
+        .sheet(isPresented: $showDeleteAccountModal) {
+            DeleteAccountView()
+        }
+        .alert("로그아웃??", isPresented: $showLogoutAlert) {
+            Button("로그아웃", role: .destructive) { }
+            Button("취소", role: .cancel) { }
+        } message: {
+            Text("정말로 로그아웃을 하시겠습니까?")
         }
     }
 }
