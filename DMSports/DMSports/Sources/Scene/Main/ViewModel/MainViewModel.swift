@@ -3,62 +3,63 @@ import Foundation
 import SwiftKeychainWrapper
 
 class MainViewModel: ObservableObject {
-    let userClient = MoyaProvider<UsersService>(plugins: [MoyaLoggerPlugin()])
-    @Published var name: String = ""
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var viewTag: Int?
-    @Published var showProgrees: Bool = false
-    @Published var showError: Bool = false
-    @Published var errorMessage: String = ""
-    func signUp() {
-        userClient.request(.signUp(email: "", password: "", name: "")) { res in
+    let clubClient = MoyaProvider<ClubsService>(plugins: [MoyaLoggerPlugin()])
+    @Published var checkVoteModel = CheckVoteModelStruct(isBan: false, banPeriod: nil, maxPeople: 0, voteList: [])
+    @Published var type: Club = .BADMINTON
+    func getCheckVote() {
+        clubClient.request(.checkVote(type: type)) { res in
             switch res {
             case .success(let result):
                 switch result.statusCode {
                 case 200...201:
                     DispatchQueue.main.async {
                         let decoder = JSONDecoder()
-                        if let data = try? decoder.decode(TokenModel.self, from: result.data) {
-                            Token.accessToken = data.accessToken
-                            Token.refreshToken = data.refreshToken
-//                            self.getMyProFile()
-                            print("✅로그인 성공")
-                            print("🔊\(data.expiredAt)")
-                            KeychainWrapper.standard.set(true, forKey: "auto")
-                            KeychainWrapper.standard.set(self.email, forKey: "id")
-                            KeychainWrapper.standard.set(self.password, forKey: "pw")
-                            self.viewTag = 1
+                        if let data = try? decoder.decode(CheckVoteModel.self, from: result.data) {
+                            self.checkVoteModel = CheckVoteModelStruct(
+                                isBan: data.isBan,
+                                banPeriod: data.banPeriod ?? "nil",
+                                maxPeople: data.maxPeople,
+                                voteList: data.voteList.map({ voteListData in
+                                    VoteListStruct(
+                                        voteID: voteListData.voteID,
+                                        time: Vote(rawValue: voteListData.time.self) ?? .DINNER,
+                                        voteCount: voteListData.voteCount,
+                                        maxPeople: voteListData.maxPeople,
+                                        isComplete: voteListData.isComplete,
+                                        voteUser: voteListData.voteUser.map({ voteUserData in
+                                            VoteUserStruct(
+                                                name: voteUserData.name,
+                                                team: voteUserData.team
+                                            )
+                                        })
+                                    )
+                                })
+                            )
+                            print("checkVote success")
                         } else {
-                            print("⚠️login docoder error")
+                            print("⚠️vote docoder error")
                         }
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.showProgrees = false
-                    }
-                case 400:
-                    DispatchQueue.main.async {
-                        self.errorMessage = "올바르지 않은 아이디/비밀번호 형식입니다."
-                        self.showError = true
-                        self.showProgrees = false
-                    }
-                case 401:
-                    DispatchQueue.main.async {
-                        self.errorMessage = "올바르지 않은 비밀번호 입니다."
-                        self.showError = true
-                        self.showProgrees = false
-                    }
-                case 404:
-                    DispatchQueue.main.async {
-                        self.errorMessage = "찾을 수 없는 아이디 입니다."
-                        self.showError = true
-                        self.showProgrees = false
                     }
                 default:
                     DispatchQueue.main.async {
-                        self.errorMessage = "알 수 없는 오류입니다. 문의 바랍니다!\n(code: \(result.statusCode))"
-                        self.showError = true
-                        self.showProgrees = false
+                        print("알 수 없는 오류입니다. 문의 바랍니다!\n(code: \(result.statusCode)")
+                    }
+                }
+            case .failure(let err):
+                print("⛔️getCheckVote error: \(err.localizedDescription)")
+            }
+        }
+    }
+    func vote(userID: Int) {
+        clubClient.request(.vote(userID: userID)) { res in
+            switch res {
+            case .success(let result):
+                switch result.statusCode {
+                case 204:
+                        print("투표 성공")
+                default:
+                    DispatchQueue.main.async {
+                        print("알 수 없는 오류입니다. 문의 바랍니다!\n(code: \(result.statusCode)")
                     }
                 }
             case .failure(let err):
