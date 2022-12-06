@@ -2,27 +2,27 @@ import SwiftUI
 
 struct SubscriptionView: View {
     @Binding var close: Bool
-    let sport: Sports
+    let sport: Club
     let action: () -> Void
     private func changeList() -> [String] {
         switch sport {
-        case .배드민턴:
+        case .BADMINTON:
             return ["nil"]
-        case .축구:
+        case .SOCCER:
             return [
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민",
-                "손흥민"
+                "C.F",
+                "S.F",
+                "L.W",
+                "C.M",
+                "R.W",
+                "A.M",
+                "D.M",
+                "R.S.T",
+                "L.S.T",
+                "S.W",
+                "G.K"
             ]
-        case .농구:
+        case .BASKETBALL:
             return [
                 "P.G",
                 "S.G",
@@ -30,7 +30,7 @@ struct SubscriptionView: View {
                 "P.F",
                 "C"
             ]
-        case .배구:
+        case .VOLLEYBALL:
             return [
                 "Right",
                 "Left",
@@ -88,7 +88,7 @@ struct SubscriptionView: View {
 struct SubscriptionView_Previews: PreviewProvider {
     static var previews: some View {
         SubscriptionView(close: .constant(true),
-                         sport: .배드민턴,
+                         sport: .BADMINTON,
                          action: { })
     }
 }
