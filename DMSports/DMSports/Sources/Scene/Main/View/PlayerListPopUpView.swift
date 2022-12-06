@@ -6,9 +6,8 @@ struct PlayerListPopUpView: View {
         GridItem(.flexible(), spacing: 0, alignment: .leading),
         GridItem(.flexible(), spacing: 0, alignment: .leading)
     ]
-    let humen = [
-        "박박박", "이이이", "김김김", "길길길", "정정정", "조조조"
-    ]
+    let ATeam: [VoteUserStruct]
+    let BTeam: [VoteUserStruct]
     var body: some View {
         ZStack {
             VStack(alignment: .leading, spacing: 0) {
@@ -21,8 +20,8 @@ struct PlayerListPopUpView: View {
                     .foregroundColor(.hint)
                     .padding(.bottom, 12)
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(humen, id: \.self) { data in
-                        Text(data)
+                    ForEach(ATeam, id: \.self) { data in
+                        Text(data.name)
                             .font(.custom("Inter-Regular", size: 16))
                             .foregroundColor(.hint)
                     }
@@ -33,8 +32,8 @@ struct PlayerListPopUpView: View {
                     .foregroundColor(.hint)
                     .padding(.bottom, 12)
                 LazyVGrid(columns: columns) {
-                    ForEach(humen, id: \.self) { data in
-                        Text(data)
+                    ForEach(BTeam, id: \.self) { data in
+                        Text(data.name)
                             .font(.custom("Inter-Regular", size: 16))
                             .foregroundColor(.hint)
                     }
@@ -59,6 +58,6 @@ struct PlayerListPopUpView: View {
 
 struct PlayerListPopUpView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerListPopUpView(close: .constant(true))
+        PlayerListPopUpView(close: .constant(false), ATeam: [], BTeam: [])
     }
 }
