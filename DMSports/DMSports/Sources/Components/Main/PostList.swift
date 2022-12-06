@@ -1,35 +1,34 @@
 import SwiftUI
+import SwiftKeychainWrapper
 
 struct PostList: View {
-    @Binding var text: String
-    let time: String
-    let maxAmount: Int
-    let miniAmount: Int
-    let timeLeft: String
-    let end: Bool
-    let already: Bool
+    @Binding var sportType: String
+    let already = true
+    let voteList: VoteListStruct
     let action1: () -> Void
     let action2: () -> Void
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
-                    Text(text)
+                    Text(sportType)
                         .font(.custom("Inter-SemiBold", size: 18))
                         .foregroundColor(.black)
                         .padding(.bottom, 5)
-                    Text("\(miniAmount)/\(maxAmount)명")
+                    Text("\(voteList.voteCount)/\(voteList.maxPeople)명")
                         .font(.custom("Inter-SemiBold", size: 16))
                         .foregroundColor(.hint)
                         .padding(.bottom, 4)
                 }
                 Spacer()
-                Text(time)
+                Text(voteList.time.rawValue)
                     .font(.custom("Inter-SemiBold", size: 18))
                     .foregroundColor(.hint)
+                    .padding(.trailing, 8)
             }
             .padding(.bottom, 4)
-            ProgressView(value: Double(miniAmount), total: Double(maxAmount))
+            ProgressView(value: Double(voteList.voteCount),
+                         total: Double(voteList.maxPeople))
                 .progressViewStyle(.linear)
                 .accentColor(.primary1)
                 .scaleEffect(x: 1, y: 3, anchor: .center)
@@ -47,16 +46,16 @@ struct PostList: View {
                         .cornerRadius(20)
                 }
                 Spacer()
-                switch end {
+                switch voteList.isComplete {
                 case true:
                     Text("마감되었어요")
                         .font(.custom("Inter-Regular", size: 14))
                         .foregroundColor(.hint)
                         .padding(.trailing, 4)
                 case false:
-                    Text("\(timeLeft) 남음")
-                        .font(.custom("Inter-Medium", size: 10))
-                        .foregroundColor(.hint)
+//                    Text("\(timeLeft) 남음")
+//                        .font(.custom("Inter-Medium", size: 10))
+//                        .foregroundColor(.hint)
                     Button {
                         if !already { action2() }
                     } label: {
@@ -74,22 +73,26 @@ struct PostList: View {
         }
         .padding(.leading, 16)
         .padding(.top, 12)
-        .padding(.bottom, end ? 16 : 8)
-        .padding(.trailing, end ? 16 : 8)
-        .background(end ? Color.disabledColor : Color.white)
+        .padding(.bottom, voteList.isComplete ? 16 : 8)
+        .padding(.trailing, voteList.isComplete ? 16 : 8)
+        .background(voteList.isComplete ? Color.disabledColor : Color.white)
         .cornerRadius(20)
+        .onAppear {
+            KeychainWrapper.standard.set(false, forKey: "already")
+        }
     }
 }
 
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {
-        PostList(text: .constant("배드민턴"),
-                 time: "점심시간",
-                 maxAmount: 4,
-                 miniAmount: 2,
-                 timeLeft: "11:11",
-                 end: false,
-                 already: true,
+        PostList(sportType: .constant("sadfads"),
+                 voteList: VoteListStruct(
+                    voteID: 0,
+                    time: .DINNER,
+                    voteCount: 0,
+                    maxPeople: 0,
+                    isComplete: false,
+                    voteUser: []),
                  action1: { print("hello") },
                  action2: { print("helloHello") })
     }
