@@ -3,8 +3,8 @@ import Moya
 
 enum ClubsService {
     // vote
-    case vote(userID: String)
-    case checkVote(type: Club, date: String)
+    case vote(userID: Int)
+    case checkVote(type: Club)
     case voteList(type: Club)
     // schedule
     case scheduleHope
@@ -41,11 +41,10 @@ extension ClubsService: TargetType {
         switch self {
         case .vote:
             return .requestPlain
-        case .checkVote(let type, let date):
+        case .checkVote(let type):
             return .requestParameters(
                 parameters: [
-                    "type": type,
-                    "date": date
+                    "type": type
                 ],
                 encoding: URLEncoding.queryString)
         case .voteList(let type):
