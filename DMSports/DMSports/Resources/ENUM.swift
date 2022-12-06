@@ -4,26 +4,6 @@
 //
 //  Created by 홍승재 on 2022/12/01.
 //
-enum Sports {
-    case 배드민턴
-    case 축구
-    case 농구
-    case 배구
-    var name: String {
-        switch self {
-        case .배드민턴:
-            return "배드민턴"
-        case .축구:
-            return "축구"
-        case .농구:
-            return "농구"
-        case .배구:
-            return "배구"
-        }
-    }
-}
-
-import Foundation
 
 enum Authority: String {
     case USER
@@ -49,9 +29,9 @@ enum Notice: String {
     case VOLLEYBALL
 }
 
-enum Vote: String {
-    case LUNCH
-    case DINNER
+enum Vote: String, Codable {
+    case LUNCH = "점심시간"
+    case DINNER = "저녁시간"
 }
 
 enum DayOfWeek: String {
