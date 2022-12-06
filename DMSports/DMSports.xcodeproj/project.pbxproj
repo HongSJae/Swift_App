@@ -61,6 +61,7 @@
 		90C8B95D293996580027355A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B95C293996580027355A /* SignInViewModel.swift */; };
 		90C8B95F2939DA860027355A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B95E2939DA860027355A /* SignUpViewModel.swift */; };
 		90C8B9612939ED5D0027355A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B9602939ED5D0027355A /* MainViewModel.swift */; };
+		90C8B964293DB2FB0027355A /* CheckVoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B963293DB2FB0027355A /* CheckVoteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,7 @@
 		90C8B95C293996580027355A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		90C8B95E2939DA860027355A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		90C8B9602939ED5D0027355A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		90C8B963293DB2FB0027355A /* CheckVoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVoteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 			children = (
 				90C8B95A293995DE0027355A /* ErrorModel.swift */,
 				90C8B959293995590027355A /* Auth */,
+				90C8B962293DB2F00027355A /* Club */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,6 +553,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		90C8B962293DB2F00027355A /* Club */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B963293DB2FB0027355A /* CheckVoteModel.swift */,
+			);
+			path = Club;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -655,6 +666,7 @@
 				90C8B9612939ED5D0027355A /* MainViewModel.swift in Sources */,
 				90C8B91029363E940027355A /* NoticeView.swift in Sources */,
 				90C8B8EB2935E8A20027355A /* MainView.swift in Sources */,
+				90C8B964293DB2FB0027355A /* CheckVoteModel.swift in Sources */,
 				90C8B8E42935DCCE0027355A /* TabBarView.swift in Sources */,
 				90261F582935A5440054E2E5 /* PasswordTextfield.swift in Sources */,
 				90C8B913293640A60027355A /* NoticeForm.swift in Sources */,
