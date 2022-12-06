@@ -76,7 +76,9 @@ struct TabBarView: View {
                         .ignoresSafeArea()
                 }
                 .popup(isPresented: $showPlayerList, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
-                    PlayerListPopUpView(close: $showPlayerList)
+                    PlayerListPopUpView(close: $showPlayerList,
+                                        ATeam: <#T##[VoteUserStruct]#>,
+                                        BTeam: <#T##[VoteUserStruct]#>)
                         .padding(.horizontal, 16)
                 })
                 .popup(isPresented: $showEdit, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
