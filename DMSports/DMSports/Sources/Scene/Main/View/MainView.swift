@@ -1,43 +1,12 @@
 import SwiftUI
 
-struct PostValue: Hashable {
-    var text: String
-    var time: String
-    var maxAmount: Int
-    var miniAmount: Int
-    var timeLeft: String
-    var end: Bool
-    var already: Bool
-}
-
 struct MainView: View {
-    @State private var event: Sports = .배드민턴
+    @StateObject var mainViewModel = MainViewModel()
+    @State private var event: Club = .BADMINTON
     @State private var eventString: String = "배드민턴"
     @State private var shouldShowModal = false
     @Binding var shouldShowToast: Bool
-    let postArr: [PostValue] = [
-        PostValue(text: "배드민턴",
-                  time: "점심시간",
-                  maxAmount: 4,
-                  miniAmount: 2,
-                  timeLeft: "11:11",
-                  end: false,
-                  already: false),
-        PostValue(text: "배드민턴",
-                  time: "저녁시간",
-                  maxAmount: 5,
-                  miniAmount: 4,
-                  timeLeft: "11:11",
-                  end: false,
-                  already: false),
-        PostValue(text: "배드민턴",
-                  time: "저녁시간",
-                  maxAmount: 4,
-                  miniAmount: 2,
-                  timeLeft: "11:11",
-                  end: true,
-                  already: false)
-    ]
+    @Binding var voteID: Int
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -84,16 +53,16 @@ struct MainView: View {
                                 HStack(spacing: 8) {
                                     KindOfSportsButton(
                                         event: $event,
-                                        sports: .배드민턴)
+                                        sports: .BADMINTON)
                                     KindOfSportsButton(
                                         event: $event,
-                                        sports: .축구)
+                                        sports: .SOCCER)
                                     KindOfSportsButton(
                                         event: $event,
-                                        sports: .농구)
+                                        sports: .BASKETBALL)
                                     KindOfSportsButton(
                                         event: $event,
-                                        sports: .배구)
+                                        sports: .VOLLEYBALL)
                                 }
                                 .padding(.horizontal, 12)
                             }
@@ -104,7 +73,7 @@ struct MainView: View {
                                     .padding(.leading, 28)
                                 Spacer()
                             }
-                            if postArr.isEmpty {
+                            if mainViewModel.checkVoteModel.voteList.isEmpty {
                                 Text("오늘은 일정이 없어요")
                                     .font(.custom("Inter-Regular", size: 14))
                                     .foregroundColor(.hint)
@@ -112,14 +81,9 @@ struct MainView: View {
                             } else {
                                 ScrollView {
                                     VStack(spacing: 0) {
-                                        ForEach (postArr, id: \.self) { data in
-                                            PostList (text: $eventString,
-                                                      time: data.time,
-                                                      maxAmount: data.maxAmount,
-                                                      miniAmount: data.miniAmount,
-                                                      timeLeft: data.timeLeft,
-                                                      end: data.end,
-                                                      already: data.already,
+                                        ForEach (mainViewModel.checkVoteModel.voteList, id: \.self) { data in
+                                            PostList(sportType: $eventString,
+                                                      voteList: data,
                                                       action1: {
                                                 withAnimation {
                                                     shouldShowToast = true
@@ -130,26 +94,43 @@ struct MainView: View {
                                             })
                                             .padding(.bottom, 12)
                                             .padding(.horizontal, 16)
+                                            .sheet(isPresented: self.$shouldShowModal) {
+                                                SubscriptionView(close: $shouldShowModal,
+                                                                 sport: event,
+                                                                 action: {
+                                                    mainViewModel.vote(userID: data.voteID)
+                                                    print("신청 성공!")
+                                                })
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                        .sheet(isPresented: self.$shouldShowModal) {
-                            SubscriptionView(close: $shouldShowModal,
-                                             sport: event,
-                                             action: {
-                                print("신청 성공!")
-                            })
-                        }
                         .onChange(of: event, perform: { newValue in
-                            eventString = newValue.name
+                            eventString = {
+                                switch newValue {
+                                case .BASKETBALL:
+                                    return "농구"
+                                case .SOCCER:
+                                    return "축구"
+                                case .BADMINTON:
+                                    return "배드민턴"
+                                case .VOLLEYBALL:
+                                    return "배구"
+                                }
+                            }()
+                            mainViewModel.type = event
+                            mainViewModel.getCheckVote()
                         })
                         .padding(.top, 20)
                     }
                     .cornerRadius(20, corners: .topLeft)
                     .cornerRadius(20, corners: .topRight)
                 }
+            }
+            .onAppear() {
+                mainViewModel.getCheckVote()
             }
         }
     }
