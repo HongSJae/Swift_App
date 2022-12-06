@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct KindOfSportsButton: View {
-    @Binding var event: Sports
-    let sports: Sports
+    @Binding var event: Club
+    let sports: Club
     private func returnName() -> String {
         switch sports {
-        case .배드민턴:
+        case .BADMINTON:
             return "배드민턴"
-        case .축구:
+        case .SOCCER:
             return "축구"
-        case .농구:
+        case .BASKETBALL:
             return "농구"
-        case .배구:
+        case .VOLLEYBALL:
             return "배구"
         }
     }
@@ -51,6 +51,6 @@ struct KindOfSportsButton: View {
 
 struct KindOfSportsButton_Previews: PreviewProvider {
     static var previews: some View {
-        KindOfSportsButton(event: .constant(.배드민턴), sports: .배드민턴)
+        KindOfSportsButton(event: .constant(.BADMINTON), sports: .BADMINTON)
     }
 }
