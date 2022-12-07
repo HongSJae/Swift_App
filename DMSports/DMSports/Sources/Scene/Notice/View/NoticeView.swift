@@ -1,11 +1,7 @@
 import SwiftUI
 
-enum NoticeType {
-    case event
-    case all
-}
-
 struct NoticeView: View {
+    @StateObject var noticeViewModel = NoticeViewModel()
     @State private var shouldShowModalAllNotice: Bool = false
     @State private var shouldShowModalEventNotice: Bool = false
     @Binding var shouldShowPopUpDelete: Bool
@@ -33,8 +29,10 @@ struct NoticeView: View {
                                     .padding(.top, 20)
                             }
                         }
-                        NoticeForm(proxy: proxy)
-                        NoticeForm(proxy: proxy)
+                        ForEach(noticeViewModel.recentNoticeModelStruct.admin,
+                                id: \.self) { data in
+                            NoticeForm(proxy: proxy, admin: data)
+                        }
                         HStack(alignment: .bottom, spacing: 0) {
                             Text("종목별 공지사항")
                                 .font(.custom("Inter-SemiBold", size: 20))
@@ -52,27 +50,31 @@ struct NoticeView: View {
                                 
                             }
                         }
-                        EditableNoticeForm(edit: {
-                            withAnimation {
-                                shouldShowPopUpEdit = true
-                            }},
-                                           delete: {
-                            withAnimation {
-                                shouldShowPopUpDelete = true
-                            }
-                        },
-                                           proxy: proxy)
-                        EditableNoticeForm(edit: {
-                            withAnimation {
-                                shouldShowPopUpEdit = true
-                            }
-                        },
-                                           delete: {
-                            withAnimation {
-                                shouldShowPopUpDelete = true
-                            }
-                        },
-                                           proxy: proxy)
+                        ForEach(noticeViewModel.recentNoticeModelStruct.manager,
+                                id: \.self) { data in
+                            NoticeForm(proxy: proxy, admin: data)
+                        }
+//                        EditableNoticeForm(edit: {
+//                            withAnimation {
+//                                shouldShowPopUpEdit = true
+//                            }},
+//                                           delete: {
+//                            withAnimation {
+//                                shouldShowPopUpDelete = true
+//                            }
+//                        },
+//                                           proxy: proxy)
+//                        EditableNoticeForm(edit: {
+//                            withAnimation {
+//                                shouldShowPopUpEdit = true
+//                            }
+//                        },
+//                                           delete: {
+//                            withAnimation {
+//                                shouldShowPopUpDelete = true
+//                            }
+//                        },
+//                                           proxy: proxy)
                     }
                     .padding(.horizontal, 16)
                 }
@@ -88,6 +90,9 @@ struct NoticeView: View {
                                      title: "종목 공지사항")
                 })
             }
+        }
+        .onAppear {
+            noticeViewModel.fetchRecentNotice()
         }
     }
 }
