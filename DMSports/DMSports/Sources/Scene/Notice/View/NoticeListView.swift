@@ -30,10 +30,10 @@ struct NoticeListView: View {
                         .foregroundColor(.hint)
                         .padding(.bottom, 16)
                     ScrollView {
-                        ForEach(0..<20, id: \.self) { _ in
-                            NoticeForm(proxy: proxy)
-                                .padding(.bottom, 6)
-                        }
+//                        ForEach(0..<20, id: \.self) { _ in
+//                            NoticeForm(proxy: proxy)
+//                                .padding(.bottom, 6)
+//                        }
                     }
                 }
                 .padding(.horizontal, 16)
