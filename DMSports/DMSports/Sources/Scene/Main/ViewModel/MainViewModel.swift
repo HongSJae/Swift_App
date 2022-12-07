@@ -1,6 +1,5 @@
 import Moya
 import Foundation
-import SwiftKeychainWrapper
 
 class MainViewModel: ObservableObject {
     let clubClient = MoyaProvider<ClubsService>(plugins: [MoyaLoggerPlugin()])
@@ -56,7 +55,8 @@ class MainViewModel: ObservableObject {
             case .success(let result):
                 switch result.statusCode {
                 case 204:
-                        print("투표 성공")
+                    print("투표 성공")
+                    self.getCheckVote()
                 default:
                     DispatchQueue.main.async {
                         print("알 수 없는 오류입니다. 문의 바랍니다!\n(code: \(result.statusCode)")
