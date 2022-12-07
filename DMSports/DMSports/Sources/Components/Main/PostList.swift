@@ -1,12 +1,17 @@
 import SwiftUI
-import SwiftKeychainWrapper
+
+struct PostAlready {
+    var voteID: Int
+    var already = false
+}
 
 struct PostList: View {
     @Binding var sportType: String
-    let already = true
+    let postAlready: PostAlready
     let voteList: VoteListStruct
     let action1: () -> Void
     let action2: () -> Void
+    let action3: () -> Void
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .bottom) {
@@ -57,14 +62,26 @@ struct PostList: View {
 //                        .font(.custom("Inter-Medium", size: 10))
 //                        .foregroundColor(.hint)
                     Button {
-                        if !already { action2() }
+                        if !UserDefaults.standard.bool(
+                            forKey: "already" + String(postAlready.voteID)) {
+                            action2()
+                        } else {
+                            action3()
+                        }
+                        UserDefaults.standard.set(
+                            !UserDefaults.standard.bool(
+                                forKey: "already" + String(postAlready.voteID)),
+                            forKey: "already" + String(postAlready.voteID)
+                        )
                     } label: {
-                        Text(already ? "완료" : "신청")
+                        Text(UserDefaults.standard.bool(
+                            forKey: "already" + String(postAlready.voteID)) ? "취소" : "신청")
                             .font(.custom("Inter-SemiBold", size: 18))
                             .foregroundColor(.white)
                             .padding(.vertical, 9)
                             .padding(.horizontal, 23)
-                            .background(already ? Color.disabledColor : Color.primary1)
+                            .background(UserDefaults.standard.bool(
+                                forKey: "already" + String(postAlready.voteID)) ? Color.disabledColor : Color.primary1)
                             .cornerRadius(20)
                     }
                 }
@@ -78,7 +95,13 @@ struct PostList: View {
         .background(voteList.isComplete ? Color.disabledColor : Color.white)
         .cornerRadius(20)
         .onAppear {
-            KeychainWrapper.standard.set(false, forKey: "already")
+            if !UserDefaults.standard.bool(
+                forKey: "already" + String(postAlready.voteID)) {
+                UserDefaults.standard.set(
+                    postAlready.already,
+                    forKey: "already" + String(postAlready.voteID)
+                )
+            }
         }
     }
 }
@@ -86,6 +109,7 @@ struct PostList: View {
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {
         PostList(sportType: .constant("sadfads"),
+                 postAlready: PostAlready(voteID: 0),
                  voteList: VoteListStruct(
                     voteID: 0,
                     time: .DINNER,
@@ -94,6 +118,7 @@ struct PostList_Previews: PreviewProvider {
                     isComplete: false,
                     voteUser: []),
                  action1: { print("hello") },
-                 action2: { print("helloHello") })
+                 action2: { print("helloHello") },
+                 action3: {})
     }
 }
