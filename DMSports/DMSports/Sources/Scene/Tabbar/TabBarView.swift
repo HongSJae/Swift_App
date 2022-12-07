@@ -21,6 +21,7 @@ struct TabBarView: View {
     @State private var showPlayerList = false
     @State private var showEdit = false
     @State private var showDelete = false
+    @State private var voteUser: [VoteUserStruct] = []
     var body: some View {
         GeometryReader { proxy in
             VStack(spacing: 0) {
@@ -29,7 +30,8 @@ struct TabBarView: View {
                     ShowView(tabIndex: $tabIndex,
                              showPlayerList: $showPlayerList,
                              showEdit: $showEdit,
-                             showDelete: $showDelete)
+                             showDelete: $showDelete,
+                             voteUser: $voteUser)
                         .padding(.bottom, getSafeAreaBot() ? 60 : 80)
                     ZStack {
                         VStack(spacing: 0) {
@@ -77,8 +79,8 @@ struct TabBarView: View {
                 }
                 .popup(isPresented: $showPlayerList, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
                     PlayerListPopUpView(close: $showPlayerList,
-                                        ATeam: <#T##[VoteUserStruct]#>,
-                                        BTeam: <#T##[VoteUserStruct]#>)
+                                        ATeam: voteUser,
+                                        BTeam: voteUser)
                         .padding(.horizontal, 16)
                 })
                 .popup(isPresented: $showEdit, type: .default, position: .bottom, animation: .default, autohideIn: nil, dragToDismiss: true, closeOnTap: false, closeOnTapOutside: true, view: {
