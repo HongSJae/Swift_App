@@ -62,6 +62,8 @@
 		90C8B95F2939DA860027355A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B95E2939DA860027355A /* SignUpViewModel.swift */; };
 		90C8B9612939ED5D0027355A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B9602939ED5D0027355A /* MainViewModel.swift */; };
 		90C8B964293DB2FB0027355A /* CheckVoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B963293DB2FB0027355A /* CheckVoteModel.swift */; };
+		90C8B96C293F23F70027355A /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B96B293F23F70027355A /* NoticeViewModel.swift */; };
+		90C8B96F293F24D00027355A /* RecentNoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C8B96E293F24D00027355A /* RecentNoticeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		90C8B95E2939DA860027355A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		90C8B9602939ED5D0027355A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		90C8B963293DB2FB0027355A /* CheckVoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVoteModel.swift; sourceTree = "<group>"; };
+		90C8B96B293F23F70027355A /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
+		90C8B96E293F24D00027355A /* RecentNoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentNoticeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +305,7 @@
 				90C8B95A293995DE0027355A /* ErrorModel.swift */,
 				90C8B959293995590027355A /* Auth */,
 				90C8B962293DB2F00027355A /* Club */,
+				90C8B96D293F24AB0027355A /* Notice */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 		90C8B90D29363E810027355A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				90C8B96B293F23F70027355A /* NoticeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -561,6 +567,14 @@
 			path = Club;
 			sourceTree = "<group>";
 		};
+		90C8B96D293F24AB0027355A /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				90C8B96E293F24D00027355A /* RecentNoticeModel.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -682,8 +696,10 @@
 				90C8B9232937013B0027355A /* NoticeDetailView.swift in Sources */,
 				90C8B8E92935E7CA0027355A /* RoundedCorner.swift in Sources */,
 				90C8B92D29375E0A0027355A /* ChangePasswordView.swift in Sources */,
+				90C8B96C293F23F70027355A /* NoticeViewModel.swift in Sources */,
 				90261F1029358DB70054E2E5 /* DMSportsApp.swift in Sources */,
 				90C8B91D293650CC0027355A /* EditNoticeView.swift in Sources */,
+				90C8B96F293F24D00027355A /* RecentNoticeModel.swift in Sources */,
 				90C8B8F02935F32F0027355A /* KindOfSportsButton.swift in Sources */,
 				90C8B928293707830027355A /* MyView.swift in Sources */,
 				90C8B956293898700027355A /* ENUM.swift in Sources */,
