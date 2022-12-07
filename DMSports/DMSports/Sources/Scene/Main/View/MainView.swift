@@ -6,7 +6,7 @@ struct MainView: View {
     @State private var eventString: String = "배드민턴"
     @State private var shouldShowModal = false
     @Binding var shouldShowToast: Bool
-    @Binding var voteID: Int
+    @Binding var voteUser: [VoteUserStruct]
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -83,14 +83,19 @@ struct MainView: View {
                                     VStack(spacing: 0) {
                                         ForEach (mainViewModel.checkVoteModel.voteList, id: \.self) { data in
                                             PostList(sportType: $eventString,
-                                                      voteList: data,
-                                                      action1: {
+                                                     postAlready: PostAlready(voteID: data.voteID),
+                                                     voteList: data,
+                                                     action1: {
                                                 withAnimation {
                                                     shouldShowToast = true
+                                                    voteUser = data.voteUser
                                                 }
                                             },
                                                       action2: {
                                                 shouldShowModal = true
+                                            },
+                                                     action3: {
+                                                mainViewModel.vote(userID: data.voteID)
                                             })
                                             .padding(.bottom, 12)
                                             .padding(.horizontal, 16)
@@ -98,8 +103,11 @@ struct MainView: View {
                                                 SubscriptionView(close: $shouldShowModal,
                                                                  sport: event,
                                                                  action: {
-                                                    mainViewModel.vote(userID: data.voteID)
-                                                    print("신청 성공!")
+                                                    DispatchQueue.main.async {
+                                                        mainViewModel.vote(userID: data.voteID)
+                                                        print("신청 성공!")
+                                                        shouldShowModal.toggle()
+                                                    }
                                                 })
                                             }
                                         }
