@@ -1,37 +1,29 @@
 import SwiftUI
 
-enum User {
-    case user
-    case admin
-    case manager
-}
-
 struct NoticeForm: View {
     @State private var sheetDetail = false
     @State private var showEdit = false
     @State private var showDelete = false
-    let title: String = "준수야 그러면 안된다."
-    let content: String = "준수야 그러면 안돼, 준수야 그러면 안돼, 장지성 아님"
-    let date: String = "22시간 전"
     let proxy: GeometryProxy
+    let admin: AdminStruct
     var body: some View {
         Button {
             sheetDetail = true
         } label: {
             VStack(alignment: .leading) {
                 HStack(alignment: .bottom, spacing: 0) {
-                    Text("MMMMMMMMMMMMMMMM")
+                    Text(admin.title)
                         .font(.custom("Inter-SemiBold", size: 18))
                         .foregroundColor(.black)
                         .lineLimit(1)
-                    Text("종목 / 방금전")
+                    Text("\(admin.type) / \(admin.createdAt)")
                         .font(.custom("Inter-Medium", size: 10))
                         .foregroundColor(.hint)
                         .padding(.leading, 4)
                         .padding(.bottom, 3)
                     Spacer()
                 }
-                Text("안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노안될꺼 머있노")
+                Text(admin.contentPreview)
                     .font(.custom("Inter-Regular", size: 14))
                     .foregroundColor(.hint)
                     .multilineTextAlignment(.leading)
@@ -47,9 +39,9 @@ struct NoticeForm: View {
                 NoticeDetailView(close: $sheetDetail,
                                  showEdit: $showEdit,
                                  showDelete: $showDelete,
-                                 title: title,
-                                 content: content,
-                                 date: date)
+                                 title: admin.title,
+                                 content: admin.contentPreview,
+                                 date: admin.createdAt)
             })
         }
     }
