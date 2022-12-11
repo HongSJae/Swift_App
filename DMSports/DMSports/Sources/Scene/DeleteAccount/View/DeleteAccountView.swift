@@ -34,7 +34,6 @@ struct DeleteAccountView: View {
                                   isSee: $visible,
                                   placeHolder: "비밀번호를 다시 입력해 주세요")
                 .padding(.bottom, 48)
-                
                 HStack {
                     Spacer()
                     Text("비밀번호를 잊으셨나요?")
