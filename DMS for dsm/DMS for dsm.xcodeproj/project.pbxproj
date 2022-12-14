@@ -11,16 +11,20 @@
 		90AABA782947F069002C6E53 /* DMS_for_dsmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA772947F069002C6E53 /* DMS_for_dsmApp.swift */; };
 		90AABA7A2947F069002C6E53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA792947F069002C6E53 /* ContentView.swift */; };
 		90AABA8B294807CC002C6E53 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90AABA8A294807CC002C6E53 /* Moya */; };
-		90AABA94294810B4002C6E53 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA93294810B4002C6E53 /* MainView.swift */; };
+		90AABA94294810B4002C6E53 /* SchoolMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA93294810B4002C6E53 /* SchoolMealView.swift */; };
 		90AABA982948116A002C6E53 /* SchoolMealClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA972948116A002C6E53 /* SchoolMealClient.swift */; };
 		90AABA9E294811BC002C6E53 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA9D294811BC002C6E53 /* MoyaLoggerPlugin.swift */; };
 		90AABAA0294811D1002C6E53 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA9F294811D1002C6E53 /* Header.swift */; };
 		90AABAA629481226002C6E53 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 90AABAA529481226002C6E53 /* SwiftKeychainWrapper */; };
 		90AABAA929481481002C6E53 /* SchoolMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAA829481481002C6E53 /* SchoolMealModel.swift */; };
-		90AABAAD294814B8002C6E53 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAAC294814B8002C6E53 /* MainViewModel.swift */; };
+		90AABAAD294814B8002C6E53 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAAC294814B8002C6E53 /* SchoolViewModel.swift */; };
 		90AABAB129481EBD002C6E53 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAB029481EBD002C6E53 /* Color.swift */; };
 		90AABAB329481F6D002C6E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AABAB229481F6D002C6E53 /* Assets.xcassets */; };
 		90AABAB429481F6D002C6E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AABAB229481F6D002C6E53 /* Assets.xcassets */; };
+		90CFD9C72949BED40075395A /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9C62949BED40075395A /* ScheduleView.swift */; };
+		90CFD9C92949C27A0075395A /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9C82949C27A0075395A /* ScheduleModel.swift */; };
+		90CFD9CB2949C2E60075395A /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9CA2949C2E60075395A /* ScheduleViewModel.swift */; };
+		90CFD9CD2949C3050075395A /* ScheduleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9CC2949C3050075395A /* ScheduleClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +56,18 @@
 		90AABA722947F069002C6E53 /* DMS for dsm Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMS for dsm Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AABA772947F069002C6E53 /* DMS_for_dsmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMS_for_dsmApp.swift; sourceTree = "<group>"; };
 		90AABA792947F069002C6E53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		90AABA93294810B4002C6E53 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		90AABA93294810B4002C6E53 /* SchoolMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMealView.swift; sourceTree = "<group>"; };
 		90AABA972948116A002C6E53 /* SchoolMealClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMealClient.swift; sourceTree = "<group>"; };
 		90AABA9D294811BC002C6E53 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
 		90AABA9F294811D1002C6E53 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		90AABAA829481481002C6E53 /* SchoolMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMealModel.swift; sourceTree = "<group>"; };
-		90AABAAC294814B8002C6E53 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		90AABAAC294814B8002C6E53 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
 		90AABAB029481EBD002C6E53 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		90AABAB229481F6D002C6E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90CFD9C62949BED40075395A /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		90CFD9C82949C27A0075395A /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		90CFD9CA2949C2E60075395A /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		90CFD9CC2949C3050075395A /* ScheduleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				90AABA8F29480FDE002C6E53 /* Application */,
-				90AABA90294810A3002C6E53 /* Main */,
+				90CFD9C22949BEB00075395A /* Schedule */,
+				90AABA90294810A3002C6E53 /* SchoolMeal */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -139,20 +148,20 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		90AABA90294810A3002C6E53 /* Main */ = {
+		90AABA90294810A3002C6E53 /* SchoolMeal */ = {
 			isa = PBXGroup;
 			children = (
 				90AABAA729481473002C6E53 /* Model */,
 				90AABA92294810AE002C6E53 /* View */,
 				90AABA91294810A8002C6E53 /* ViewModel */,
 			);
-			path = Main;
+			path = SchoolMeal;
 			sourceTree = "<group>";
 		};
 		90AABA91294810A8002C6E53 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				90AABAAC294814B8002C6E53 /* MainViewModel.swift */,
+				90AABAAC294814B8002C6E53 /* SchoolViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -160,7 +169,7 @@
 		90AABA92294810AE002C6E53 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				90AABA93294810B4002C6E53 /* MainView.swift */,
+				90AABA93294810B4002C6E53 /* SchoolMealView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				90AABA972948116A002C6E53 /* SchoolMealClient.swift */,
+				90CFD9CC2949C3050075395A /* ScheduleClient.swift */,
 			);
 			path = MoyaClient;
 			sourceTree = "<group>";
@@ -193,6 +203,40 @@
 			isa = PBXGroup;
 			children = (
 				90AABAA829481481002C6E53 /* SchoolMealModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90CFD9C22949BEB00075395A /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9C52949BEC80075395A /* Model */,
+				90CFD9C42949BEC40075395A /* View */,
+				90CFD9C32949BEB90075395A /* ViewModel */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		90CFD9C32949BEB90075395A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9CA2949C2E60075395A /* ScheduleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90CFD9C42949BEC40075395A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9C62949BED40075395A /* ScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90CFD9C52949BEC80075395A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9C82949C27A0075395A /* ScheduleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,13 +349,17 @@
 			files = (
 				90AABA7A2947F069002C6E53 /* ContentView.swift in Sources */,
 				90AABAB129481EBD002C6E53 /* Color.swift in Sources */,
-				90AABA94294810B4002C6E53 /* MainView.swift in Sources */,
+				90AABA94294810B4002C6E53 /* SchoolMealView.swift in Sources */,
 				90AABA9E294811BC002C6E53 /* MoyaLoggerPlugin.swift in Sources */,
 				90AABA782947F069002C6E53 /* DMS_for_dsmApp.swift in Sources */,
+				90CFD9C72949BED40075395A /* ScheduleView.swift in Sources */,
+				90CFD9CD2949C3050075395A /* ScheduleClient.swift in Sources */,
 				90AABAA0294811D1002C6E53 /* Header.swift in Sources */,
+				90CFD9CB2949C2E60075395A /* ScheduleViewModel.swift in Sources */,
 				90AABA982948116A002C6E53 /* SchoolMealClient.swift in Sources */,
 				90AABAA929481481002C6E53 /* SchoolMealModel.swift in Sources */,
-				90AABAAD294814B8002C6E53 /* MainViewModel.swift in Sources */,
+				90AABAAD294814B8002C6E53 /* SchoolViewModel.swift in Sources */,
+				90CFD9C92949C27A0075395A /* ScheduleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
