@@ -8,10 +8,9 @@ class ScheduleViewModel: ObservableObject {
     @Published var grade: String = ""
     @Published var _class: String = ""
     @Published var date: String = ""
-    @Published var schedule: [String] = ["시간표가 없어요..", "시간표가 없어요..", "시간표가 없어요..", "시간표가 없어요.."]
-    @Published var perio: [String] = ["1", "2", "3", "4"]
+    @Published var schedule: [String] = [""]
+    @Published var perio: [String] = [""]
     @Published var progress: Bool = true
-    
     func getSchedule() {
         scheduleClient.request(.dsm(grade: grade, class: _class, date: date)) { res in
             switch res {
