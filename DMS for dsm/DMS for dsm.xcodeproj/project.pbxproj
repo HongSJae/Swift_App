@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90AABA732947F069002C6E53 /* DMS for dsm Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 90AABA722947F069002C6E53 /* DMS for dsm Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		90AABA782947F069002C6E53 /* DMS_for_dsmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA772947F069002C6E53 /* DMS_for_dsmApp.swift */; };
+		90AABA7A2947F069002C6E53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA792947F069002C6E53 /* ContentView.swift */; };
+		90AABA8B294807CC002C6E53 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 90AABA8A294807CC002C6E53 /* Moya */; };
+		90AABA94294810B4002C6E53 /* SchoolMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA93294810B4002C6E53 /* SchoolMealView.swift */; };
+		90AABA982948116A002C6E53 /* SchoolMealClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA972948116A002C6E53 /* SchoolMealClient.swift */; };
+		90AABA9E294811BC002C6E53 /* MoyaLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA9D294811BC002C6E53 /* MoyaLoggerPlugin.swift */; };
+		90AABAA0294811D1002C6E53 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABA9F294811D1002C6E53 /* Header.swift */; };
+		90AABAA629481226002C6E53 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 90AABAA529481226002C6E53 /* SwiftKeychainWrapper */; };
+		90AABAA929481481002C6E53 /* SchoolMealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAA829481481002C6E53 /* SchoolMealModel.swift */; };
+		90AABAAD294814B8002C6E53 /* SchoolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAAC294814B8002C6E53 /* SchoolViewModel.swift */; };
+		90AABAB129481EBD002C6E53 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AABAB029481EBD002C6E53 /* Color.swift */; };
+		90AABAB329481F6D002C6E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AABAB229481F6D002C6E53 /* Assets.xcassets */; };
+		90AABAB429481F6D002C6E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90AABAB229481F6D002C6E53 /* Assets.xcassets */; };
+		90CFD9C72949BED40075395A /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9C62949BED40075395A /* ScheduleView.swift */; };
+		90CFD9C92949C27A0075395A /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9C82949C27A0075395A /* ScheduleModel.swift */; };
+		90CFD9CB2949C2E60075395A /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9CA2949C2E60075395A /* ScheduleViewModel.swift */; };
+		90CFD9CD2949C3050075395A /* ScheduleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CFD9CC2949C3050075395A /* ScheduleClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90AABA742947F069002C6E53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90AABA662947F069002C6E53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90AABA712947F069002C6E53;
+			remoteInfo = "DMS for dsm Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		90AABA852947F06B002C6E53 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				90AABA732947F069002C6E53 /* DMS for dsm Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		90AABA6C2947F069002C6E53 /* DMS for dsm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMS for dsm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AABA722947F069002C6E53 /* DMS for dsm Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMS for dsm Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AABA772947F069002C6E53 /* DMS_for_dsmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMS_for_dsmApp.swift; sourceTree = "<group>"; };
+		90AABA792947F069002C6E53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		90AABA93294810B4002C6E53 /* SchoolMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMealView.swift; sourceTree = "<group>"; };
+		90AABA972948116A002C6E53 /* SchoolMealClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMealClient.swift; sourceTree = "<group>"; };
+		90AABA9D294811BC002C6E53 /* MoyaLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggerPlugin.swift; sourceTree = "<group>"; };
+		90AABA9F294811D1002C6E53 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		90AABAA829481481002C6E53 /* SchoolMealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMealModel.swift; sourceTree = "<group>"; };
+		90AABAAC294814B8002C6E53 /* SchoolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolViewModel.swift; sourceTree = "<group>"; };
+		90AABAB029481EBD002C6E53 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		90AABAB229481F6D002C6E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90CFD9C62949BED40075395A /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		90CFD9C82949C27A0075395A /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		90CFD9CA2949C2E60075395A /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		90CFD9CC2949C3050075395A /* ScheduleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		90AABA6F2947F069002C6E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AABAA629481226002C6E53 /* SwiftKeychainWrapper in Frameworks */,
+				90AABA8B294807CC002C6E53 /* Moya in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		90AABA652947F069002C6E53 = {
+			isa = PBXGroup;
+			children = (
+				90AABA762947F069002C6E53 /* DMS for dsm Watch App */,
+				90AABA6D2947F069002C6E53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90AABA6D2947F069002C6E53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA6C2947F069002C6E53 /* DMS for dsm.app */,
+				90AABA722947F069002C6E53 /* DMS for dsm Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		90AABA762947F069002C6E53 /* DMS for dsm Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA8C294807EB002C6E53 /* Network */,
+				90AABA8D294807F9002C6E53 /* Resources */,
+				90AABA8E29480802002C6E53 /* Sources */,
+			);
+			path = "DMS for dsm Watch App";
+			sourceTree = "<group>";
+		};
+		90AABA8C294807EB002C6E53 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA992948116D002C6E53 /* Header */,
+				90AABA9A29481172002C6E53 /* MoyaClient */,
+				90AABA9B29481185002C6E53 /* Plugin */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		90AABA8D294807F9002C6E53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90AABAB029481EBD002C6E53 /* Color.swift */,
+				90AABAB229481F6D002C6E53 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		90AABA8E29480802002C6E53 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA8F29480FDE002C6E53 /* Application */,
+				90CFD9C22949BEB00075395A /* Schedule */,
+				90AABA90294810A3002C6E53 /* SchoolMeal */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		90AABA8F29480FDE002C6E53 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA772947F069002C6E53 /* DMS_for_dsmApp.swift */,
+				90AABA792947F069002C6E53 /* ContentView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		90AABA90294810A3002C6E53 /* SchoolMeal */ = {
+			isa = PBXGroup;
+			children = (
+				90AABAA729481473002C6E53 /* Model */,
+				90AABA92294810AE002C6E53 /* View */,
+				90AABA91294810A8002C6E53 /* ViewModel */,
+			);
+			path = SchoolMeal;
+			sourceTree = "<group>";
+		};
+		90AABA91294810A8002C6E53 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90AABAAC294814B8002C6E53 /* SchoolViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90AABA92294810AE002C6E53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA93294810B4002C6E53 /* SchoolMealView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90AABA992948116D002C6E53 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA9F294811D1002C6E53 /* Header.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		90AABA9A29481172002C6E53 /* MoyaClient */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA972948116A002C6E53 /* SchoolMealClient.swift */,
+				90CFD9CC2949C3050075395A /* ScheduleClient.swift */,
+			);
+			path = MoyaClient;
+			sourceTree = "<group>";
+		};
+		90AABA9B29481185002C6E53 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				90AABA9D294811BC002C6E53 /* MoyaLoggerPlugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		90AABAA729481473002C6E53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90AABAA829481481002C6E53 /* SchoolMealModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90CFD9C22949BEB00075395A /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9C52949BEC80075395A /* Model */,
+				90CFD9C42949BEC40075395A /* View */,
+				90CFD9C32949BEB90075395A /* ViewModel */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		90CFD9C32949BEB90075395A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9CA2949C2E60075395A /* ScheduleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90CFD9C42949BEC40075395A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9C62949BED40075395A /* ScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90CFD9C52949BEC80075395A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90CFD9C82949C27A0075395A /* ScheduleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		90AABA6B2947F069002C6E53 /* DMS for dsm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90AABA862947F06B002C6E53 /* Build configuration list for PBXNativeTarget "DMS for dsm" */;
+			buildPhases = (
+				90AABA6A2947F069002C6E53 /* Resources */,
+				90AABA852947F06B002C6E53 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90AABA752947F069002C6E53 /* PBXTargetDependency */,
+			);
+			name = "DMS for dsm";
+			productName = "DMS for dsm";
+			productReference = 90AABA6C2947F069002C6E53 /* DMS for dsm.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		90AABA712947F069002C6E53 /* DMS for dsm Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90AABA822947F06B002C6E53 /* Build configuration list for PBXNativeTarget "DMS for dsm Watch App" */;
+			buildPhases = (
+				90AABA6E2947F069002C6E53 /* Sources */,
+				90AABA6F2947F069002C6E53 /* Frameworks */,
+				90AABA702947F069002C6E53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DMS for dsm Watch App";
+			packageProductDependencies = (
+				90AABA8A294807CC002C6E53 /* Moya */,
+				90AABAA529481226002C6E53 /* SwiftKeychainWrapper */,
+			);
+			productName = "DMS for dsm Watch App";
+			productReference = 90AABA722947F069002C6E53 /* DMS for dsm Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		90AABA662947F069002C6E53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					90AABA6B2947F069002C6E53 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					90AABA712947F069002C6E53 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 90AABA692947F069002C6E53 /* Build configuration list for PBXProject "DMS for dsm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 90AABA652947F069002C6E53;
+			packageReferences = (
+				90AABA89294807CC002C6E53 /* XCRemoteSwiftPackageReference "Moya" */,
+				90AABAA429481226002C6E53 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
+			productRefGroup = 90AABA6D2947F069002C6E53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				90AABA6B2947F069002C6E53 /* DMS for dsm */,
+				90AABA712947F069002C6E53 /* DMS for dsm Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		90AABA6A2947F069002C6E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AABAB329481F6D002C6E53 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90AABA702947F069002C6E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AABAB429481F6D002C6E53 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		90AABA6E2947F069002C6E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90AABA7A2947F069002C6E53 /* ContentView.swift in Sources */,
+				90AABAB129481EBD002C6E53 /* Color.swift in Sources */,
+				90AABA94294810B4002C6E53 /* SchoolMealView.swift in Sources */,
+				90AABA9E294811BC002C6E53 /* MoyaLoggerPlugin.swift in Sources */,
+				90AABA782947F069002C6E53 /* DMS_for_dsmApp.swift in Sources */,
+				90CFD9C72949BED40075395A /* ScheduleView.swift in Sources */,
+				90CFD9CD2949C3050075395A /* ScheduleClient.swift in Sources */,
+				90AABAA0294811D1002C6E53 /* Header.swift in Sources */,
+				90CFD9CB2949C2E60075395A /* ScheduleViewModel.swift in Sources */,
+				90AABA982948116A002C6E53 /* SchoolMealClient.swift in Sources */,
+				90AABAA929481481002C6E53 /* SchoolMealModel.swift in Sources */,
+				90AABAAD294814B8002C6E53 /* SchoolViewModel.swift in Sources */,
+				90CFD9C92949C27A0075395A /* ScheduleModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90AABA752947F069002C6E53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90AABA712947F069002C6E53 /* DMS for dsm Watch App */;
+			targetProxy = 90AABA742947F069002C6E53 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		90AABA802947F06B002C6E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		90AABA812947F06B002C6E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		90AABA832947F06B002C6E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 63UM6H56P2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "DMS for dsm";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.DMS-for-dsm.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		90AABA842947F06B002C6E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 63UM6H56P2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "DMS for dsm";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.DMS-for-dsm.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		90AABA872947F06B002C6E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63UM6H56P2;
+				INFOPLIST_KEY_CFBundleDisplayName = "DMS for dsm";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.DMS-for-dsm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		90AABA882947F06B002C6E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63UM6H56P2;
+				INFOPLIST_KEY_CFBundleDisplayName = "DMS for dsm";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.DMS-for-dsm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90AABA692947F069002C6E53 /* Build configuration list for PBXProject "DMS for dsm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90AABA802947F06B002C6E53 /* Debug */,
+				90AABA812947F06B002C6E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90AABA822947F06B002C6E53 /* Build configuration list for PBXNativeTarget "DMS for dsm Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90AABA832947F06B002C6E53 /* Debug */,
+				90AABA842947F06B002C6E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90AABA862947F06B002C6E53 /* Build configuration list for PBXNativeTarget "DMS for dsm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90AABA872947F06B002C6E53 /* Debug */,
+				90AABA882947F06B002C6E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90AABA89294807CC002C6E53 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		90AABAA429481226002C6E53 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90AABA8A294807CC002C6E53 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90AABA89294807CC002C6E53 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		90AABAA529481226002C6E53 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90AABAA429481226002C6E53 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 90AABA662947F069002C6E53 /* Project object */;
+}

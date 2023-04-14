@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-CMD/Pods-CMD-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework
+${BUILT_PRODUCTS_DIR}/Then/Then.framework
+${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework

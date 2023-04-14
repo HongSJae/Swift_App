@@ -1,0 +1,6 @@
+framework module Pods_FireBase_Inflearn {
+  umbrella header "Pods-FireBase-Inflearn-umbrella.h"
+
+  export *
+  module * { export * }
+}

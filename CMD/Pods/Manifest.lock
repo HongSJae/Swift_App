@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.6.1)
+  - SnapKit (5.6.0)
+  - TextFieldEffects (1.6.0)
+  - Then (3.0.0)
+  - ViewAnimator (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SnapKit
+  - TextFieldEffects
+  - Then
+  - ViewAnimator
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SnapKit
+    - TextFieldEffects
+    - Then
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
+
+PODFILE CHECKSUM: f7e7a2df564356c0feb14311d016c7899b0ee12d
+
+COCOAPODS: 1.11.3
