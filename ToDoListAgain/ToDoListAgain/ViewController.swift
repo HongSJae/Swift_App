@@ -29,27 +29,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     private func setData() {
-        let data = TDL.map {
-            [
-                "title": $0.ToDoTilte,
-                "content": $0.ToDoText
-            ]
-        }
-        UserDefaults.standard.set(data, forKey: "item")
+        UserDefaults.standard.set(TDL, forKey: "item")
         UserDefaults.standard.synchronize()
-    }
-    func loadData() {
-        guard let data = UserDefaults.standard.object(forKey: "item") as? [[String: AnyObject]] else {
-            return
-        }
-        
-        TDL = data.map {
-            let title = $0["title"] as? String
-            let content = $0["content"] as? String
-            
-            return ToDoList(ToDoTitle: title!, ToDoText: content!)
-            
-        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,15 +51,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-//    @IBAction func EditBtn(_ sender: UIBarButtonItem) {
-//        if TableView.isEditing {
-//            sender.title = "Edit"
-//            TableView.setEditing(false, animated: true)
-//        } else {
-//            sender.title = "Done"
-//            TableView.setEditing(true, animated: true)
-//        }
-//    }
     @IBAction func LeftButton(_ sender: UIButton) {
         if TableView.isEditing {
             EditBtton.setTitle("수정", for: .normal)
@@ -95,7 +67,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TDL.remove(at: sourceIndexPath.row)
         TDL.insert(moved, at: destinationIndexPath.row)
     }
-
-
 }
 

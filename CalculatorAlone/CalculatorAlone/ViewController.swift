@@ -81,15 +81,16 @@ class ViewController: UIViewController {
         }
     }
     func removePoint(num: Double) -> String{ //구글링, 근데 이해됨
-            var floatNumString = String(num)
-                
-            while floatNumString.last == "0" {
-                floatNumString.removeLast()
-            }
-            if floatNumString.last == "."{
-                floatNumString.removeLast()
-            }
-            return floatNumString
+        var floatNumString = String(num)
+        
+        while floatNumString.last == "0" {
+            floatNumString.removeLast()
         }
+        if floatNumString.last == "."{
+            floatNumString.removeLast()
+        }
+        return floatNumString
+    }
 }
+
 
