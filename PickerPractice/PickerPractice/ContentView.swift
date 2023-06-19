@@ -16,7 +16,6 @@ struct ContentView: View {
             }
             Text(selectedURL?.lastPathComponent ?? "선택된 파일 없음")
             Button("이미지 선택") {
-                showImagePicker = true
             }
             Image(uiImage: selectedImage ?? .init())
                 .resizable()
@@ -34,9 +33,8 @@ struct ContentView: View {
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $selectedImage)
         }
-        .onAppear() {
-            viewModel.requestCameraPermission()
-            viewModel.requestLibPermission()
+        .alert("메시지", isPresented: $viewModel.showingAlert) {
+            Button("OK", role: .cancel) {  }
         }
     }
 }
