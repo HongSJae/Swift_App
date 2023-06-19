@@ -13,6 +13,7 @@
 		9023127D2A4004C900B2BB76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9023127C2A4004C900B2BB76 /* Preview Assets.xcassets */; };
 		902312842A400C0F00B2BB76 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902312832A400C0F00B2BB76 /* DocumentPicker.swift */; };
 		902312862A400C6D00B2BB76 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902312852A400C6D00B2BB76 /* ImagePicker.swift */; };
+		9023128D2A401A6400B2BB76 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9023128C2A401A6400B2BB76 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		9023127C2A4004C900B2BB76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		902312832A400C0F00B2BB76 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 		902312852A400C6D00B2BB76 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9023128C2A401A6400B2BB76 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				902312752A4004C800B2BB76 /* PickerPracticeApp.swift */,
 				902312772A4004C800B2BB76 /* ContentView.swift */,
+				9023128C2A401A6400B2BB76 /* ContentViewModel.swift */,
 				902312832A400C0F00B2BB76 /* DocumentPicker.swift */,
 				902312852A400C6D00B2BB76 /* ImagePicker.swift */,
 				902312792A4004C900B2BB76 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 				902312862A400C6D00B2BB76 /* ImagePicker.swift in Sources */,
 				902312842A400C0F00B2BB76 /* DocumentPicker.swift in Sources */,
 				902312762A4004C800B2BB76 /* PickerPracticeApp.swift in Sources */,
+				9023128D2A401A6400B2BB76 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +282,8 @@
 				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera 권한 주세영";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 권한 주세용";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +313,8 @@
 				DEVELOPMENT_TEAM = 63UM6H56P2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera 권한 주세영";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범 권한 주세용";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

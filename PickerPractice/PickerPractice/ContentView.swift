@@ -7,6 +7,8 @@ struct ContentView: View {
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
 
+    @StateObject var viewModel: ContentViewModel
+
     var body: some View {
         VStack(spacing: 10) {
             Button("문서 선택") {
@@ -18,7 +20,6 @@ struct ContentView: View {
             }
             Image(uiImage: selectedImage ?? .init())
                 .resizable()
-                .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
                 .overlay {
                     Rectangle()
@@ -33,11 +34,15 @@ struct ContentView: View {
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $selectedImage)
         }
+        .onAppear() {
+            viewModel.requestCameraPermission()
+            viewModel.requestLibPermission()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: .init())
     }
 }
